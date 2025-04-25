@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #4d6781;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 0.7rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #0d6efd;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #495057;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #0d6efd;
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Home Section */
+        #home {
+            background: linear-gradient(135deg, #6f42c1, #0d6efd);
+            color: white;
+        }
+
+        .home-content {
+            text-align: center;
+        }
+
+        .home-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .home-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* About Section */
+        #about {
+            background-color: white;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            color: #212529;
+            position: relative;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .about-content h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: #0d6efd;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Projects Section */
+        #projects {
+            background-color: #f8f9fa;
+        }
+
+        .projects-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .projects-heading h2 {
+            font-size: 2.5rem;
+            color: #212529;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .projects-heading h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #0d6efd;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-img img {
+            transform: scale(1.1);
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+        }
+
+        .project-description {
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech {
+            background-color: #e9ecef;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .project-link {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #0d6efd;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-link:hover {
+            background-color: #0b5ed7;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #0d6efd, #6f42c1);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-heading h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-link:hover {
+            transform: scale(1.1);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #212529;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .nav-links li {
+                margin-left: 0;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .home-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .home-content p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container">
+            <div class="home-content" data-aos="fade-up">
+                <h1>John Doe</h1>
+                <p>Software Engineering Student</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <div data-aos="fade-right">
+                    <h2>About Me</h2>
+                    <div class="about-text">
+                        <p>I am a passionate second-year software engineering student at [Your University]. With a strong foundation in computer science principles and hands-on experience in various programming languages, I am dedicated to creating efficient and innovative software solutions.</p>
+                        <p>My academic journey has equipped me with skills in [mention specific areas like web development, mobile app development, etc.], and I'm constantly learning and adapting to new technologies.</p>
+                        <p>Currently seeking internship opportunities where I can apply my skills and gain industry experience while contributing to meaningful projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="projects-heading" data-aos="fade-up">
+                <h2>My Projects</h2>
+                <p>Here are some of the projects I've worked on</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="project-img">
+                        <img src="/api/placeholder/400/320" alt="Project 1">
+                    </div>
+                    <div class="project-info">
+                        <h3>E-Commerce Platform</h3>
+                        <p class="project-description">A full-stack e-commerce website with product listings, shopping cart, and payment integration.</p>
+                        <div class="tech-stack">
+                            <span class="tech">React</span>
+                            <span class="tech">Node.js</span>
+                            <span class="tech">MongoDB</span>
+                            <span class="tech">Express</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="project-img">
+                        <img src="/api/placeholder/400/320" alt="Project 2">
+                    </div>
+                    <div class="project-info">
+                        <h3>Task Management App</h3>
+                        <p class="project-description">A responsive task manager application with drag-and-drop functionality and priority filters.</p>
+                        <div class="tech-stack">
+                            <span class="tech">JavaScript</span>
+                            <span class="tech">HTML/CSS</span>
+                            <span class="tech">Firebase</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="project-img">
+                        <img src="/api/placeholder/400/320" alt="Project 3">
+                    </div>
+                    <div class="project-info">
+                        <h3>Weather Forecast App</h3>
+                        <p class="project-description">A mobile-friendly weather application that provides real-time forecasts using a weather API.</p>
+                        <div class="tech-stack">
+                            <span class="tech">React Native</span>
+                            <span class="tech">API Integration</span>
+                            <span class="tech">Redux</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-heading" data-aos="fade-up">
+                <h2>Contact Me</h2>
+                <p>Feel free to reach out through any of these platforms</p>
+            </div>
+            <div class="contact-links" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://linkedin.com/in/yourusername" class="contact-link">
+                    <div class="contact-icon">in</div>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/yourusername" class="contact-link">
+                    <div class="contact-icon">GH</div>
+                    <span>GitHub</span>
+                </a>
+                <a href="mailto:your.email@example.com" class="contact-link">
+                    <div class="contact-icon">@</div>
+                    <span>Email</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 John Doe - Software Engineering Portfolio</p>
+    </footer>
+
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease',
+                once: true,
+                offset: 100
+            });
+            
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aladin Portfolio</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="16x16">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="particles-container" id="particles"></div>
+        <div class="container">
+            <div class="home-content" data-aos="fade-up">
+                <p id="myNameIs">Hi! my name is</p>
+                <h1>Aladin Cheniour.</h1>
+                <h2>I'm a Software Engineering Student</h2>
+                <p id="intro"> I am a passionate software engineering 
+                    student with a keen interest in web development and software design. 
+                    I also develop things on my free time. I'm open to any opportunity.</p>
+                <a class="blue-bg-button" href="#about">Get Started</a>    
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <div data-aos="fade-right">
+                    <h2>About Me</h2>
+                    <div class="about-text">
+                        <p class="paragraph">Hi! My name is Aladin Cheniour, I'm passionate about challenges and always 
+                            looking for new ways to push the boundaries of what I can create. I love 
+                            combining math, logic, and creativity through programming, and I've worked 
+                            on a wide range of projects (check out the projects section for more).</p>
+
+                            <p class="paragraph">I started my academic journey with a Bachelor's degree in Mathematics and 
+                            Computer Science at Université Paris Cité, which gave me a strong foundation 
+                            in both theory and problem-solving. In 2023, I joined the engineering program 
+                            at Polytech Paris-Saclay to deepen my knowledge in software development and 
+                            applied sciences. I also had the opportunity to study Game Design in Finland, 
+                            where I explored interactive storytelling, user experience, etc...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section    PockerEnReseau   catan  ImAladinCh  Dominion  drivingCarInSPaceSimulation self-driving-car  PROJET_SPECIALITE -->
+    <section id="projects">
+        <div class="container">
+            <div class="projects-heading" data-aos="fade-up">
+                <h2>My Projects</h2>
+                <p>Here are some of the projects I've worked on</p>
+            </div>
+            <div class="projects-grid">
+
+                <!-- Project -->
+                <div class="project-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="project-img">
+                        <img src="./resources/versus.png" alt="Project 1">
+                    </div>
+                    <div class="project-info">
+                        <h3>Versus</h3>
+                        <p class="project-description">
+                            A full-featured app for organizing sports events—users can sign up, create and join events, chat, and manage schedules.                        
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech">React Js</span>
+                            <span class="tech">Spring Boot</span>
+                            <span class="tech">MongoBD</span>
+                        </div>
+                        <a href="https://github.com/aladin20c/versus" class="project-link">View Project</a>
+                    </div>
+                </div>
+                
+                
+                <!-- Project -->
+                <div class="project-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="project-img">
+                        <img src="/api/placeholder/400/320">
+                    </div>
+                    <div class="project-info">
+                        <h3>Gamified CV</h3>
+                        <p class="project-description">
+                            An interactive, gamified résumé that presents your profile as a game, blending personal branding and creativity.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech">JavaScript</span>
+                            <span class="tech">HTML/CSS</span>
+                        </div>
+                        <a href="https://aladin20c.github.io/ImAladinCh/" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project -->
+                <div class="project-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="project-img">
+                        <img src="./resources/car.png" >
+                    </div>
+                    <div class="project-info">
+                        <h3>ML Self-Driving Car</h3>
+                        <p class="project-description">
+                            A simulation where a car learns to drive autonomously using machine learning to navigate and avoid obstacles.
+                        </p>
+                        <div class="tech-stack"js>
+                            <span class="tech">JavaScript</span>
+                            <span class="tech">HTML/CSS</span>
+                            <span class="tech">Tenserflow</span>
+                        </div>
+                        <a href="https://aladin20c.github.io/self-driving-car/" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project -->
+                <div class="project-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="project-img">
+                        <img src="./resources/opengl.png">
+                    </div>
+                    <div class="project-info">
+                        <h3>Orbital Driving Simulator</h3>
+                        <p class="project-description">
+                            An OpenGL-based simulation in Python where you drive a car in space, 
+                            testing physics and graphics rendering.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech">Python</span>
+                            <span class="tech">OpenGL</span>
+                        </div>
+                        <a href="https://youtu.be/sotObIvhX3Q" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+
+
+                <!-- Project-->
+                <div class="project-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="project-img">
+                        <img src="./resources/dominion.png">
+                    </div>
+                    <div class="project-info">
+                        <h3>Dominion C++</h3>
+                        <p class="project-description">
+                            A C++ implementation of Dominion, offering a strategic board game experience with a custom rule engine.                        </p>
+                        <div class="tech-stack">
+                            <span class="tech">C++</span>
+                            <span class="tech">wxwidgets</span>
+                        </div>
+                        <a href="https://github.com/Nizar91300/Dominion" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Project-->
+                <div class="project-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="project-img">
+                        <img src="./resources/pocker.png">
+                    </div>
+                    <div class="project-info">
+                        <h3>Network Poker</h3>
+                        <p class="project-description">
+                            A Java-based multiplayer poker game using sockets to connect server and client players in real time.                     
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech">Java</span>
+                            <span class="tech">JavaFX</span>
+                        </div>
+                        <a href="https://github.com/aladin20c/PockerEnReseau" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+
+
+                <!-- Project-->
+                <div class="project-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="project-img">
+                        <img src="./resources/catan.png">
+                    </div>
+                    <div class="project-info">
+                        <h3>Catan Java Edition</h3>
+                        <p class="project-description">
+                            A Java clone of the popular social board game The Settlers of Catan, 
+                            complete with strategy and AI bots.                        
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech">Java</span>
+                        </div>
+                        <a href="https://github.com/aladin20c/catan" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-heading" data-aos="fade-up">
+                <h2>Contact Me</h2>
+                <p>Feel free to reach out through any of these platforms</p>
+            </div>
+            <div class="contact-links" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://www.linkedin.com/in/aladin-cheniour-917636303/" class="contact-link">
+                    <div class="contact-icon">in</div>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/aladin20c" class="contact-link">
+                    <div class="contact-icon">GH</div>
+                    <span>GitHub</span>
+                </a>
+                <a href="mailto:aladincheniour19@exgmail.com" class="contact-link">
+                    <div class="contact-icon">@</div>
+                    <span>Email</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Aladin Cheniour · ™ MIT License</p>
+    </footer>
+
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 600,
+                easing: 'ease',
+                once: true,
+                offset: 100
+            });
+            
+            // Navbar animation when page loads
+            setTimeout(function() {
+                document.querySelector('.navbar').classList.add('loaded');
+            }, 100);
+            
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 30) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Create particles for background animation
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 80;
+            
+            for(let i = 0; i < particleCount; i++) {
+                createParticle();
+            }
+            
+            function createParticle() {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random position, size and animation duration
+                const size = Math.random() * 15 + 5; // 5-20px
+                const posX = Math.random() * 100; // 0-100%
+                const posY = Math.random() * 100 + 100; // 100-200% (start below screen)
+                const duration = Math.random() * 20 + 10; // 10-30s
+                const delay = Math.random() * 10; // 0-10s
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.bottom = `${-posY}px`;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.animationDelay = `${delay}s`;
+                
+                particlesContainer.appendChild(particle);
+                
+                // Remove and recreate particle when animation ends
+                setTimeout(() => {
+                    particlesContainer.removeChild(particle);
+                    createParticle();
+                }, (duration + delay) * 1000);
+            }
+        });
+    </script>
+</body>
+</html>
