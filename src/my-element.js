@@ -2,6 +2,26 @@ import { LitElement, css, html } from 'lit'
 import { icons } from './icons.js';
 import {sections,socials,experiences,education,projects} from './data.js'
 
+
+
+export const hoverBackgroundStyle = css`
+  .hover-background {
+    position: absolute;
+    inset: -16px -16px -16px -16px;
+    z-index: 0;  /* Behind the content */
+    border-radius: 6px;
+    display: none;
+    pointer-events: none;  /* So it doesn't interfere with hovering */
+  }
+
+  @media (min-width: 1024px) {
+    .hover-background {
+      display: block;
+      inset: -24px -24px -24px -24px;
+    }
+  }
+`;
+
 /**
  * THE Main title Eleemnt.
  */
@@ -476,88 +496,91 @@ export class ExperienceCard extends LitElement {
   };
 
 
-  static styles = css`
-    :host { 
-      cursor: pointer;
-    }
-
-    .education-card {
-      position: relative;
-      padding: 0;
-      margin-bottom: 48px;
-    }
-    
-    
-    .experience-grid {
-      display: grid;
-      padding-bottom: 4px;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    @media (min-width: 640px) {
-      .experience-grid {
-        grid-template-columns: repeat(8, minmax(0, 1fr));
-        gap: 32px;
+  static styles = [
+    hoverBackgroundStyle,
+    css`
+      :host { 
+        cursor: pointer;
       }
-    }
 
-    @media (min-width: 768px) {
-      .experience-grid {
-        gap: 16px;
+      .education-card {
+        position: relative;
+        padding: 0;
+        margin-bottom: 48px;
       }
-    }
+      
+      
+      .experience-grid {
+        display: grid;
+        padding-bottom: 4px;
+        transition: all 0.3s ease;
+        position: relative;
+      }
 
-    .experience-date {
-      padding: 0;
-      z-index: 10;
-      margin-bottom: 8px;
-      margin-top: 4px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--slate-500);
-    }
+      @media (min-width: 640px) {
+        .experience-grid {
+          grid-template-columns: repeat(8, minmax(0, 1fr));
+          gap: 32px;
+        }
+      }
 
+      @media (min-width: 768px) {
+        .experience-grid {
+          gap: 16px;
+        }
+      }
 
-    @media (min-width: 640px) {
       .experience-date {
-        grid-column: span 2 / span 2;
+        padding: 0;
+        z-index: 10;
+        margin-bottom: 8px;
+        margin-top: 4px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--slate-500);
       }
-    }
 
-    .experience-content {
-      padding: 0;
-      margin: 0;
-      z-index: 10;
-    }
 
-    @media (min-width: 640px) {
+      @media (min-width: 640px) {
+        .experience-date {
+          grid-column: span 2 / span 2;
+        }
+      }
+
       .experience-content {
-        grid-column: span 6 / span 6;
+        padding: 0;
+        margin: 0;
+        z-index: 10;
       }
-    }
 
-    .experience-title {
-      margin: 0;
-      font-weight: 500;
-      line-height: 1.25;
-      color: var(--slate-200);
-    }
+      @media (min-width: 640px) {
+        .experience-content {
+          grid-column: span 6 / span 6;
+        }
+      }
 
-    .experience-description {
-      margin-top: 8px;
-      font-size: 0.875rem;
-      line-height: 1.5;
-    }
+      .experience-title {
+        margin: 0;
+        font-weight: 500;
+        line-height: 1.25;
+        color: var(--slate-200);
+      }
 
-    .tech-list {
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: 8px;
-    }
-  `;
+      .experience-description {
+        margin-top: 8px;
+        font-size: 0.875rem;
+        line-height: 1.5;
+      }
+
+      .tech-list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 8px;
+      }
+    `
+  ];
 
   handleHostClick(event) {
     if (!event.target.closest('a')) {
@@ -619,57 +642,51 @@ export class ExperienceList extends LitElement {
   }
 
 
-  static styles = css`
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    li {
-      position: relative; 
-      padding: 0;
-      margin-bottom: 48px; 
-    }
-
-    .hover-background {
-      position: absolute;
-      inset: -16px -16px -16px -16px;
-      z-index: 0;  /* Behind the content */
-      border-radius: 6px;
-      transition: all 0.3s ease;
-      display: none;
-      pointer-events: none;  /* So it doesn't interfere with hovering */
-    }
-
-    @media (min-width: 1024px) {
-      .hover-background {
-        display: block;
-        inset: -24px -24px -24px -24px;
+  static styles = [
+    hoverBackgroundStyle,
+    css`
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
       }
-    }
+      
+      li {
+        position: relative; 
+        padding: 0;
+        margin-bottom: 48px; 
+      }
 
-    li:hover .hover-background {
-      background-color: rgba(30, 41, 59, 0.5);
-      box-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1);
-      filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04));
-    }
+      experience-card {
+        position: relative;
+        z-index: 1;
+        display: block;
+      }
+      
+      @media (max-width: 1199px) {
+        hover-background {
+          display: none;
+        }
+      }
 
-    experience-card {
-      position: relative;
-      z-index: 1;
-      display: block;
-    }
+      @media (min-width: 1200px) and (hover: hover) and (pointer: fine) {
+        ul:hover li {
+          opacity: 0.5;
+          transition: opacity 0.1s ease;
+        }
 
-    ul:hover li {
-      opacity: 0.5;
-      transition: opacity 0.3s ease;
-    }
+        ul li:hover {
+          opacity: 1 !important;
+        }
 
-    ul li:hover {
-      opacity: 1 !important;
-    }
-  `;
+        li:hover .hover-background {
+          background-color: rgba(30, 41, 59, 0.5);
+          box-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1);
+          filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04));
+        }
+      }
+    `
+  ];
 
 
   render() {
@@ -955,57 +972,51 @@ export class EducationList extends LitElement {
     super();
   }
 
-  static styles = css`
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    li {
-      position: relative; 
-      padding: 0;
-      margin-bottom: 48px; 
-    }
-
-    .hover-background {
-      position: absolute;
-      inset: -16px -16px -16px -16px;
-      z-index: 0;  /* Behind the content */
-      border-radius: 6px;
-      transition: all 0.3s ease;
-      display: none;
-      pointer-events: none;  /* So it doesn't interfere with hovering */
-    }
-
-    @media (min-width: 1024px) {
-      .hover-background {
-        display: block;
-        inset: -24px -24px -24px -24px;
+  static styles = [ 
+    hoverBackgroundStyle,
+    css`
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
       }
-    }
+      
+      li {
+        position: relative; 
+        padding: 0;
+        margin-bottom: 48px; 
+      }
 
-    li:hover .hover-background {
-      background-color: rgba(30, 41, 59, 0.5);
-      box-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1);
-      filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04));
-    }
+      education-card {
+        position: relative;
+        z-index: 1;
+        display: block;
+      }
 
-    education-card {
-      position: relative;
-      z-index: 1;
-      display: block;
-    }
+      @media (max-width: 1199px) {
+        hover-background {
+          display: none;
+        }
+      }
 
-    ul:hover li {
-      opacity: 0.5;
-      transition: opacity 0.3s ease;
-    }
+      @media (min-width: 1200px) and (hover: hover) and (pointer: fine) {
+        ul:hover li {
+          opacity: 0.5;
+          transition: opacity 0.1s ease;
+        }
 
-    ul li:hover {
-      opacity: 1 !important;
-    }
-  `;
+        ul li:hover {
+          opacity: 1 !important;
+        }
+
+        li:hover .hover-background {
+          background-color: rgba(30, 41, 59, 0.5);
+          box-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1);
+          filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04));
+        }
+      }
+    `
+  ];
 
   render() {
     return html`
@@ -1305,57 +1316,51 @@ export class ProjectList extends LitElement {
     super();
   }
 
-  static styles = css`
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    li {
-      position: relative; 
-      padding: 0;
-      margin-bottom: 48px; 
-    }
-
-    .hover-background {
-      position: absolute;
-      inset: -16px -16px -16px -16px;
-      z-index: 0;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-      display: none;
-      pointer-events: none;
-    }
-
-    @media (min-width: 1024px) {
-      .hover-background {
-        display: block;
-        inset: -24px -24px -24px -24px;
+  static styles = [
+    hoverBackgroundStyle,
+    css`
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
       }
-    }
+      
+      li {
+        position: relative; 
+        padding: 0;
+        margin-bottom: 48px; 
+      }
 
-    li:hover .hover-background {
-      background-color: rgba(30, 41, 59, 0.5);
-      box-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1);
-      filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04));
-    }
+      project-card {
+        position: relative;
+        z-index: 1;
+        display: block;
+      }
 
-    project-card {
-      position: relative;
-      z-index: 1;
-      display: block;
-    }
+      @media (max-width: 1199px) {
+        hover-background {
+          display: none;
+        }
+      }
 
-    ul:hover li {
-      opacity: 0.5;
-      transition: opacity 0.3s ease;
-    }
+      @media (min-width: 1200px) and (hover: hover) and (pointer: fine) {
+        ul:hover li {
+          opacity: 0.5;
+          transition: opacity 0.1s ease;
+        }
 
-    ul li:hover {
-      opacity: 1 !important;
-    }
-  `;
+        ul li:hover {
+          opacity: 1 !important;
+        }
+
+        li:hover .hover-background {
+          background-color: rgba(30, 41, 59, 0.5);
+          box-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1);
+          filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04));
+        }
+      }
+    `
+  ];
 
   render() {
     return html`
@@ -1381,3 +1386,312 @@ customElements.define('project-list', ProjectList);
 
 
 
+
+
+
+/**
+ * Home Page
+ */
+export class HomePage extends LitElement {
+  static properties = {
+    activeSection: { type: String }
+  };
+  constructor() {
+    super();
+    this.activeSection = '#about'; // Default starting section
+    this.observer = null;          // Store observer so we can clean it up later
+  }
+  
+
+  static styles = 
+    css`
+    #main-container {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      max-width: 1280px;
+    }
+
+    @media (min-width: 1024px) {
+      #main-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+      }
+    }
+
+
+    /***********************HEADER***********************/
+
+    header {
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 48px 24px;
+      position: static;
+      height: auto;
+      width: 100%;
+    }
+
+    @media (min-width: 768px) {
+      header {
+        padding: 62px 48px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      header {
+        padding: 96px 48px;
+        padding-bottom: 24px;
+        position: sticky;
+        max-height: 100vh;
+        width: 45%;
+        height: 100vh;
+      }
+    }
+
+
+    /***********************subtitle***********************/
+
+    .subtitle{
+      color : rgb(226, 232, 240);
+      font-size: 1.125rem;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      line-height: 1.75rem;
+      margin-top: 12px;
+    }
+
+    @media (min-width: 768px) {
+      .subtitle{
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .subtitle{
+        font-size: 1.25rem;
+      }
+    }
+
+    /***********************paragraph***********************/
+
+    .intro-paragraph{
+      color : rgb(148, 163, 184);
+      margin-top: 16px;
+      max-width: 27rem;
+      line-height: 1.5;
+    }
+
+    @media (min-width: 768px) {
+      .intro-paragraph{
+        max-width: 35rem;
+      }
+    }
+
+    /***********************nav*menu***********************/
+
+    nav-menu {
+      display: none;
+    }
+
+    /* Show on Desktop (1024px and up) */
+    @media (min-width: 1024px) {
+      nav-menu {
+        display: block;
+      }
+    }
+
+
+
+    /***********************MAIN***********************/
+
+
+    main {
+      padding: 24px 24px;
+      width: 100%;
+    }
+
+    @media (min-width: 768px) {
+      main {
+        padding: 24px 48px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      main {
+        padding: 90px 30px;
+        width: 55%;
+      }
+    }
+
+
+    /***********************ABOUT***********************/
+
+    .mb-4 {
+      margin-bottom: 16px;
+    }
+
+    .focusEl {
+      font-weight: 500;
+      color: var(--slate-200);
+      text-decoration: none;
+    }
+
+    /***********************Footer***********************/
+
+    footer {
+      max-width: 28rem;
+      padding-bottom: 64px;
+      font-size: 0.875rem;
+      color: var(--slate-500);
+    }
+
+    @media (min-width: 640px) {
+      footer {
+        padding-bottom: 0;
+      }
+    }
+
+    footer a {
+      font-weight: 500;
+      color: var(--slate-400);
+      text-decoration: none;
+    }
+
+    footer a:hover,
+    footer a:focus-visible {
+      color: var(--teal-300);
+    }`
+  ;
+
+  firstUpdated() {
+    // Query elements from this component's Shadow DOM
+    const sections = this.shadowRoot.querySelectorAll('portfolio-section');
+
+    const observerOptions = {
+      rootMargin: '-30% 0px -60% 0px', 
+      threshold: 0
+    };
+
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // 3. Update the Lit property instead of touching the DOM directly
+          this.activeSection = `#${entry.target.id}`;
+
+          // Update URL without jumping
+          history.replaceState(null, null, `#${entry.target.id}`);
+        }
+      });
+    }, observerOptions);
+    // Start observing all sections
+    sections.forEach(section => this.observer.observe(section));
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    if (this.observer) {
+      this.observer.disconnect();
+    }
+  }
+
+  render() {
+    return html`
+        <div id="main-container">
+
+          <header>
+
+            <div>
+              <name-header name="Alaeddine Cheniour" url="/"></name-header>
+              <h2 class="subtitle"> Software Engineer | 3D Graphics & HCI</h2>
+              <p class="intro-paragraph">
+                I build interactive 3D graphics and human-centered software.
+              </p>
+              <nav-menu .activeSection="${this.activeSection}"></nav-menu>
+            </div>
+
+            <div class="social-links">
+              <social-list></social-list>
+            </div>
+
+          </header>
+
+
+
+          <main id="main-content">
+
+            <portfolio-section id="about">
+              <p class="mb-4">
+                I’m a software engineer and HCI researcher specializing in the intersection of
+                high-performance graphics and human-centered design. I enjoy building powerful systems that remain easy to use,
+                bridging the gap between complex architecture and intuitive design.
+              </p>
+
+              <p class="mb-4">
+                I am finishing my dual degree: an Engineering degree in Mathematics and Computer Science from
+                <link-item link="https://www.polytech.universite-paris-saclay.fr/" text="Polytech Paris-Saclay"></link-item>
+                and a Master’s in
+                <span class="focusEl">Human-Computer Interaction, Computer Graphics & Design</span>
+                from
+                <link-item link="https://www.ip-paris.fr/" text="Institut Polytechnique de Paris"></link-item>.
+                These experiences have shaped my approach to software, combining engineering with a deep understanding of how humans interact with digital environments.
+              </p>
+
+              <p class="mb-4">
+                Currently, I’m a Research Intern at
+                <link-item link="https://www.3ds.com/fr/science/meditwin" text="Dassault Systèmes"></link-item>
+                Human Virtual Twin research team, where I focus on medical visualization. My work involves identifying innovative
+                2D and 3D tools to manipulate medical data, as well as exploring remote
+                rendering and optimisation techniques.
+              </p>
+
+
+              <p class="mb-4">
+                Besides work, I’m usually capturing the world through street photography or getting lost in a good book.
+              </p>
+
+            </portfolio-section>
+
+
+            <portfolio-section id="experience">
+              <experience-list></experience-list>
+              <link-item link="/resume.pdf" text="View Full Résumé" svg="true"></link-item>
+            </portfolio-section>
+
+
+            <portfolio-section id="education">
+              <education-list></education-list>
+            </portfolio-section>
+
+
+            <portfolio-section id="projects">
+              <project-list></project-list>
+
+            </portfolio-section>
+
+
+            <footer>
+              <p>
+                Designed in <a href="https://figma.com" target="_blank" rel="noopener noreferrer">Figma</a>,
+                built using <a href="https://lit.dev" target="_blank" rel="noopener noreferrer">Lit</a> and
+                CSS, deployed on
+                <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
+              </p>
+              <p class="mt-4">
+                Inspired by Brittany Chiang's design.
+              </p>
+            </footer>
+
+
+          </main>
+        
+        </div>
+    `;
+  }
+}
+customElements.define('home-page', HomePage);
+
+
+//              <!--<link-item link="/archive" text="View Project Archive" svg="true"></link-item>-->
