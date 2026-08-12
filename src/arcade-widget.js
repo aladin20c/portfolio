@@ -1,4 +1,5 @@
 import { LitElement, css, html } from 'lit'
+import { getAsset } from './utils.js';
 
 export class ArcadeWidget extends LitElement {
   static styles = css`
@@ -54,7 +55,7 @@ export class ArcadeWidget extends LitElement {
     super();
     // Default values you can override via HTML attributes
     this.linkUrl = 'https://aladin20c.github.io/portfolio-playable/'; 
-    this.gifSrc = '/arcade.gif';
+    this.gifSrc = getAsset('arcade.gif');
   }
 
   render() {

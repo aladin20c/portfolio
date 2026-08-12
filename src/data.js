@@ -17,7 +17,7 @@ const socials = [
 const experiences = [
     {
         date: "2025 — Present",
-        role: "Medical HCI Research Intern",
+        role: "Medical Research Intern",
         company: "Dassault Systèmes",
         companyLink: "https://www.3ds.com/science/meditwin",
         description: "Building high-performance 2D/3D manipulation, annotation and segmentation tools for volumetric medical data. Exploring remote rendering and optimisation techniques for volumetric rendering.",

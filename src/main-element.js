@@ -3,6 +3,7 @@ import { icons } from './icons.js';
 import {socials,experiences,education,projects} from './data.js'
 import { LinkItem } from './link-item.js';
 import { TechTag } from './tech-tag.js';
+import { getAsset } from './utils.js';
 
 
 export const hoverBackgroundStyle = css`
@@ -868,7 +869,7 @@ export class ProjectCard extends LitElement {
 
   renderImage() {
     if (this.image) {
-      return html`<img src="${this.image}" alt="${this.title}">`;
+      return html`<img src="${getAsset(this.image)}" alt="${this.title}">`;
     } else {
       return html`<div class="image-placeholder">${this.title.charAt(0)}</div>`;
     }
@@ -1192,7 +1193,7 @@ export class MainPart extends LitElement {
 
             <portfolio-section id="experience">
               <experience-list></experience-list>
-              <link-item link="/resume.pdf" text="View Full Résumé" svg="true"></link-item>
+              <link-item link="${getAsset('resume.pdf')}" text="View Full Résumé" svg="true"></link-item>
             </portfolio-section>
 
             <portfolio-section id="education">
