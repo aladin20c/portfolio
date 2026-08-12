@@ -1,23 +1,91 @@
  // app.js
-import { LitElement, html } from 'lit';
+import { LitElement, css, html } from 'lit'
 import { Router } from '@lit-labs/router';
-import {HomePage} from './my-element.js'
-import {ArchivePage} from './archive-elements.js'
+import { HeaderPart } from './header-elements';
+import { MainPart } from './main-element';
+import { ArcadeWidget } from './arcade-widget';
 
-export class MyApp extends LitElement {
-  router = new Router(this, [
-    {
-      path: '/',
-      render: () => html`<home-page></home-page>`
-    },
-    {
-      path: '/archive',
-      render: () => html`<archive-page></archive-page>`
+/**
+ * Home Page
+ */
+export class HomePage extends LitElement {
+  static properties = {
+    activeSection: { type: String }
+  };
+
+  constructor() {
+    super();
+    this.activeSection = window.location.hash || '#about'; 
+  }
+  
+  static styles = 
+    css`
+    #main-container {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      max-width: 1280px;
     }
-  ]);
+
+    @media (min-width: 1024px) {
+      #main-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+      }
+    }
+    `;
+  
+  _handleNavClick(e) {
+    const sectionId = e.detail.section;
+    // Find the main-part component
+    const mainPart = this.shadowRoot.querySelector('main-part');
+    if (mainPart) {
+      mainPart.scrollToSection(sectionId);
+    }
+  }
+
+  _handleSectionChange(e) {
+    this.activeSection = e.detail.section;
+    history.replaceState(null, null, this.activeSection);
+  }
 
   render() {
-    return this.router.outlet();
+    return html`
+        <div id="main-container">
+          <header-part .activeSection="${this.activeSection}" @nav-link-clicked="${this._handleNavClick}">></header-part>
+          <main-part @section-changed="${this._handleSectionChange}"></main-part>
+        </div>
+    `;
+  }
+}
+customElements.define('home-page', HomePage);
+
+
+
+export class MyApp extends LitElement {
+
+  render() {
+    return html`<home-page></home-page>`;
   }
 }
 customElements.define('my-app', MyApp);
+
+
+// export class MyApp extends LitElement {
+//   router = new Router(this, [
+//     {
+//       path: '/',
+//       render: () => html`<home-page></home-page>`
+//     },
+//     {
+//       path: '/archive',
+//       render: () => html`<archive-page></archive-page>`
+//     }
+//   ]);
+
+//   render() {
+//     return this.router.outlet();
+//   }
+// }
+// customElements.define('my-app', MyApp);

@@ -1,0 +1,1343 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alaeddine Cheniour</title>
+    <link rel="icon" type="image/png" href="./logo.png">
+    <script type="module" crossorigin>(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))i(s);new MutationObserver(s=>{for(const r of s)if(r.type==="childList")for(const o of r.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&i(o)}).observe(document,{childList:!0,subtree:!0});function t(s){const r={};return s.integrity&&(r.integrity=s.integrity),s.referrerPolicy&&(r.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?r.credentials="include":s.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function i(s){if(s.ep)return;s.ep=!0;const r=t(s);fetch(s.href,r)}})();const M=globalThis,D=M.ShadowRoot&&(M.ShadyCSS===void 0||M.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,R=Symbol(),q=new WeakMap;let se=class{constructor(e,t,i){if(this._$cssResult$=!0,i!==R)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=e,this.t=t}get styleSheet(){let e=this.o;const t=this.t;if(D&&e===void 0){const i=t!==void 0&&t.length===1;i&&(e=q.get(t)),e===void 0&&((this.o=e=new CSSStyleSheet).replaceSync(this.cssText),i&&q.set(t,e))}return e}toString(){return this.cssText}};const ce=n=>new se(typeof n=="string"?n:n+"",void 0,R),p=(n,...e)=>{const t=n.length===1?n[0]:e.reduce((i,s,r)=>i+(o=>{if(o._$cssResult$===!0)return o.cssText;if(typeof o=="number")return o;throw Error("Value passed to 'css' function must be a 'css' function result: "+o+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(s)+n[r+1],n[0]);return new se(t,n,R)},de=(n,e)=>{if(D)n.adoptedStyleSheets=e.map(t=>t instanceof CSSStyleSheet?t:t.styleSheet);else for(const t of e){const i=document.createElement("style"),s=M.litNonce;s!==void 0&&i.setAttribute("nonce",s),i.textContent=t.cssText,n.appendChild(i)}},W=D?n=>n:n=>n instanceof CSSStyleSheet?(e=>{let t="";for(const i of e.cssRules)t+=i.cssText;return ce(t)})(n):n;const{is:pe,defineProperty:he,getOwnPropertyDescriptor:ue,getOwnPropertyNames:me,getOwnPropertySymbols:ge,getPrototypeOf:fe}=Object,T=globalThis,J=T.trustedTypes,ve=J?J.emptyScript:"",xe=T.reactiveElementPolyfillSupport,A=(n,e)=>n,O={toAttribute(n,e){switch(e){case Boolean:n=n?ve:null;break;case Object:case Array:n=n==null?n:JSON.stringify(n)}return n},fromAttribute(n,e){let t=n;switch(e){case Boolean:t=n!==null;break;case Number:t=n===null?null:Number(n);break;case Object:case Array:try{t=JSON.parse(n)}catch{t=null}}return t}},ne=(n,e)=>!pe(n,e),K={attribute:!0,type:String,converter:O,reflect:!1,useDefault:!1,hasChanged:ne};Symbol.metadata??=Symbol("metadata"),T.litPropertyMetadata??=new WeakMap;let w=class extends HTMLElement{static addInitializer(e){this._$Ei(),(this.l??=[]).push(e)}static get observedAttributes(){return this.finalize(),this._$Eh&&[...this._$Eh.keys()]}static createProperty(e,t=K){if(t.state&&(t.attribute=!1),this._$Ei(),this.prototype.hasOwnProperty(e)&&((t=Object.create(t)).wrapped=!0),this.elementProperties.set(e,t),!t.noAccessor){const i=Symbol(),s=this.getPropertyDescriptor(e,i,t);s!==void 0&&he(this.prototype,e,s)}}static getPropertyDescriptor(e,t,i){const{get:s,set:r}=ue(this.prototype,e)??{get(){return this[t]},set(o){this[t]=o}};return{get:s,set(o){const h=s?.call(this);r?.call(this,o),this.requestUpdate(e,h,i)},configurable:!0,enumerable:!0}}static getPropertyOptions(e){return this.elementProperties.get(e)??K}static _$Ei(){if(this.hasOwnProperty(A("elementProperties")))return;const e=fe(this);e.finalize(),e.l!==void 0&&(this.l=[...e.l]),this.elementProperties=new Map(e.elementProperties)}static finalize(){if(this.hasOwnProperty(A("finalized")))return;if(this.finalized=!0,this._$Ei(),this.hasOwnProperty(A("properties"))){const t=this.properties,i=[...me(t),...ge(t)];for(const s of i)this.createProperty(s,t[s])}const e=this[Symbol.metadata];if(e!==null){const t=litPropertyMetadata.get(e);if(t!==void 0)for(const[i,s]of t)this.elementProperties.set(i,s)}this._$Eh=new Map;for(const[t,i]of this.elementProperties){const s=this._$Eu(t,i);s!==void 0&&this._$Eh.set(s,t)}this.elementStyles=this.finalizeStyles(this.styles)}static finalizeStyles(e){const t=[];if(Array.isArray(e)){const i=new Set(e.flat(1/0).reverse());for(const s of i)t.unshift(W(s))}else e!==void 0&&t.push(W(e));return t}static _$Eu(e,t){const i=t.attribute;return i===!1?void 0:typeof i=="string"?i:typeof e=="string"?e.toLowerCase():void 0}constructor(){super(),this._$Ep=void 0,this.isUpdatePending=!1,this.hasUpdated=!1,this._$Em=null,this._$Ev()}_$Ev(){this._$ES=new Promise(e=>this.enableUpdating=e),this._$AL=new Map,this._$E_(),this.requestUpdate(),this.constructor.l?.forEach(e=>e(this))}addController(e){(this._$EO??=new Set).add(e),this.renderRoot!==void 0&&this.isConnected&&e.hostConnected?.()}removeController(e){this._$EO?.delete(e)}_$E_(){const e=new Map,t=this.constructor.elementProperties;for(const i of t.keys())this.hasOwnProperty(i)&&(e.set(i,this[i]),delete this[i]);e.size>0&&(this._$Ep=e)}createRenderRoot(){const e=this.shadowRoot??this.attachShadow(this.constructor.shadowRootOptions);return de(e,this.constructor.elementStyles),e}connectedCallback(){this.renderRoot??=this.createRenderRoot(),this.enableUpdating(!0),this._$EO?.forEach(e=>e.hostConnected?.())}enableUpdating(e){}disconnectedCallback(){this._$EO?.forEach(e=>e.hostDisconnected?.())}attributeChangedCallback(e,t,i){this._$AK(e,i)}_$ET(e,t){const i=this.constructor.elementProperties.get(e),s=this.constructor._$Eu(e,i);if(s!==void 0&&i.reflect===!0){const r=(i.converter?.toAttribute!==void 0?i.converter:O).toAttribute(t,i.type);this._$Em=e,r==null?this.removeAttribute(s):this.setAttribute(s,r),this._$Em=null}}_$AK(e,t){const i=this.constructor,s=i._$Eh.get(e);if(s!==void 0&&this._$Em!==s){const r=i.getPropertyOptions(s),o=typeof r.converter=="function"?{fromAttribute:r.converter}:r.converter?.fromAttribute!==void 0?r.converter:O;this._$Em=s;const h=o.fromAttribute(t,r.type);this[s]=h??this._$Ej?.get(s)??h,this._$Em=null}}requestUpdate(e,t,i,s=!1,r){if(e!==void 0){const o=this.constructor;if(s===!1&&(r=this[e]),i??=o.getPropertyOptions(e),!((i.hasChanged??ne)(r,t)||i.useDefault&&i.reflect&&r===this._$Ej?.get(e)&&!this.hasAttribute(o._$Eu(e,i))))return;this.C(e,t,i)}this.isUpdatePending===!1&&(this._$ES=this._$EP())}C(e,t,{useDefault:i,reflect:s,wrapped:r},o){i&&!(this._$Ej??=new Map).has(e)&&(this._$Ej.set(e,o??t??this[e]),r!==!0||o!==void 0)||(this._$AL.has(e)||(this.hasUpdated||i||(t=void 0),this._$AL.set(e,t)),s===!0&&this._$Em!==e&&(this._$Eq??=new Set).add(e))}async _$EP(){this.isUpdatePending=!0;try{await this._$ES}catch(t){Promise.reject(t)}const e=this.scheduleUpdate();return e!=null&&await e,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){if(!this.isUpdatePending)return;if(!this.hasUpdated){if(this.renderRoot??=this.createRenderRoot(),this._$Ep){for(const[s,r]of this._$Ep)this[s]=r;this._$Ep=void 0}const i=this.constructor.elementProperties;if(i.size>0)for(const[s,r]of i){const{wrapped:o}=r,h=this[s];o!==!0||this._$AL.has(s)||h===void 0||this.C(s,void 0,r,h)}}let e=!1;const t=this._$AL;try{e=this.shouldUpdate(t),e?(this.willUpdate(t),this._$EO?.forEach(i=>i.hostUpdate?.()),this.update(t)):this._$EM()}catch(i){throw e=!1,this._$EM(),i}e&&this._$AE(t)}willUpdate(e){}_$AE(e){this._$EO?.forEach(t=>t.hostUpdated?.()),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(e)),this.updated(e)}_$EM(){this._$AL=new Map,this.isUpdatePending=!1}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$ES}shouldUpdate(e){return!0}update(e){this._$Eq&&=this._$Eq.forEach(t=>this._$ET(t,this[t])),this._$EM()}updated(e){}firstUpdated(e){}};w.elementStyles=[],w.shadowRootOptions={mode:"open"},w[A("elementProperties")]=new Map,w[A("finalized")]=new Map,xe?.({ReactiveElement:w}),(T.reactiveElementVersions??=[]).push("2.1.2");const B=globalThis,X=n=>n,H=B.trustedTypes,Y=H?H.createPolicy("lit-html",{createHTML:n=>n}):void 0,re="$lit$",x=`lit$${Math.random().toFixed(9).slice(2)}$`,oe="?"+x,ye=`<${oe}>`,$=document,E=()=>$.createComment(""),C=n=>n===null||typeof n!="object"&&typeof n!="function",V=Array.isArray,be=n=>V(n)||typeof n?.[Symbol.iterator]=="function",N=`[ 	
+\f\r]`,S=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,Z=/-->/g,Q=/>/g,y=RegExp(`>|${N}(?:([^\\s"'>=/]+)(${N}*=${N}*(?:[^ 	
+\f\r"'\`<>=]|("|')|))|$)`,"g"),ee=/'/g,te=/"/g,ae=/^(?:script|style|textarea|title)$/i,$e=n=>(e,...t)=>({_$litType$:n,strings:e,values:t}),a=$e(1),k=Symbol.for("lit-noChange"),m=Symbol.for("lit-nothing"),ie=new WeakMap,b=$.createTreeWalker($,129);function le(n,e){if(!V(n)||!n.hasOwnProperty("raw"))throw Error("invalid template strings array");return Y!==void 0?Y.createHTML(e):e}const we=(n,e)=>{const t=n.length-1,i=[];let s,r=e===2?"<svg>":e===3?"<math>":"",o=S;for(let h=0;h<t;h++){const l=n[h];let u,g,c=-1,f=0;for(;f<l.length&&(o.lastIndex=f,g=o.exec(l),g!==null);)f=o.lastIndex,o===S?g[1]==="!--"?o=Z:g[1]!==void 0?o=Q:g[2]!==void 0?(ae.test(g[2])&&(s=RegExp("</"+g[2],"g")),o=y):g[3]!==void 0&&(o=y):o===y?g[0]===">"?(o=s??S,c=-1):g[1]===void 0?c=-2:(c=o.lastIndex-g[2].length,u=g[1],o=g[3]===void 0?y:g[3]==='"'?te:ee):o===te||o===ee?o=y:o===Z||o===Q?o=S:(o=y,s=void 0);const v=o===y&&n[h+1].startsWith("/>")?" ":"";r+=o===S?l+ye:c>=0?(i.push(u),l.slice(0,c)+re+l.slice(c)+x+v):l+x+(c===-2?h:v)}return[le(n,r+(n[t]||"<?>")+(e===2?"</svg>":e===3?"</math>":"")),i]};class P{constructor({strings:e,_$litType$:t},i){let s;this.parts=[];let r=0,o=0;const h=e.length-1,l=this.parts,[u,g]=we(e,t);if(this.el=P.createElement(u,i),b.currentNode=this.el.content,t===2||t===3){const c=this.el.content.firstChild;c.replaceWith(...c.childNodes)}for(;(s=b.nextNode())!==null&&l.length<h;){if(s.nodeType===1){if(s.hasAttributes())for(const c of s.getAttributeNames())if(c.endsWith(re)){const f=g[o++],v=s.getAttribute(c).split(x),L=/([.?@])?(.*)/.exec(f);l.push({type:1,index:r,name:L[2],strings:v,ctor:L[1]==="."?_e:L[1]==="?"?Se:L[1]==="@"?Ae:U}),s.removeAttribute(c)}else c.startsWith(x)&&(l.push({type:6,index:r}),s.removeAttribute(c));if(ae.test(s.tagName)){const c=s.textContent.split(x),f=c.length-1;if(f>0){s.textContent=H?H.emptyScript:"";for(let v=0;v<f;v++)s.append(c[v],E()),b.nextNode(),l.push({type:2,index:++r});s.append(c[f],E())}}}else if(s.nodeType===8)if(s.data===oe)l.push({type:2,index:r});else{let c=-1;for(;(c=s.data.indexOf(x,c+1))!==-1;)l.push({type:7,index:r}),c+=x.length-1}r++}}static createElement(e,t){const i=$.createElement("template");return i.innerHTML=e,i}}function _(n,e,t=n,i){if(e===k)return e;let s=i!==void 0?t._$Co?.[i]:t._$Cl;const r=C(e)?void 0:e._$litDirective$;return s?.constructor!==r&&(s?._$AO?.(!1),r===void 0?s=void 0:(s=new r(n),s._$AT(n,t,i)),i!==void 0?(t._$Co??=[])[i]=s:t._$Cl=s),s!==void 0&&(e=_(n,s._$AS(n,e.values),s,i)),e}class ke{constructor(e,t){this._$AV=[],this._$AN=void 0,this._$AD=e,this._$AM=t}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}u(e){const{el:{content:t},parts:i}=this._$AD,s=(e?.creationScope??$).importNode(t,!0);b.currentNode=s;let r=b.nextNode(),o=0,h=0,l=i[0];for(;l!==void 0;){if(o===l.index){let u;l.type===2?u=new z(r,r.nextSibling,this,e):l.type===1?u=new l.ctor(r,l.name,l.strings,this,e):l.type===6&&(u=new Ee(r,this,e)),this._$AV.push(u),l=i[++h]}o!==l?.index&&(r=b.nextNode(),o++)}return b.currentNode=$,s}p(e){let t=0;for(const i of this._$AV)i!==void 0&&(i.strings!==void 0?(i._$AI(e,i,t),t+=i.strings.length-2):i._$AI(e[t])),t++}}class z{get _$AU(){return this._$AM?._$AU??this._$Cv}constructor(e,t,i,s){this.type=2,this._$AH=m,this._$AN=void 0,this._$AA=e,this._$AB=t,this._$AM=i,this.options=s,this._$Cv=s?.isConnected??!0}get parentNode(){let e=this._$AA.parentNode;const t=this._$AM;return t!==void 0&&e?.nodeType===11&&(e=t.parentNode),e}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(e,t=this){e=_(this,e,t),C(e)?e===m||e==null||e===""?(this._$AH!==m&&this._$AR(),this._$AH=m):e!==this._$AH&&e!==k&&this._(e):e._$litType$!==void 0?this.$(e):e.nodeType!==void 0?this.T(e):be(e)?this.k(e):this._(e)}O(e){return this._$AA.parentNode.insertBefore(e,this._$AB)}T(e){this._$AH!==e&&(this._$AR(),this._$AH=this.O(e))}_(e){this._$AH!==m&&C(this._$AH)?this._$AA.nextSibling.data=e:this.T($.createTextNode(e)),this._$AH=e}$(e){const{values:t,_$litType$:i}=e,s=typeof i=="number"?this._$AC(e):(i.el===void 0&&(i.el=P.createElement(le(i.h,i.h[0]),this.options)),i);if(this._$AH?._$AD===s)this._$AH.p(t);else{const r=new ke(s,this),o=r.u(this.options);r.p(t),this.T(o),this._$AH=r}}_$AC(e){let t=ie.get(e.strings);return t===void 0&&ie.set(e.strings,t=new P(e)),t}k(e){V(this._$AH)||(this._$AH=[],this._$AR());const t=this._$AH;let i,s=0;for(const r of e)s===t.length?t.push(i=new z(this.O(E()),this.O(E()),this,this.options)):i=t[s],i._$AI(r),s++;s<t.length&&(this._$AR(i&&i._$AB.nextSibling,s),t.length=s)}_$AR(e=this._$AA.nextSibling,t){for(this._$AP?.(!1,!0,t);e!==this._$AB;){const i=X(e).nextSibling;X(e).remove(),e=i}}setConnected(e){this._$AM===void 0&&(this._$Cv=e,this._$AP?.(e))}}class U{get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}constructor(e,t,i,s,r){this.type=1,this._$AH=m,this._$AN=void 0,this.element=e,this.name=t,this._$AM=s,this.options=r,i.length>2||i[0]!==""||i[1]!==""?(this._$AH=Array(i.length-1).fill(new String),this.strings=i):this._$AH=m}_$AI(e,t=this,i,s){const r=this.strings;let o=!1;if(r===void 0)e=_(this,e,t,0),o=!C(e)||e!==this._$AH&&e!==k,o&&(this._$AH=e);else{const h=e;let l,u;for(e=r[0],l=0;l<r.length-1;l++)u=_(this,h[i+l],t,l),u===k&&(u=this._$AH[l]),o||=!C(u)||u!==this._$AH[l],u===m?e=m:e!==m&&(e+=(u??"")+r[l+1]),this._$AH[l]=u}o&&!s&&this.j(e)}j(e){e===m?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,e??"")}}class _e extends U{constructor(){super(...arguments),this.type=3}j(e){this.element[this.name]=e===m?void 0:e}}class Se extends U{constructor(){super(...arguments),this.type=4}j(e){this.element.toggleAttribute(this.name,!!e&&e!==m)}}class Ae extends U{constructor(e,t,i,s,r){super(e,t,i,s,r),this.type=5}_$AI(e,t=this){if((e=_(this,e,t,0)??m)===k)return;const i=this._$AH,s=e===m&&i!==m||e.capture!==i.capture||e.once!==i.once||e.passive!==i.passive,r=e!==m&&(i===m||s);s&&this.element.removeEventListener(this.name,this,i),r&&this.element.addEventListener(this.name,this,e),this._$AH=e}handleEvent(e){typeof this._$AH=="function"?this._$AH.call(this.options?.host??this.element,e):this._$AH.handleEvent(e)}}class Ee{constructor(e,t,i){this.element=e,this.type=6,this._$AN=void 0,this._$AM=t,this.options=i}get _$AU(){return this._$AM._$AU}_$AI(e){_(this,e)}}const Ce=B.litHtmlPolyfillSupport;Ce?.(P,z),(B.litHtmlVersions??=[]).push("3.3.2");const Pe=(n,e,t)=>{const i=t?.renderBefore??e;let s=i._$litPart$;if(s===void 0){const r=t?.renderBefore??null;i._$litPart$=s=new z(e.insertBefore(E(),r),r,void 0,t??{})}return s._$AI(n),s};const F=globalThis;class d extends w{constructor(){super(...arguments),this.renderOptions={host:this},this._$Do=void 0}createRenderRoot(){const e=super.createRenderRoot();return this.renderOptions.renderBefore??=e.firstChild,e}update(e){const t=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(e),this._$Do=Pe(t,this.renderRoot,this.renderOptions)}connectedCallback(){super.connectedCallback(),this._$Do?.setConnected(!0)}disconnectedCallback(){super.disconnectedCallback(),this._$Do?.setConnected(!1)}render(){return k}}d._$litElement$=!0,d.finalized=!0,F.litElementHydrateSupport?.({LitElement:d});const ze=F.litElementPolyfillSupport;ze?.({LitElement:d});(F.litElementVersions??=[]).push("4.2.2");class G extends Event{constructor(e){super(G.eventName,{bubbles:!0,composed:!0,cancelable:!1}),this.routes=e}}G.eventName="lit-routes-connected";const j={github:a`
+        <svg viewBox="0 0 16 16" fill="currentColor" class="social-icon" aria-hidden="true">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+    `,instagram:a`
+        <svg viewBox="0 0 24 24" fill="currentColor" class="social-icon" aria-hidden="true">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+        </svg>
+    `,linkedin:a`
+        <svg viewBox="0 0 24 24" fill="currentColor" class="social-icon" aria-hidden="true">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+        </svg>
+    `,goodreads:a`
+            <svg fill="#000000" width="24px" height="24px" viewBox="-2.4 -2.4 28.80 28.80" role="img" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0">
+                    <rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="0" fill="currentColor" strokewidth="0"></rect>
+                </g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <path d="M11.43 23.995c-3.608-.208-6.274-2.077-6.448-5.078.695.007 1.375-.013 2.07-.006.224 1.342 1.065 2.43 2.683 3.026 1.583.496 3.737.46 5.082-.174 1.351-.636 2.145-1.822 2.503-3.577.212-1.042.236-1.734.231-2.92l-.005-1.631h-.059c-1.245 2.564-3.315 3.53-5.59 3.475-5.74-.054-7.68-4.534-7.528-8.606.01-5.241 3.22-8.537 7.557-8.495 2.354-.14 4.605 1.362 5.554 3.37l.059.002.002-2.918 2.099.004-.002 15.717c-.193 7.04-4.376 7.89-8.209 7.811zm6.1-15.633c-.096-3.26-1.601-6.62-5.503-6.645-3.954-.017-5.625 3.592-5.604 6.85-.013 3.439 1.643 6.305 4.703 6.762 4.532.591 6.551-3.411 6.404-6.967z"></path>
+                </g>
+            </svg>
+    `,arrow:a`
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path>
+        </svg>
+    `},Le=[{id:"#about",label:"About"},{id:"#experience",label:"Experience"},{id:"#education",label:"Education"},{id:"#projects",label:"Projects"}],Me=[{name:"github",label:"GitHub",url:"https://github.com/aladin20c"},{name:"linkedin",label:"LinkedIn",url:"https://www.linkedin.com/in/aladin-cheniour/"},{name:"goodreads",label:"Goodreads",url:"https://www.goodreads.com/user/show/101887216-aladin"}],He=[{date:"2025 — Present",role:"Medical HCI Research Intern",company:"Dassault Systèmes",companyLink:"https://www.3ds.com/science/meditwin",description:"Building high-performance 2D/3D manipulation, annotation and segmentation tools for volumetric medical data. Exploring remote rendering and optimisation techniques for volumetric rendering.",techs:["DICOM","FHIR","VTK","WebGL","Lit"]},{date:"April — Aug 2025",role:"Full-Stack Software Engineer",company:"Ouidou",companyLink:"https://www.ouidou.fr",description:"Collaborated with multi-disciplinary teams to maintain and implement major features. Optimized application performance by resolving bottlenecks in backend queries and frontend rendering.",techs:["Node.js","Angular","Spring Boot","React","PostgreSQL"]},{date:"2024 — 2025",role:"Academic Tutor",company:"Polytech Paris Saclay",companyLink:"https://www.polytech.universite-paris-saclay.fr",description:"Led tutoring sessions at polytech for first and second-year engineering students in Computer Science, Mathematics, and Physics.",techs:["Algorithms","Math","C++","Physics"]},{date:"June — Aug 2024",role:"Software Engineer Intern",company:"SMA BTP",companyLink:"https://www.smabtp.fr",description:"Automated file submission and testing workflows by developing Selenium scripts. Interfaced with developers to ensure coherent UX across internal tools.",techs:["Selenium","Angular","Spring Boot"]},{date:"July — Aug 2022",role:"Data Analyst Intern",company:"SEABEX",companyLink:"https://seabex.com",description:"Developed and maintained Python programs for processing and analyzing satellite-collected agricultural data to provide decision-support solutions for irrigation and optimize water consumption.",techs:["Python","PyTorch","OpenCV"]}],je=[{period:"July 2026",degree:"Summer School",field:"Automated Machine Learning",institution:"TU Dortmund & Lamaar Institut",institutionLink:"https://www.automlschool.org",grade:"Dortmund, Germany",achievements:["Covering introductory, state-of-the-art, and application lectures for AutoML and Foundation Models.","Core topics such as: Hyperparameter optimization and model selection, Applying and scaling foundation models, Neural architecture search, Bayesian Optimization, ..."]},{period:"2025 — 2026",degree:"Master of Science",field:"Interaction, Computer Graphics & Design",institution:"Institut Polytechnique de Paris",institutionLink:"https://www.ip-paris.fr",grade:"Palaiseau, France",thesis:"Innovative Visualization and Manipulation Tools and 3D rendering techniques for Medical Data",achievements:["Courses: Computer Vision, Deep Learning, Virtual Humans, Computer animation and simulation, data physicalization & visualisation, Quant UX.","Placed 6th out of 87 in a Kaggle challenge to predict twitter users social roles."]},{period:"2023 — 2026",degree:"Engineering Degree",field:"Mathematics & Computer Science",institution:"Polytech Paris Saclay",institutionLink:"https://www.polytech.universite-paris-saclay.fr",grade:"Orsay, France",achievements:["Courses Included : Advanced Database Management, Computer Networks, Machine Learning, Computer Architecture and Web Development","Won the Polytech Rendering Competition Award 2024"]},{period:"July — Aug 2023",degree:"Summer School",field:"Game Design & Development",institution:"Turku University",institutionLink:"https://www.utu.fi/en",grade:"Turku, Finland",achievements:["Intensive program in Game Design principles","Game development using the Unity engine"]},{period:"2020 — 2023",degree:"Bachelor of Science",field:"Mathematics & Computer Science",institution:"University of Paris City",institutionLink:"https://u-paris.fr",grade:"Paris, France",achievements:["Foundational courses in Mathematics and Computational Theory","2020-2022: Major in computer science (L1-L2). Placed 4th out of 107.","2022-2023: Major in Mathematics with a minor in Computer science (L2). Ranked 3rd out of 50."]}],Te=[{title:"Cursor-Tracking HeatMap",description:"Chrome extension capturing user cursor behavior during live sessions to visualize interactions via heatmaps and detailed user paths for UX optimization.",techs:["JavaScript","Chrome API","Data Visualization"],image:"/img1.png",githubLink:"https://github.com/aladin20c/cursor-tracker-quant-ux"},{title:"Computer Vision Pipeline For Chess",description:"Computer vision system that identifies piece positions on a physical chessboard from a photo to reconstruct the digital game state.",techs:["Python","OpenCV","Computer Vision"],image:"/img2.png",githubLink:"https://github.com/aladin20c/chess_computer_vision"},{title:"Carbon Footprint Calculator",description:"Mobile application for Viveris to calculate environmental impact, featuring a robust backend and cross-platform mobile UI.",techs:["Spring Boot","React","React Native","Java"],image:"/img3.png",githubLink:"https://github.com/aladin20c/eco-boost-campus"}];class Ue extends d{static properties={name:{type:String},url:{type:String}};static styles=p`
+    a {
+      color: var(--slate-200);
+      cursor: pointer;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -1.2px;
+      line-height: 2.5rem;
+      text-decoration: none;
+      display: block;
+    }
+
+    /* Tablet Styles */
+    @media (min-width: 768px) {
+      a {
+        font-size: 2.6rem;
+        line-height: 2.25rem;
+      }
+    }
+
+    /* Desktop Styles */
+    @media (min-width: 1200px) {
+      a {
+        font-size: 3rem;
+        line-height: 2.25rem;
+      }
+    }
+  `;constructor(){super(),this.name="Alaeddine Cheniour",this.url="/"}render(){return a`<a href="${this.url}" >${this.name}</a>`}}customElements.define("name-header",Ue);class Ie extends d{static properties={href:{type:String},text:{type:String},active:{type:Boolean,reflect:!0}};static styles=p`
+    :host { display: block; }
+    
+    .nav-link {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      text-decoration: none;
+    }
+
+    .nav-indicator {
+      width: 32px;
+      height: 1px;
+      background-color: var(--slate-600);
+      margin-right: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-text {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--slate-500);
+    }
+
+    /* Hover States: The indicator grows and the text brightens */
+    .nav-link:hover .nav-indicator,
+    :host([active]) .nav-indicator {
+      width: 64px;
+      background-color: var(--slate-200);
+    }
+
+    .nav-link:hover .nav-text,
+    :host([active]) .nav-text {
+      color: var(--slate-200);
+    }
+  `;render(){return a`
+      <a class="nav-link" href="${this.href}">
+        <span class="nav-indicator"></span>
+        <span class="nav-text">${this.text}</span>
+      </a>
+    `}}customElements.define("nav-item",Ie);class Ne extends d{static properties={activeSection:{type:String}};static styles=p`
+    nav ul {
+      margin: 48px 0 24px 0;
+      width: max-content;
+      padding: 0;
+      list-style-type: none;
+    }
+  `;constructor(){super(),this.activeSection=window.location.hash||"#about"}handleNavClick(e,t){e.preventDefault(),this.dispatchEvent(new CustomEvent("nav-link-clicked",{detail:{section:t},bubbles:!0,composed:!0})),this.activeSection=t}render(){return a`
+      <nav aria-label="Main navigation">
+        <ul>
+          ${Le.map(e=>a`
+            <li>
+              <nav-item 
+                href="${e.id}" 
+                text="${e.label}"
+                ?active="${this.activeSection===e.id}"
+                @click="${t=>this.handleNavClick(t,e.id)}">
+              </nav-item>
+            </li>
+          `)}
+        </ul>
+      </nav>
+    `}}customElements.define("nav-menu",Ne);class Oe extends d{static properties={href:{type:String},label:{type:String},iconName:{type:String}};static styles=p`
+    .social-link {
+      margin-top: 30px;
+      margin-right: 20px;
+      font-size: 0.5rem;
+      flex-shrink: 0;
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .social-link:hover { color: var(--slate-200); }
+    .social-icon { width: 24px; height: 24px; }
+  `;render(){return a`
+      <a class="social-link" href="${this.href}" aria-label="${this.label}">
+        ${j[this.iconName]}
+      </a>
+    `}}customElements.define("social-link",Oe);class De extends d{static styles=p`
+    
+    ul {
+      display: flex;
+      margin-top: auto;
+      align-items: center;
+      margin-left: 4px;
+      padding: 0;
+    }
+    li {
+      list-style-type: none;
+    }
+    /* We can style the internal icon size from here ::slotted(social-link), social-link {--icon-size: 24px;} */
+  `;render(){return a`
+      <ul>
+        ${Me.map(e=>a`
+          <li>
+            <social-link 
+              .iconName="${e.name}" 
+              .label="${e.label}" 
+              .href="${e.url}">
+            </social-link>
+          </li>
+        `)}
+      </ul>
+    `}}customElements.define("social-list",De);class Re extends d{static properties={activeSection:{type:String}};constructor(){super(),this.activeSection=window.location.hash||"#about"}static styles=p`
+    :host {
+      display: block;
+      width: 100%;
+      height: auto;
+      position: static;
+      box-sizing: border-box;
+    }
+
+    @media (min-width: 1024px) {
+      :host {
+        width: 45%;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+      }
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 48px 24px;
+      width: 100%;
+      height: 100%; /* Fill the height provided by :host */
+      box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) {
+      header {
+        padding: 62px 48px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      header {
+        padding: 96px 48px;
+        padding-bottom: 24px;
+      }
+    }
+
+    .subtitle{
+      color : rgb(226, 232, 240);
+      font-size: 1.125rem;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      line-height: 1.75rem;
+      margin-top: 12px;
+    }
+
+    @media (min-width: 768px) {
+      .subtitle{
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .subtitle{
+        font-size: 1.25rem;
+      }
+    }
+
+    .intro-paragraph{
+      color : rgb(148, 163, 184);
+      margin-top: 16px;
+      max-width: 27rem;
+      line-height: 1.5;
+    }
+
+    @media (min-width: 768px) {
+      .intro-paragraph{
+        max-width: 35rem;
+      }
+    }
+
+    nav-menu {
+      display: none;
+    }
+
+    /* Show on Desktop (1024px and up) */
+    @media (min-width: 1024px) {
+      nav-menu {
+        display: block;
+      }
+    }
+  `;render(){return a`
+        <header>
+            <div>
+              <name-header name="Alaeddine Cheniour" url="/"></name-header>
+              <h2 class="subtitle"> Software Engineer | 3D Graphics & HCI</h2>
+              <p class="intro-paragraph">
+                I build interactive 3D graphics and human-centered software.
+              </p>
+              <nav-menu .activeSection="${this.activeSection}"></nav-menu>
+            </div>
+            <div class="social-links">
+              <social-list></social-list>
+            </div>
+        </header>
+    `}}customElements.define("header-part",Re);class Be extends d{static properties={text:{type:String},link:{type:String},svg:{type:Boolean},dashedBorder:{type:Boolean},active:{type:Boolean,reflect:!0}};static styles=p`
+    :host {
+      display: inline-block;
+    }
+    
+    a {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--slate-200);
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.2s ease;
+    }
+
+    a.with-border{
+      border-bottom: 1px dashed rgba(148, 163, 184, 0.3);
+    }
+
+    :host([active]) a,
+    a:hover,
+    a:focus-visible {
+      color: var(--teal-300);
+      border-bottom-color: var(--teal-400);
+    }
+
+    :host([active]) a.active.with-border,
+    a.active.with-border:hover,
+    a.active.with-border:focus-visible {
+      border-bottom-color: var(--teal-400);
+    }
+
+    /* Active state styling */
+    a.active {
+      color: var(--teal-300);
+    }
+
+    a.active.with-border{
+      border-bottom-color: var(--teal-400);
+    }
+
+    span {
+      display: inline-block;
+    }
+
+    svg {
+      display: inline-block;
+      height: 16px;
+      width: 16px;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+      margin-left: 6px;
+      transform: translateY(0);
+    }
+
+    :host([active]) a svg,
+    a:hover svg,
+    a:focus-visible svg, 
+    a.active svg {
+      transform: translate(2px, -1px);
+    }
+  `;constructor(){super(),this.svg=!1,this.active=!1,this.dashedBorder=!1}render(){return a`
+      <a 
+        href="${this.link}" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="${this.active?"active":""} ${this.dashedBorder?"with-border":""}"
+      >
+        <span>${this.text}</span>
+        ${this.svg?a`${j.arrow}`:""}
+      </a>
+    `}}customElements.define("link-item",Be);class Ve extends d{static properties={name:{type:String}};static styles=p`
+    :host {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 9999px;
+      background-color: var(--teal-400-tr);
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      line-height: 1.25;
+      color: var(--teal-300);
+      margin-right: 6px;
+      margin-top: 8px;
+    }
+  `;render(){return a`${this.name}`}}customElements.define("tech-tag",Ve);const I=p`
+  .hover-background {
+    position: absolute;
+    inset: -16px -16px -16px -16px;
+    z-index: 0;  /* Behind the content */
+    border-radius: 6px;
+    display: none;
+    pointer-events: none;  /* So it doesn't interfere with hovering */
+  }
+
+  @media (min-width: 1024px) {
+    .hover-background {
+      display: block;
+      inset: -24px -24px -24px -24px;
+    }
+  }
+`;class Fe extends d{static properties={id:{type:String}};static styles=p`
+    :host {
+      display: block;
+      scroll-margin-top: 64px;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      margin-bottom: 64px;
+    }
+
+    @media (min-width: 768px) {
+      section {
+        margin-bottom: 96px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      section {
+        margin-bottom: 144px;
+      }
+    }
+
+    .section-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      margin: 0 -24px;
+      width: 100vw;
+      background-color: rgba(15, 23, 42, 0.25);
+      padding: 20px 24px;
+      backdrop-filter: blur(8px);
+    }
+
+    @media (min-width: 768px) {
+      .section-header {
+        margin: 0 -48px;
+        padding: 20px 48px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .section-header {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+
+    .section-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--slate-200);
+    }
+  `;render(){const e=this.id?this.id.charAt(0).toUpperCase()+this.id.slice(1):"";return a`
+      <section id="${this.id}">
+        <div class="section-header">
+          <h2 class="section-title">${e}</h2>
+        </div>
+        <div class="section-content">
+          <slot></slot>
+        </div>
+      </section>
+    `}}customElements.define("portfolio-section",Fe);class Ge extends d{static properties={date:{type:String},role:{type:String},company:{type:String},companyLink:{type:String},description:{type:String},techs:{type:Array},isHovered:{type:Boolean}};static styles=[I,p`
+      :host { 
+        cursor: pointer;
+      }
+
+      .education-card {
+        position: relative;
+        padding: 0;
+        margin-bottom: 48px;
+      }
+      
+      
+      .experience-grid {
+        display: grid;
+        padding-bottom: 4px;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      @media (min-width: 640px) {
+        .experience-grid {
+          grid-template-columns: repeat(8, minmax(0, 1fr));
+          gap: 32px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .experience-grid {
+          gap: 16px;
+        }
+      }
+
+      .experience-date {
+        padding: 0;
+        z-index: 10;
+        margin-bottom: 8px;
+        margin-top: 4px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--slate-500);
+      }
+
+
+      @media (min-width: 640px) {
+        .experience-date {
+          grid-column: span 2 / span 2;
+        }
+      }
+
+      .experience-content {
+        padding: 0;
+        margin: 0;
+        z-index: 10;
+      }
+
+      @media (min-width: 640px) {
+        .experience-content {
+          grid-column: span 6 / span 6;
+        }
+      }
+
+      .experience-title {
+        margin: 0;
+        font-weight: 500;
+        line-height: 1.25;
+        color: var(--slate-200);
+      }
+
+      .experience-description {
+        margin-top: 8px;
+        font-size: 0.875rem;
+        line-height: 1.5;
+      }
+
+      .tech-list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 8px;
+      }
+    `];handleHostClick(e){e.target.closest("a")||window.open(this.companyLink,"_blank","noopener,noreferrer")}constructor(){super(),this.isHovered=!1}handleMouseEnter(){this.isHovered=!0}handleMouseLeave(){this.isHovered=!1}render(){return a`
+    <div class="education-card"  
+      @click=${this.handleHostClick} 
+      @mouseenter=${this.handleMouseEnter}
+      @mouseleave=${this.handleMouseLeave}
+    >
+      <div class="hover-background"></div>
+      <div class="experience-grid">
+        <div class="experience-date">${this.date}</div>
+        
+        <div class="experience-content">
+          <h3 class="experience-title">
+            <link-item link="${this.companyLink}" text="${this.role} . ${this.company}" svg="true" ?active=${this.isHovered} ></link-item>
+          </h3>
+          
+          <div class="experience-description">
+            ${this.description}
+          </div>
+          
+          <div class="tech-list">
+            ${this.techs?this.techs.map(e=>a`<tech-tag name="${e}"></tech-tag>`):""}
+          </div>
+        </div>
+      </div>
+    </div>  
+    `}}customElements.define("experience-card",Ge);class qe extends d{constructor(){super()}static styles=[I,p`
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      li {
+        position: relative; 
+        padding: 0;
+        margin-bottom: 48px; 
+      }
+
+      experience-card {
+        position: relative;
+        z-index: 1;
+        display: block;
+      }
+      
+      @media (max-width: 1023px) {
+        hover-background {
+          display: none;
+        }
+      }
+
+      @media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+        ul:hover li {
+          opacity: 0.5;
+          transition: opacity 0.1s ease;
+        }
+
+        ul li:hover {
+          opacity: 1 !important;
+        }
+
+        li:hover .hover-background {
+          background-color: rgba(30, 41, 59, 0.5);
+          box-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1);
+          filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04));
+        }
+      }
+    `];render(){return a`
+      <ul>
+        ${He.map(e=>a`
+          <li>
+            <div class="hover-background"></div>
+            <experience-card 
+                .date="${e.date}"
+                .role="${e.role}"
+                .company="${e.company}"
+                .companyLink="${e.companyLink}"
+                .description="${e.description}"
+                .techs="${e.techs}">
+            </experience-card>
+          </li>
+        `)}
+      </ul>
+    `}}customElements.define("experience-list",qe);class We extends d{static properties={period:{type:String},degree:{type:String},field:{type:String},institution:{type:String},institutionLink:{type:String},achievements:{type:Array},thesis:{type:String},grade:{type:String},isHovered:{type:Boolean}};static styles=p`
+    :host {
+      cursor: pointer;
+    }
+
+    .education-card {
+      position: relative;
+      padding: 0;
+      margin-bottom: 48px;
+      list-style: none;
+    }
+    
+    .education-container {
+      position: relative;
+    }
+
+    /* Period on top - matching original style */
+    .education-period {
+      display: inline-block;
+      margin-bottom: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--slate-500);
+      z-index: 10;
+      position: relative;
+    }
+
+    .education-content {
+      padding: 0;
+      margin: 0;
+      z-index: 10;
+      position: relative;
+    }
+
+    .education-title {
+      margin-top: 10px;
+      font-weight: 500;
+      line-height: 1.25;
+      color: var(--slate-200);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+    }
+
+    .degree {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--slate-200);
+    }
+
+    .field {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--slate-400);
+      margin-left: 4px;
+      margin-right: 4px;
+    }
+
+    @media (max-width: 640px) {
+      .education-title {
+        gap: 4px;
+      }
+
+      .field, .institution-wrapper {
+        margin-left: 0;
+      }
+    }
+
+    /* Using link-item component for institution */
+    .institution-wrapper {
+      display: block;
+      margin-left: 0;
+    }
+
+    /* Thesis section */
+    .thesis {
+      margin: 16px 0;
+      padding: 12px 16px;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--slate-300);
+      border-left: 3px solid var(--teal-400);
+      position: relative;
+    }
+
+    .thesis::before {
+      content: '“';
+      font-size: 2rem;
+      position: absolute;
+      left: 8px;
+      top: -8px;
+      color: var(--teal-400);
+      opacity: 0.5;
+      font-family: serif;
+    }
+
+    .thesis::after {
+      content: '”';
+      font-size: 2rem;
+      position: absolute;
+      right: 12px;
+      bottom: -20px;
+      color: var(--teal-400);
+      opacity: 0.5;
+      font-family: serif;
+    }
+
+    .thesis strong {
+      color: var(--teal-300);
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    /* Grade styled like a tech tag */
+    .grade-list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .grade-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--teal-300);
+      background: rgba(45, 212, 191, 0.1);
+      border-radius: 12px;
+      letter-spacing: 0.01em;
+    }
+
+    /* Achievements list */
+    .achievements {
+      margin-top: 8px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .achievement-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 6px;
+      font-size: 0.85rem;
+      color: var(--slate-400);
+      line-height: 1.5;
+    }
+
+    .achievement-marker {
+      display: inline-block;
+      min-width: 16px;
+      margin-right: 8px;
+      color: var(--slate-500);
+      font-size: 0.8rem;
+    }
+
+    
+  `;handleHostClick(e){e.target.closest("a")||window.open(this.institutionLink,"_blank","noopener,noreferrer")}constructor(){super(),this.isHovered=!1}handleMouseEnter(){this.isHovered=!0}handleMouseLeave(){this.isHovered=!1}render(){return a`
+      <div class="education-card"
+          @click=${this.handleHostClick}
+          @mouseenter=${this.handleMouseEnter}
+          @mouseleave=${this.handleMouseLeave}
+      >
+        <div class="education-container">
+          <div class="education-period">${this.period}</div>
+
+          <div class="education-content">
+            
+            <span class="institution-wrapper">
+                <link-item
+                    link="${this.institutionLink}"
+                    text="${this.institution}"
+                    svg="true"
+                    ?active=${this.isHovered}
+                    ?dashedBorder=${!0}
+                ></link-item>
+              </span>
+            <h5 class="education-title">
+              <span class="degree">${this.degree}</span>
+              ${this.field?a`<span class="field">· ${this.field}</span>`:""}
+            </h5>
+            
+
+            ${this.grade?a`
+              \x3C!--<div class="grade-list"><span class="grade-tag">${this.grade}</span></div>-->
+            `:""}
+
+            ${this.thesis?a`
+              <div class="thesis">
+                <strong>Thesis:</strong> ${this.thesis}
+              </div>
+            `:""}
+
+            ${this.achievements?.length?a`
+              <ul class="achievements">
+                ${this.achievements.map(e=>a`
+                  <li class="achievement-item">
+                    <span class="achievement-marker">—</span>
+                    <span>${e}</span>
+                  </li>
+                `)}
+              </ul>
+            `:""}
+          </div>
+        </div>
+      </div>
+    `}}customElements.define("education-card",We);class Je extends d{constructor(){super()}static styles=[I,p`
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      li {
+        position: relative; 
+        padding: 0;
+        margin-bottom: 48px; 
+      }
+
+      education-card {
+        position: relative;
+        z-index: 1;
+        display: block;
+      }
+
+      @media (max-width: 1023px) {
+        hover-background {
+          display: none;
+        }
+      }
+
+      @media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+        ul:hover li {
+          opacity: 0.5;
+          transition: opacity 0.1s ease;
+        }
+
+        ul li:hover {
+          opacity: 1 !important;
+        }
+
+        li:hover .hover-background {
+          background-color: rgba(30, 41, 59, 0.5);
+          box-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1);
+          filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04));
+        }
+      }
+    `];render(){return a`
+      <ul>
+        ${je.map(e=>a`
+          <li>
+            <div class="hover-background"></div>
+            <education-card
+                .period="${e.period}"
+                .degree="${e.degree}"
+                .field="${e.field}"
+                .institution="${e.institution}"
+                .institutionLink="${e.institutionLink}"
+                .achievements="${e.achievements}"
+                .thesis="${e.thesis}"
+                .grade="${e.grade}">
+            </education-card>
+          </li>
+        `)}
+      </ul>
+    `}}customElements.define("education-list",Je);class Ke extends d{static properties={title:{type:String},description:{type:String},techs:{type:Array},image:{type:String},githubLink:{type:String},demoLink:{type:String},isHovered:{type:Boolean}};static styles=p`
+    :host {
+      cursor: pointer;
+      display: block;
+    }
+
+    .project-card {
+      position: relative;
+      padding: 0;
+      margin-bottom: 48px;
+      list-style: none;
+    }
+    
+    .project-container {
+      position: relative;
+    }
+
+    /* Grid layout for image + content */
+    .project-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    @media (min-width: 640px) {
+      .project-grid {
+        grid-template-columns: 200px 1fr; /* Fixed width for image on left */
+        gap: 24px;
+      }
+    }
+
+    /* Image/placeholder section */
+    .project-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/10; /* Rectangular ratio */
+      border-radius: 6px;
+      overflow: hidden;
+      background-color: var(--slate-800);
+      z-index: 10;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover .project-image img {
+      transform: scale(1.05);
+    }
+
+    /* Placeholder when no image */
+    .image-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--slate-800) 0%, var(--slate-900) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--slate-500);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 1px solid var(--slate-700);
+    }
+
+    .project-content {
+      padding: 0;
+      margin: 0;
+      z-index: 10;
+      position: relative;
+    }
+
+    .project-title {
+      margin: 0 0 8px 0;
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.25;
+      color: var(--slate-200);
+    }
+
+    .project-description {
+      margin-top: 8px;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: var(--slate-400);
+    }
+
+    /* Tech stack */
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 12px;
+      gap: 8px;
+    }
+
+    .tech-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--teal-300);
+      background: rgba(45, 212, 191, 0.1);
+      border-radius: 12px;
+      letter-spacing: 0.01em;
+    }
+
+    /* Links section */
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .project-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      color: var(--slate-400);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .project-links a:hover {
+      color: var(--teal-300);
+    }
+
+    .project-links svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.2s ease;
+    }
+
+    .project-links a:hover svg {
+      transform: translate(2px, -2px);
+    }
+
+    /* Responsive */
+    @media (max-width: 639px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .project-image {
+        max-width: 100%;
+        margin-bottom: 8px;
+      }
+    }
+  `;handleHostClick(e){e.target.closest("a")||(this.githubLink?window.open(this.githubLink,"_blank","noopener,noreferrer"):this.demoLink&&window.open(this.demoLink,"_blank","noopener,noreferrer"))}constructor(){super(),this.isHovered=!1,this.techs=[]}handleMouseEnter(){this.isHovered=!0}handleMouseLeave(){this.isHovered=!1}renderImage(){return this.image?a`<img src="${this.image}" alt="${this.title}">`:a`<div class="image-placeholder">${this.title.charAt(0)}</div>`}render(){return a`
+      <div class="project-card"
+          @click=${this.handleHostClick}
+          @mouseenter=${this.handleMouseEnter}
+          @mouseleave=${this.handleMouseLeave}
+      >
+        <div class="project-container">
+          <div class="project-grid">
+            \x3C!-- Image on left -->
+            <div class="project-image">
+              ${this.renderImage()}
+            </div>
+
+            \x3C!-- Content on right -->
+            <div class="project-content">
+              <h3 class="project-title">${this.title}</h3>
+              
+              <div class="project-description">
+                ${this.description}
+              </div>
+              
+              ${this.techs?.length?a`
+                <div class="tech-list">
+                  ${this.techs.map(e=>a`
+                    <span class="tech-tag">${e}</span>
+                  `)}
+                </div>
+              `:""}
+
+              \x3C!-- Links section -->
+              <div class="project-links">
+                ${this.githubLink?a`
+                  <a href="${this.githubLink}" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     @click=${e=>e.stopPropagation()}>
+                    <span>GitHub</span>
+                    ${j.arrow}
+                  </a>
+                `:""}
+                
+                ${this.demoLink?a`
+                  <a href="${this.demoLink}" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     @click=${e=>e.stopPropagation()}>
+                    <span>Live Demo</span>
+                    ${j.arrow}
+                  </a>
+                `:""}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `}}customElements.define("project-card",Ke);class Xe extends d{constructor(){super()}static styles=[I,p`
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      li {
+        position: relative; 
+        padding: 0;
+        margin-bottom: 48px; 
+      }
+
+      project-card {
+        position: relative;
+        z-index: 1;
+        display: block;
+      }
+
+      @media (max-width: 1023px) {
+        hover-background {
+          display: none;
+        }
+      }
+
+      @media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+        ul:hover li {
+          opacity: 0.5;
+          transition: opacity 0.1s ease;
+        }
+
+        ul li:hover {
+          opacity: 1 !important;
+        }
+
+        li:hover .hover-background {
+          background-color: rgba(30, 41, 59, 0.5);
+          box-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1);
+          filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04));
+        }
+      }
+    `];render(){return a`
+      <ul>
+        ${Te.map(e=>a`
+          <li>
+            <div class="hover-background"></div>
+            <project-card
+                .title="${e.title}"
+                .description="${e.description}"
+                .techs="${e.techs}"
+                .image="${e.image}"
+                .githubLink="${e.githubLink}"
+                .demoLink="${e.demoLink}">
+            </project-card>
+          </li>
+        `)}
+      </ul>
+    `}}customElements.define("project-list",Xe);class Ye extends d{constructor(){super()}static styles=p`
+      .mb-4 {
+        margin-bottom: 16px;
+      }
+
+      footer {
+        max-width: 28rem;
+        padding-bottom: 64px;
+        font-size: 0.875rem;
+        color: var(--slate-500);
+      }
+
+      @media (min-width: 640px) {
+        footer {
+          padding-bottom: 0;
+        }
+      }
+
+      footer a {
+        font-weight: 500;
+        color: var(--slate-400);
+        text-decoration: none;
+      }
+
+      footer a:hover,
+      footer a:focus-visible {
+        color: var(--teal-300);
+      }
+    `;render(){return a`
+      <footer>
+        <p>
+          Designed in <a href="https://figma.com" target="_blank" rel="noopener noreferrer">Figma</a>,
+          built using <a href="https://lit.dev" target="_blank" rel="noopener noreferrer">Lit</a> and
+          CSS, deployed on
+          <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
+        </p>
+        <p class="mt-4">
+          Inspired by Brittany Chiang's design.
+        </p>
+      </footer>
+    `}}customElements.define("footer-part",Ye);class Ze extends d{constructor(){super(),this.observer=null}static styles=p`
+      :host {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      @media (min-width: 1024px) {
+        :host {
+          width: 55%; /* Takes up the remaining space next to the 45% header */
+        }
+      }
+
+      main {
+        width: 100%;
+        padding: 24px 24px;
+        box-sizing: border-box;
+      }
+
+      @media (min-width: 768px) {
+        main {
+          padding: 24px 48px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        main {
+          padding: 90px 30px;
+        }
+      }
+
+      .mb-4 {
+        margin-bottom: 16px;
+      }
+
+      .focusEl {
+        font-weight: 500;
+        color: var(--slate-200);
+        text-decoration: none;
+      }
+    `;scrollToSection(e){const t=this.shadowRoot.querySelector(e);t&&t.scrollIntoView({behavior:"smooth"})}firstUpdated(){const e=this.shadowRoot.querySelectorAll("portfolio-section"),t={rootMargin:"-30% 0px -60% 0px",threshold:0};this.observer=new IntersectionObserver(i=>{i.forEach(s=>{s.isIntersecting&&this.dispatchEvent(new CustomEvent("section-changed",{detail:{section:`#${s.target.id}`},bubbles:!0,composed:!0}))})},t),e.forEach(i=>this.observer.observe(i))}disconnectedCallback(){super.disconnectedCallback(),this.observer&&this.observer.disconnect()}render(){return a`
+          <main id="main-content">
+
+            <portfolio-section id="about">
+              <p class="mb-4">
+                I’m a software engineer and HCI researcher specializing in the intersection of
+                high-performance graphics and human-centered design. I enjoy building powerful systems that remain easy to use,
+                bridging the gap between complex architecture and intuitive design.
+              </p>
+
+              <p class="mb-4">
+                I am finishing my dual degree: an Engineering degree in Mathematics and Computer Science from
+                <link-item link="https://www.polytech.universite-paris-saclay.fr/" text="Polytech Paris-Saclay"></link-item>
+                and a Master’s in
+                <span class="focusEl">Human-Computer Interaction, Computer Graphics & Design</span>
+                from
+                <link-item link="https://www.ip-paris.fr/" text="Institut Polytechnique de Paris"></link-item>.
+                These experiences have shaped my approach to software, combining engineering with a deep understanding of how humans interact with digital environments.
+              </p>
+
+              <p class="mb-4">
+                Currently, I’m a Research Intern at
+                <link-item link="https://www.3ds.com/fr/science/meditwin" text="Dassault Systèmes"></link-item>
+                Human Virtual Twin research team, where I focus on medical visualization. My work involves identifying innovative
+                2D and 3D tools to manipulate medical data, as well as exploring remote
+                rendering and optimisation techniques.
+              </p>
+
+              <p class="mb-4">
+                Besides work, I’m usually capturing the world through street photography or getting lost in a good book.
+              </p>
+            </portfolio-section>
+
+            <portfolio-section id="experience">
+              <experience-list></experience-list>
+              <link-item link="/resume.pdf" text="View Full Résumé" svg="true"></link-item>
+            </portfolio-section>
+
+            <portfolio-section id="education">
+              <education-list></education-list>
+            </portfolio-section>
+
+            <portfolio-section id="projects">
+              <project-list></project-list>
+            </portfolio-section>
+
+            <footer-part></footer-part>
+
+          </main>
+    `}}customElements.define("main-part",Ze);class Qe extends d{static styles=p`
+    :host {
+      /* Locks the widget to the bottom right of the screen */
+      position: absolute
+      ;
+      bottom: 30px;
+      right: 30px;
+      z-index: 9999; 
+    }
+
+    .widget-link {
+      display: block;
+      cursor: pointer;
+      /* Initial smooth, bouncy transition when hovered */
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .widget-gif {
+      width: 80px; /* Adjust this based on your GIF's actual size */
+      height: auto;
+      /* Adds a subtle shadow to make it pop off the background */
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+      transition: filter 0.3s ease;
+    }
+
+    /* Hover State */
+    .widget-link:hover {
+      /* Triggers a continuous floating animation */
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .widget-link:hover .widget-gif {
+      /* Deepens the shadow when floating to enhance the 3D effect */
+      filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.4));
+    }
+
+    /* Keyframes for the continuous float */
+    @keyframes float {
+      0% { transform: translateY(-15px); }
+      50% { transform: translateY(-5px); }
+      100% { transform: translateY(-15px); }
+    }
+  `;static properties={linkUrl:{type:String},gifSrc:{type:String}};constructor(){super(),this.linkUrl="https://aladin20c.github.io/portfolio-playable/",this.gifSrc="/arcade.gif"}render(){return a`
+      \x3C!-- target="_blank" opens the link in a new tab -->
+      \x3C!-- rel="noopener noreferrer" is a security best practice for external links -->
+      <a href="${this.linkUrl}" target="_blank" rel="noopener noreferrer" class="widget-link">
+        <img src="${this.gifSrc}" alt="Arcade Secret" class="widget-gif" />
+      </a>
+    `}}customElements.define("arcade-widget",Qe);class et extends d{static properties={activeSection:{type:String}};constructor(){super(),this.activeSection=window.location.hash||"#about"}static styles=p`
+    #main-container {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      max-width: 1280px;
+    }
+
+    @media (min-width: 1024px) {
+      #main-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+      }
+    }
+    `;_handleNavClick(e){const t=e.detail.section,i=this.shadowRoot.querySelector("main-part");i&&i.scrollToSection(t)}_handleSectionChange(e){this.activeSection=e.detail.section,history.replaceState(null,null,this.activeSection)}render(){return a`
+        <div id="main-container">
+          <header-part .activeSection="${this.activeSection}" @nav-link-clicked="${this._handleNavClick}">></header-part>
+          <main-part @section-changed="${this._handleSectionChange}"></main-part>
+        </div>
+    `}}customElements.define("home-page",et);class tt extends d{render(){return a`<home-page></home-page>`}}customElements.define("my-app",tt);</script>
+    <style rel="stylesheet" crossorigin>:root{--slate-900: #0f172a;--slate-800: #1e293b;--slate-700: #334155;--slate-600: #475569;--slate-500: #64748b;--slate-400: #94a3b8;--slate-300: #cbd5e1;--slate-200: #e2e8f0;--teal-900: #134e4a;--teal-400: #2dd4bf;--teal-300: #5eead4;--blue-500: #3b82f6;--purple-600: #9333ea;--teal-400-tr: #2dd4bf1a}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background-color:var(--slate-900);line-height:1.625;color:var(--slate-400);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;scroll-behavior:smooth;width:100vw;min-height:100vh;overflow-x:hidden;position:relative}@media(max-width:1023px){body:before{content:"";position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:-1;background:radial-gradient(circle 600px at 0% 0%,rgba(29,78,216,.15),transparent 100%)}}@media(min-width:1024px){body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),rgba(29,78,216,.15),transparent 80%)}}</style>
+  </head>
+
+  <body>
+    
+  <my-app></my-app>
+
+  <script>
+    window.addEventListener('mousemove', (e) => {
+      document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
+      document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
+    });
+  </script>
+
+  <arcade-widget></arcade-widget>
+  </body>
+</html>

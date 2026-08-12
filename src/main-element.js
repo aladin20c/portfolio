@@ -1,7 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { icons } from './icons.js';
-import {sections,socials,experiences,education,projects} from './data.js'
-
+import {socials,experiences,education,projects} from './data.js'
+import { LinkItem } from './link-item.js';
+import { TechTag } from './tech-tag.js';
 
 
 export const hoverBackgroundStyle = css`
@@ -21,348 +22,6 @@ export const hoverBackgroundStyle = css`
     }
   }
 `;
-
-/**
- * THE Main title Eleemnt.
- */
-export class NameHeader extends LitElement {
-
-  static properties = {
-    name: { type: String },
-    url: { type: String }
-  };
-
-  static styles = css`
-    a {
-      color: var(--slate-200);
-      cursor: pointer;
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: -1.2px;
-      line-height: 2.5rem;
-      text-decoration: none;
-      display: block;
-    }
-
-    /* Tablet Styles */
-    @media (min-width: 768px) {
-      a {
-        font-size: 2.6rem;
-        line-height: 2.25rem;
-      }
-    }
-
-    /* Desktop Styles */
-    @media (min-width: 1200px) {
-      a {
-        font-size: 3rem;
-        line-height: 2.25rem;
-      }
-    }
-  `;
-
-  constructor() {
-    super();
-    this.name = 'Alaeddine Cheniour';
-    this.url = '/';
-  }
-
-  render() {
-    return html`<a href="${this.url}" >${this.name}</a>`;
-  }
-
-}
-customElements.define('name-header', NameHeader);
-
-
-
-/**
- * Navigation Item on the left
- */
-export class NavItem extends LitElement {
-  static properties = {
-    href: { type: String },
-    text: { type: String },
-    active: { type: Boolean, reflect: true }
-  };
-
-  static styles = css`
-    :host { display: block; }
-    
-    .nav-link {
-      display: flex;
-      align-items: center;
-      padding: 10px 0;
-      text-decoration: none;
-    }
-
-    .nav-indicator {
-      width: 32px;
-      height: 1px;
-      background-color: var(--slate-600);
-      margin-right: 16px;
-      transition: all 0.3s ease;
-    }
-
-    .nav-text {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--slate-500);
-    }
-
-    /* Hover States: The indicator grows and the text brightens */
-    .nav-link:hover .nav-indicator,
-    :host([active]) .nav-indicator {
-      width: 64px;
-      background-color: var(--slate-200);
-    }
-
-    .nav-link:hover .nav-text,
-    :host([active]) .nav-text {
-      color: var(--slate-200);
-    }
-  `;
-
-  render() {
-    return html`
-      <a class="nav-link" href="${this.href}">
-        <span class="nav-indicator"></span>
-        <span class="nav-text">${this.text}</span>
-      </a>
-    `;
-  }
-}
-customElements.define('nav-item', NavItem);
-
-
-/**
- * Navigation Menu
- */
-
-export class NavMenu extends LitElement {
-  static properties = {
-    activeSection: { type: String }
-  };
-
-  static styles = css`
-    nav ul {
-      margin: 48px 0 24px 0;
-      width: max-content;
-      padding: 0;
-      list-style-type: none;
-    }
-  `;
-
-  constructor() {
-    super();
-    // Default to the first section or check the URL hash
-    this.activeSection = window.location.hash || '#about';
-  }
-
-  // This function runs when any link is clicked
-  handleNavClick(e, id) {
-    this.activeSection = id;
-    // The component will now re-render, updating which nav-item is active
-  }
-
-  render() {
-
-    return html`
-      <nav aria-label="Main navigation">
-        <ul>
-          ${sections.map(section => html`
-            <li>
-              <nav-item 
-                href="${section.id}" 
-                text="${section.label}"
-                ?active="${this.activeSection === section.id}"
-                @click="${(e) => this.handleNavClick(e, section.id)}">
-              </nav-item>
-            </li>
-          `)}
-        </ul>
-      </nav>
-    `;
-  }
-}
-customElements.define('nav-menu', NavMenu);
-
-
-/**
- * Social Link Item
- */
-export class SocialLink extends LitElement {
-  static properties = {
-    href : {type : String},
-    label : {type : String},
-    iconName: { type: String }
-  };
-
-  static styles = css`
-    .social-link {
-      margin-top: 30px;
-      margin-right: 20px;
-      font-size: 0.5rem;
-      flex-shrink: 0;
-      display: block;
-      color: inherit;
-      text-decoration: none;
-    }
-    .social-link:hover { color: var(--slate-200); }
-    .social-icon { width: 24px; height: 24px; }
-  `;
-
-  render() {
-    return html`
-      <a class="social-link" href="${this.href}" aria-label="${this.label}">
-        ${icons[this.iconName]}
-      </a>
-    `;
-  }
-}
-customElements.define('social-link', SocialLink);
-
-
-/**
- * Social Link List
- */
-export class SocialList extends LitElement {
-  static styles = css`
-    
-    ul {
-      display: flex;
-      margin-top: auto;
-      align-items: center;
-      margin-left: 4px;
-      padding: 0;
-    }
-    li {
-      list-style-type: none;
-    }
-    /* We can style the internal icon size from here ::slotted(social-link), social-link {--icon-size: 24px;} */
-  `;
-
-  render() {
-    return html`
-      <ul>
-        ${socials.map(s => html`
-          <li>
-            <social-link 
-              .iconName="${s.name}" 
-              .label="${s.label}" 
-              .href="${s.url}">
-            </social-link>
-          </li>
-        `)}
-      </ul>
-    `;
-  }
-}
-customElements.define('social-list', SocialList);
-
-
-/**
- * a conponenet for <a? tags 
- */
-export class LinkItem extends LitElement {
-  static properties = {
-    text: { type: String },
-    link: { type: String },
-    svg: { type: Boolean },
-    dashedBorder: {type: Boolean},
-    active: { type: Boolean, reflect: true },
-  }
-
-  static styles = css`
-    :host {
-      display: inline-block;
-    }
-    
-    a {
-      display: inline-flex;
-      align-items: center;
-      font-weight: 500;
-      line-height: 1.5;
-      color: var(--slate-200);
-      text-decoration: none;
-      font-size: 1rem;
-      transition: color 0.2s ease;
-    }
-
-    a.with-border{
-      border-bottom: 1px dashed rgba(148, 163, 184, 0.3);
-    }
-
-    :host([active]) a,
-    a:hover,
-    a:focus-visible {
-      color: var(--teal-300);
-      border-bottom-color: var(--teal-400);
-    }
-
-    :host([active]) a.active.with-border,
-    a.active.with-border:hover,
-    a.active.with-border:focus-visible {
-      border-bottom-color: var(--teal-400);
-    }
-
-    /* Active state styling */
-    a.active {
-      color: var(--teal-300);
-    }
-
-    a.active.with-border{
-      border-bottom-color: var(--teal-400);
-    }
-
-    span {
-      display: inline-block;
-    }
-
-    svg {
-      display: inline-block;
-      height: 16px;
-      width: 16px;
-      flex-shrink: 0;
-      transition: transform 0.2s ease;
-      margin-left: 6px;
-      transform: translateY(0);
-    }
-
-    :host([active]) a svg,
-    a:hover svg,
-    a:focus-visible svg, 
-    a.active svg {
-      transform: translate(2px, -1px);
-    }
-  `;
-
-  constructor() {
-    super();
-    this.svg = false;
-    this.active = false;
-    this.dashedBorder = false;
-  }
-
-  render() {
-    return html`
-      <a 
-        href="${this.link}" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        class="${this.active ? 'active' : ''} ${this.dashedBorder ? 'with-border' : ''}"
-      >
-        <span>${this.text}</span>
-        ${this.svg ? html`${icons["arrow"]}` : ''}
-      </a>
-    `;
-  }
-}
-customElements.define('link-item', LinkItem);
-
-
 
 /**
  * MAin Part - MAin Part - MAin Part - MAin Part
@@ -448,38 +107,6 @@ export class PortfolioSection extends LitElement {
 
 }
 customElements.define('portfolio-section', PortfolioSection);
-
-
-/**
- * Tech Tag
- */
-export class TechTag extends LitElement {
-  static properties = {
-    name: { type: String }
-  };
-
-  static styles = css`
-    :host {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 9999px;
-      background-color: var(--teal-400-tr);
-      padding: 4px 12px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      line-height: 1.25;
-      color: var(--teal-300);
-      margin-right: 6px;
-      margin-top: 8px;
-    }
-  `;
-
-  render() {
-    return html`${this.name}`;
-  }
-}
-customElements.define('tech-tag', TechTag);
-
 
 /**
  * Experience Card
@@ -1384,261 +1011,123 @@ export class ProjectList extends LitElement {
 }
 customElements.define('project-list', ProjectList);
 
-
-
-
-
-export class ArcadeWidget extends LitElement {
-  static styles = css`
-    :host {
-      /* Locks the widget to the bottom right of the screen */
-      position: absolute
-      ;
-      bottom: 30px;
-      right: 30px;
-      z-index: 9999; 
-    }
-
-    .widget-link {
-      display: block;
-      cursor: pointer;
-      /* Initial smooth, bouncy transition when hovered */
-      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    .widget-gif {
-      width: 80px; /* Adjust this based on your GIF's actual size */
-      height: auto;
-      /* Adds a subtle shadow to make it pop off the background */
-      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
-      transition: filter 0.3s ease;
-    }
-
-    /* Hover State */
-    .widget-link:hover {
-      /* Triggers a continuous floating animation */
-      animation: float 2s ease-in-out infinite;
-    }
-
-    .widget-link:hover .widget-gif {
-      /* Deepens the shadow when floating to enhance the 3D effect */
-      filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.4));
-    }
-
-    /* Keyframes for the continuous float */
-    @keyframes float {
-      0% { transform: translateY(-15px); }
-      50% { transform: translateY(-5px); }
-      100% { transform: translateY(-15px); }
-    }
-  `;
-
-  static properties = {
-    linkUrl: { type: String },
-    gifSrc: { type: String }
-  };
-
+/**
+ * Footer Part in Main
+ */
+export class FooterPart extends LitElement {
   constructor() {
     super();
-    // Default values you can override via HTML attributes
-    this.linkUrl = 'https://aladin20c.github.io/portfolio-playable/'; 
-    this.gifSrc = '/arcade.gif';
   }
+
+  static styles =
+    css`
+      .mb-4 {
+        margin-bottom: 16px;
+      }
+
+      footer {
+        max-width: 28rem;
+        padding-bottom: 64px;
+        font-size: 0.875rem;
+        color: var(--slate-500);
+      }
+
+      @media (min-width: 640px) {
+        footer {
+          padding-bottom: 0;
+        }
+      }
+
+      footer a {
+        font-weight: 500;
+        color: var(--slate-400);
+        text-decoration: none;
+      }
+
+      footer a:hover,
+      footer a:focus-visible {
+        color: var(--teal-300);
+      }
+    `;
 
   render() {
     return html`
-      <!-- target="_blank" opens the link in a new tab -->
-      <!-- rel="noopener noreferrer" is a security best practice for external links -->
-      <a href="${this.linkUrl}" target="_blank" rel="noopener noreferrer" class="widget-link">
-        <img src="${this.gifSrc}" alt="Arcade Secret" class="widget-gif" />
-      </a>
+      <footer>
+        <p>
+          Designed in <a href="https://figma.com" target="_blank" rel="noopener noreferrer">Figma</a>,
+          built using <a href="https://lit.dev" target="_blank" rel="noopener noreferrer">Lit</a> and
+          CSS, deployed on
+          <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
+        </p>
+        <p class="mt-4">
+          Inspired by Brittany Chiang's design.
+        </p>
+      </footer>
     `;
   }
 }
-
-customElements.define('arcade-widget', ArcadeWidget);
-
-
+customElements.define('footer-part', FooterPart);
 
 /**
- * Home Page
+ * The main part - right panel
  */
-export class HomePage extends LitElement {
-  static properties = {
-    activeSection: { type: String }
-  };
+export class MainPart extends LitElement {
   constructor() {
     super();
-    this.activeSection = '#about'; // Default starting section
-    this.observer = null;          // Store observer so we can clean it up later
+    this.observer = null;
   }
-  
 
   static styles = 
     css`
-    #main-container {
-      width: 100%;
-      height: 100%;
-      margin: 0 auto;
-      max-width: 1280px;
-    }
-
-    @media (min-width: 1024px) {
-      #main-container {
-        display: flex;
-        justify-content: space-between;
-        gap: 16px;
-      }
-    }
-
-
-    /***********************HEADER***********************/
-
-    header {
-      top: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 48px 24px;
-      position: static;
-      height: auto;
-      width: 100%;
-    }
-
-    @media (min-width: 768px) {
-      header {
-        padding: 62px 48px;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      header {
-        padding: 96px 48px;
-        padding-bottom: 24px;
-        position: sticky;
-        max-height: 100vh;
-        width: 45%;
-        height: 100vh;
-      }
-    }
-
-
-    /***********************subtitle***********************/
-
-    .subtitle{
-      color : rgb(226, 232, 240);
-      font-size: 1.125rem;
-      font-weight: 500;
-      letter-spacing: -0.03em;
-      line-height: 1.75rem;
-      margin-top: 12px;
-    }
-
-    @media (min-width: 768px) {
-      .subtitle{
-        font-size: 1.25rem;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .subtitle{
-        font-size: 1.25rem;
-      }
-    }
-
-    /***********************paragraph***********************/
-
-    .intro-paragraph{
-      color : rgb(148, 163, 184);
-      margin-top: 16px;
-      max-width: 27rem;
-      line-height: 1.5;
-    }
-
-    @media (min-width: 768px) {
-      .intro-paragraph{
-        max-width: 35rem;
-      }
-    }
-
-    /***********************nav*menu***********************/
-
-    nav-menu {
-      display: none;
-    }
-
-    /* Show on Desktop (1024px and up) */
-    @media (min-width: 1024px) {
-      nav-menu {
+      :host {
         display: block;
+        width: 100%;
+        box-sizing: border-box;
       }
-    }
 
+      @media (min-width: 1024px) {
+        :host {
+          width: 55%; /* Takes up the remaining space next to the 45% header */
+        }
+      }
 
-
-    /***********************MAIN***********************/
-
-
-    main {
-      padding: 24px 24px;
-      width: 100%;
-    }
-
-    @media (min-width: 768px) {
       main {
-        padding: 24px 48px;
+        width: 100%;
+        padding: 24px 24px;
+        box-sizing: border-box;
       }
-    }
 
-    @media (min-width: 1024px) {
-      main {
-        padding: 90px 30px;
-        width: 55%;
+      @media (min-width: 768px) {
+        main {
+          padding: 24px 48px;
+        }
       }
-    }
 
-
-    /***********************ABOUT***********************/
-
-    .mb-4 {
-      margin-bottom: 16px;
-    }
-
-    .focusEl {
-      font-weight: 500;
-      color: var(--slate-200);
-      text-decoration: none;
-    }
-
-    /***********************Footer***********************/
-
-    footer {
-      max-width: 28rem;
-      padding-bottom: 64px;
-      font-size: 0.875rem;
-      color: var(--slate-500);
-    }
-
-    @media (min-width: 640px) {
-      footer {
-        padding-bottom: 0;
+      @media (min-width: 1024px) {
+        main {
+          padding: 90px 30px;
+        }
       }
-    }
 
-    footer a {
-      font-weight: 500;
-      color: var(--slate-400);
-      text-decoration: none;
-    }
+      .mb-4 {
+        margin-bottom: 16px;
+      }
 
-    footer a:hover,
-    footer a:focus-visible {
-      color: var(--teal-300);
-    }`
-  ;
+      .focusEl {
+        font-weight: 500;
+        color: var(--slate-200);
+        text-decoration: none;
+      }
+    `;
+  
+  scrollToSection(sectionId) {
+    const targetSection = this.shadowRoot.querySelector(sectionId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
   firstUpdated() {
-    // Query elements from this component's Shadow DOM
     const sections = this.shadowRoot.querySelectorAll('portfolio-section');
 
     const observerOptions = {
@@ -1649,48 +1138,26 @@ export class HomePage extends LitElement {
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // 3. Update the Lit property instead of touching the DOM directly
-          this.activeSection = `#${entry.target.id}`;
-
-          // Update URL without jumping
-          history.replaceState(null, null, `#${entry.target.id}`);
+          // Instead of setting a property, we shout out to the parent component
+          this.dispatchEvent(new CustomEvent('section-changed', {
+            detail: { section: `#${entry.target.id}` },
+            bubbles: true, 
+            composed: true // Allows the event to cross the shadow DOM boundary
+          }));
         }
       });
     }, observerOptions);
-    // Start observing all sections
+
     sections.forEach(section => this.observer.observe(section));
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    if (this.observer) {
-      this.observer.disconnect();
-    }
+    if (this.observer) this.observer.disconnect();
   }
 
   render() {
     return html`
-        <div id="main-container">
-
-          <header>
-
-            <div>
-              <name-header name="Alaeddine Cheniour" url="/"></name-header>
-              <h2 class="subtitle"> Software Engineer | 3D Graphics & HCI</h2>
-              <p class="intro-paragraph">
-                I build interactive 3D graphics and human-centered software.
-              </p>
-              <nav-menu .activeSection="${this.activeSection}"></nav-menu>
-            </div>
-
-            <div class="social-links">
-              <social-list></social-list>
-            </div>
-
-          </header>
-
-
-
           <main id="main-content">
 
             <portfolio-section id="about">
@@ -1718,53 +1185,33 @@ export class HomePage extends LitElement {
                 rendering and optimisation techniques.
               </p>
 
-
               <p class="mb-4">
                 Besides work, I’m usually capturing the world through street photography or getting lost in a good book.
               </p>
-
             </portfolio-section>
-
 
             <portfolio-section id="experience">
               <experience-list></experience-list>
               <link-item link="/resume.pdf" text="View Full Résumé" svg="true"></link-item>
             </portfolio-section>
 
-
             <portfolio-section id="education">
               <education-list></education-list>
             </portfolio-section>
 
-
             <portfolio-section id="projects">
               <project-list></project-list>
-
             </portfolio-section>
 
-
-            <footer>
-              <p>
-                Designed in <a href="https://figma.com" target="_blank" rel="noopener noreferrer">Figma</a>,
-                built using <a href="https://lit.dev" target="_blank" rel="noopener noreferrer">Lit</a> and
-                CSS, deployed on
-                <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
-              </p>
-              <p class="mt-4">
-                Inspired by Brittany Chiang's design.
-              </p>
-            </footer>
-
+            <footer-part></footer-part>
 
           </main>
-        
-        </div>
     `;
   }
 }
-customElements.define('home-page', HomePage);
+customElements.define('main-part', MainPart);
 
 
-//              <!--<link-item link="/archive" text="View Project Archive" svg="true"></link-item>-->
+//<!--<link-item link="/archive" text="View Project Archive" svg="true"></link-item>-->
 
 

@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit';
-import {TechTag} from './my-element.js'
+import {TechTag} from './main-element.js'
 
 export class PageShell extends LitElement {
   static styles = css`
