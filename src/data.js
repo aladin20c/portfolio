@@ -151,4 +151,31 @@ const projects = [
     }
 ];
 
-export {sections,socials,experiences,education,projects};
+
+
+
+    const projectArchive = [
+      {
+        year: '2023',
+        projectName: 'Emerson Collective',
+        projectUrl: 'https://www.emersoncollective.com/',
+        description: 'A digital platform for the philanthropic organization.',
+        builtWith: ['Next.js', 'TypeScript', 'SCSS', 'Contentful'],
+        linkUrl: 'https://www.emersoncollective.com/',
+        linkLabel: 'emersoncollective.com',
+        linkIcon: 'arrow'
+      },
+      {
+        year: '2022',
+        projectName: 'Harvard Business School Design System',
+        projectUrl: 'https://github.com/hbs/design-system',
+        description: 'A comprehensive design system for HBS digital products.',
+        builtWith: ['Storybook', 'React', 'TypeScript'],
+        linkUrl: 'https://github.com/hbs/design-system',
+        linkLabel: 'github.com/hbs/design-system',
+        linkIcon: 'github'
+      }
+    ];
+
+
+export {sections,socials,experiences,education,projects,projectArchive};
