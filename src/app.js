@@ -4,6 +4,7 @@ import { Router } from '@lit-labs/router';
 import { HeaderPart } from './header-elements';
 import { MainPart } from './main-element';
 import { ArcadeWidget } from './arcade-widget';
+import { ArchivePage } from './archive-elements';
 
 /**
  * Home Page
@@ -66,8 +67,11 @@ customElements.define('home-page', HomePage);
 export class MyApp extends LitElement {
 
   render() {
-    return html`<home-page></home-page>`;
+    return html`<archive-page></archive-page>`;
   }
+  // render() {
+  //   return html`<archive-page></archive-page>`;
+  // }
 }
 customElements.define('my-app', MyApp);
 
@@ -76,6 +80,10 @@ customElements.define('my-app', MyApp);
 //   router = new Router(this, [
 //     {
 //       path: '/',
+//       render: () => html`<home-page></home-page>`
+//     },
+//     {
+//       path: '/app.html',
 //       render: () => html`<home-page></home-page>`
 //     },
 //     {
