@@ -1,10 +1,5 @@
 import { LitElement, html, css } from 'lit';
 
-// Import official components (side-effect only; they register globally)
-import './tech-tag.js';
-import './link-item.js';
-
-// Keep PageShell and SkipLink – they are layout/accessibility utilities
 export class PageShell extends LitElement {
   static styles = css`
     :host {
@@ -71,7 +66,6 @@ export class SkipLink extends LitElement {
 }
 customElements.define('skip-link', SkipLink);
 
-// Main archive page – uses official TechTag and LinkItem
 export class ArchivePage extends LitElement {
   static properties = {
     projects: { type: Array }
@@ -84,7 +78,7 @@ export class ArchivePage extends LitElement {
         year: '2023',
         projectName: 'Emerson Collective',
         projectUrl: 'https://www.emersoncollective.com/',
-        madeAt: 'Upstatement',
+        description: 'A digital platform for the philanthropic organization, featuring stories, initiatives, and resources.',
         builtWith: ['Next.js', 'TypeScript', 'SCSS', 'Contentful'],
         linkUrl: 'https://www.emersoncollective.com/',
         linkLabel: 'emersoncollective.com'
@@ -93,7 +87,7 @@ export class ArchivePage extends LitElement {
         year: '2022',
         projectName: 'Harvard Business School Design System',
         projectUrl: '',
-        madeAt: 'Upstatement',
+        description: 'A comprehensive design system and component library for Harvard Business School digital products.',
         builtWith: ['Storybook', 'React', 'TypeScript'],
         linkUrl: '',
         linkLabel: ''
@@ -106,7 +100,7 @@ export class ArchivePage extends LitElement {
       display: block;
     }
 
-    /* Back link – consistent with LinkItem styling */
+    /* Back link – consistent with LinkItem */
     .back-link {
       display: inline-flex;
       align-items: center;
@@ -165,22 +159,34 @@ export class ArchivePage extends LitElement {
       text-align: left;
     }
 
-    /* Responsive column visibility */
-    .made-at-col,
-    .built-with-col,
-    .link-col { display: none; }
-    @media (min-width: 640px) {
-      .link-col { display: table-cell; }
+    /* Responsive column visibility – hide tags first, then description & link */
+    .tags-col,
+    .desc-col,
+    .link-col {
+      display: none;
     }
+
+    /* Medium screens: show description and link, hide tags */
+    @media (min-width: 640px) {
+      .desc-col,
+      .link-col {
+        display: table-cell;
+      }
+    }
+
+    /* Large screens: show all columns including tags */
     @media (min-width: 1024px) {
-      .made-at-col,
-      .built-with-col { display: table-cell; }
+      .tags-col {
+        display: table-cell;
+      }
     }
 
     tbody tr {
       border-bottom: 1px solid rgba(148, 163, 184, 0.1);
     }
-    tbody tr:last-child { border-bottom: none; }
+    tbody tr:last-child {
+      border-bottom: none;
+    }
 
     td {
       padding: 1rem 0.5rem 1rem 0;
@@ -188,31 +194,37 @@ export class ArchivePage extends LitElement {
       font-size: 0.875rem;
     }
 
-    .year-cell { color: var(--slate-400, #94a3b8); }
+    .year-cell {
+      color: var(--slate-400, #94a3b8);
+      white-space: nowrap;
+    }
+
     .project-cell {
       font-weight: 600;
       color: var(--slate-200, #e2e8f0);
       line-height: 1.375;
     }
 
-    /* Mobile shows link, desktop shows plain name */
-    .mobile-link { display: block; }
-    .desktop-name { display: none; }
+    /* Mobile: project name becomes a LinkItem, desktop: plain name */
+    .mobile-link {
+      display: block;
+    }
+    .desktop-name {
+      display: none;
+    }
     @media (min-width: 640px) {
       .mobile-link { display: none; }
       .desktop-name { display: block; }
     }
 
-    .made-at-cell,
-    .built-with-cell { display: none; }
-    @media (min-width: 1024px) {
-      .made-at-cell,
-      .built-with-cell { display: table-cell; }
+    .desc-cell {
+      color: var(--slate-400, #94a3b8);
+      line-height: 1.5;
+      max-width: 40rem;
     }
 
-    .link-cell { display: none; }
-    @media (min-width: 640px) {
-      .link-cell { display: table-cell; }
+    .built-with-cell {
+      /* container for tags */
     }
 
     .built-with-list {
@@ -221,10 +233,15 @@ export class ArchivePage extends LitElement {
       list-style: none;
       margin: 0;
       padding: 0;
-      transform: translateY(-0.375rem);
+      /* tighter vertical alignment */
+      transform: translateY(-0.125rem);
     }
     .built-with-list li {
-      margin: 0.25rem 0.375rem 0 0;
+      margin: 0; /* rely on tech-tag's own margin for spacing */
+    }
+
+    .link-cell {
+      white-space: nowrap;
     }
   `;
 
@@ -233,7 +250,7 @@ export class ArchivePage extends LitElement {
       <page-shell>
         <skip-link></skip-link>
 
-        <!-- Back link (replaces BackLink) -->
+        <!-- Back link -->
         <a href="/" class="back-link" aria-label="Back to Aladin">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
             <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"></path>
@@ -241,17 +258,17 @@ export class ArchivePage extends LitElement {
           Aladin
         </a>
 
-        <!-- Main heading (replaces SectionHeading) -->
+        <!-- Main heading -->
         <h1>All Projects</h1>
 
-        <!-- Table (replaces TableHead & ProjectRow) -->
+        <!-- Table -->
         <table id="main-content">
           <thead>
             <tr>
               <th>Year</th>
               <th>Project</th>
-              <th class="made-at-col">Made at</th>
-              <th class="built-with-col">Built with</th>
+              <th class="desc-col">Description</th>
+              <th class="tags-col">Built with</th>
               <th class="link-col">Link</th>
             </tr>
           </thead>
@@ -267,7 +284,7 @@ export class ArchivePage extends LitElement {
                   </span>
                   <span class="desktop-name">${project.projectName}</span>
                 </td>
-                <td class="made-at-cell">${project.madeAt}</td>
+                <td class="desc-cell">${project.description}</td>
                 <td class="built-with-cell">
                   <ul class="built-with-list">
                     ${project.builtWith.map(tech => html`<li><tech-tag name=${tech}></tech-tag></li>`)}
