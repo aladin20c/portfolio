@@ -1,7 +1,8 @@
 import { LitElement, html, css } from 'lit';
+import { icons } from './icons.js';
 import { projectArchive } from './data';
 
-/*Wrapper Around the archive */
+/* PageShell (layout wrapper)*/
 export class PageShell extends LitElement {
   static styles = css`
     :host {
@@ -34,25 +35,27 @@ export class PageShell extends LitElement {
 }
 customElements.define('page-shell', PageShell);
 
+/* BackLink */
+export class BackLink extends LitElement {
+  static properties = {
+    href: { type: String },
+    label: { type: String }
+  };
 
-export class ArchivePage extends LitElement {
   constructor() {
     super();
+    this.href = '/';
+    this.label = 'Back';
   }
 
   static styles = css`
-    :host {
-      display: block;
-    }
-
-    /* Back link */
     .back-link {
       display: inline-flex;
       align-items: center;
       font-weight: 600;
       color: var(--teal-300, #5eead4);
       text-decoration: none;
-      margin-bottom: 1rem;
+      margin-bottom: 0rem;
       font-size: 0.875rem;
       transition: color 0.2s;
     }
@@ -69,18 +72,53 @@ export class ArchivePage extends LitElement {
     .back-link:hover svg {
       transform: rotate(180deg) translateX(0.25rem);
     }
+  `;
 
+  render() {
+    return html`
+      <a href="${this.href}" class="back-link" aria-label="Back to ${this.label}">
+        ${icons["straightArrow"]}
+        ${this.label}
+      </a>
+    `;
+  }
+}
+customElements.define('back-link', BackLink);
+
+/* SectionTitle */
+export class SectionTitle extends LitElement {
+  static styles = css`
     h1 {
       font-size: 2.25rem;
       font-weight: 700;
       letter-spacing: -0.025em;
       color: var(--slate-200, #e2e8f0);
-      margin: 0 0 3rem 0;
+      margin-bottom: 2rem;
+      margin-top: 0rem;
     }
     @media (min-width: 640px) {
       h1 { font-size: 3rem; }
     }
+  `;
 
+  render() {
+    return html`<h1><slot></slot></h1>`;
+  }
+}
+customElements.define('section-title', SectionTitle);
+
+/* ProjectTable */
+export class ProjectTable extends LitElement {
+  static properties = {
+    projects: { type: Array }
+  };
+
+  constructor() {
+    super();
+    this.projects = [];
+  }
+
+  static styles = css`
     table {
       width: 100%;
       border-collapse: collapse;
@@ -102,7 +140,7 @@ export class ArchivePage extends LitElement {
       text-align: left;
     }
 
-    /* Hide columns responsively: first tags, then description & link */
+    /* hide tags first, then description & link */
     .tags-col,
     .desc-col,
     .link-col {
@@ -164,10 +202,6 @@ export class ArchivePage extends LitElement {
       max-width: 40rem;
     }
 
-    .built-with-cell {
-      /* container for tags */
-    }
-
     .built-with-list {
       display: flex;
       flex-wrap: wrap;
@@ -187,66 +221,74 @@ export class ArchivePage extends LitElement {
 
   render() {
     return html`
-      <page-shell>
-
-        <a href="/" class="back-link" aria-label="Back to Aladin">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"></path>
-          </svg>
-          Alaeddine Cheniour
-        </a>
-
-        <h1>All Projects</h1>
-
-        <table id="main-content">
-          <thead>
+      <table id="main-content">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Project</th>
+            <th class="desc-col">Description</th>
+            <th class="tags-col">Built with</th>
+            <th class="link-col">Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${this.projects.map(project => html`
             <tr>
-              <th>Year</th>
-              <th>Project</th>
-              <th class="desc-col">Description</th>
-              <th class="tags-col">Built with</th>
-              <th class="link-col">Link</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${projectArchive.map(project => html`
-              <tr>
-                <td class="year-cell">${project.year}</td>
-                <td class="project-cell">
-                  <span class="mobile-link">
-                    ${project.projectUrl
-                      ? html`<link-item
-                          text=${project.projectName}
-                          link=${project.projectUrl}
-                          icon=${project.linkIcon || 'arrow'}
-                          svg
-                          external
-                        ></link-item>`
-                      : project.projectName}
-                  </span>
-                  <span class="desktop-name">${project.projectName}</span>
-                </td>
-                <td class="desc-cell desc-col">${project.description}</td>
-                <td class="built-with-cell tags-col">
-                  <ul class="built-with-list">
-                    ${project.builtWith.map(tech => html`<li><tech-tag name=${tech}></tech-tag></li>`)}
-                  </ul>
-                </td>
-                <td class="link-cell link-col">
-                  ${project.linkUrl
+              <td class="year-cell">${project.year}</td>
+              <td class="project-cell">
+                <span class="mobile-link">
+                  ${project.projectUrl
                     ? html`<link-item
-                        text=${project.linkLabel}
-                        link=${project.linkUrl}
-                        icon=${project.linkIcon || 'arrow'}
-                        svg
-                        external
+                        text=${project.projectName}
+                        link=${project.projectUrl}
+                        bold=${true}
                       ></link-item>`
-                    : ''}
-                </td>
-              </tr>
-            `)}
-          </tbody>
-        </table>
+                    : project.projectName}
+                </span>
+                <span class="desktop-name">${project.projectName}</span>
+              </td>
+              <td class="desc-cell desc-col">${project.description}</td>
+              <td class="built-with-cell tags-col">
+                <ul class="built-with-list">
+                  ${project.builtWith.map(tech => html`<li><tech-tag name=${tech}></tech-tag></li>`)}
+                </ul>
+              </td>
+              <td class="link-cell link-col">
+                ${project.linkUrl
+                  ? html`<link-item
+                      text=${project.linkLabel}
+                      link=${project.linkUrl}
+                      svg = ${project.hasSvg}
+                      svgName=${project.linkIcon}
+                    ></link-item>`
+                  : ''}
+              </td>
+            </tr>
+          `)}
+        </tbody>
+      </table>
+    `;
+  }
+}
+customElements.define('project-table', ProjectTable);
+
+/* ArchivePage */
+export class ArchivePage extends LitElement {
+  constructor() {
+    super();
+    this.projects = projectArchive;
+  }
+
+  static properties = {
+    projects: { type: Array }
+  };
+
+  render() {
+    return html`
+      <page-shell>
+        <back-link href="/" label="Alaeddine Cheniour"></back-link>
+        <section-title>All Projects</section-title>
+        <project-table .projects=${this.projects}></project-table>
       </page-shell>
     `;
   }

@@ -64,36 +64,40 @@ customElements.define('home-page', HomePage);
 
 
 
-export class MyApp extends LitElement {
-
-  render() {
-    return html`<archive-page></archive-page>`;
-  }
-  // render() {
-  //   return html`<archive-page></archive-page>`;
-  // }
-}
-customElements.define('my-app', MyApp);
-
-
 // export class MyApp extends LitElement {
-//   router = new Router(this, [
-//     {
-//       path: '/',
-//       render: () => html`<home-page></home-page>`
-//     },
-//     {
-//       path: '/app.html',
-//       render: () => html`<home-page></home-page>`
-//     },
-//     {
-//       path: '/archive',
-//       render: () => html`<archive-page></archive-page>`
-//     }
-//   ]);
 
 //   render() {
-//     return this.router.outlet();
+//     return html`<archive-page></archive-page>`;
 //   }
+//   // render() {
+//   //   return html`<archive-page></archive-page>`;
+//   // }
 // }
 // customElements.define('my-app', MyApp);
+
+
+export class MyApp extends LitElement {
+    constructor() {
+        super();
+        this.router = new Router(this, [
+            {
+                path: '/',
+                render: () => html`<home-page></home-page>`
+            },
+            {
+                path: '/archive',
+                render: () => html`<archive-page></archive-page>`
+            },
+            {
+                path: '(.*)',
+                render: () => html`<home-page></home-page>`
+            }
+        ]);
+        this.router.baseUrl = '#';
+    }
+
+    render() {
+        return this.router.outlet();
+    }
+}
+customElements.define('my-app', MyApp);

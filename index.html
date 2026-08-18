@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alaeddine Cheniour</title>
     <link rel="icon" type="image/png" href="/logo.png">
-    <script type="module" crossorigin>(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))i(s);new MutationObserver(s=>{for(const r of s)if(r.type==="childList")for(const o of r.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&i(o)}).observe(document,{childList:!0,subtree:!0});function t(s){const r={};return s.integrity&&(r.integrity=s.integrity),s.referrerPolicy&&(r.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?r.credentials="include":s.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function i(s){if(s.ep)return;s.ep=!0;const r=t(s);fetch(s.href,r)}})();const M=globalThis,D=M.ShadowRoot&&(M.ShadyCSS===void 0||M.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,R=Symbol(),W=new WeakMap;let ne=class{constructor(e,t,i){if(this._$cssResult$=!0,i!==R)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=e,this.t=t}get styleSheet(){let e=this.o;const t=this.t;if(D&&e===void 0){const i=t!==void 0&&t.length===1;i&&(e=W.get(t)),e===void 0&&((this.o=e=new CSSStyleSheet).replaceSync(this.cssText),i&&W.set(t,e))}return e}toString(){return this.cssText}};const de=n=>new ne(typeof n=="string"?n:n+"",void 0,R),p=(n,...e)=>{const t=n.length===1?n[0]:e.reduce((i,s,r)=>i+(o=>{if(o._$cssResult$===!0)return o.cssText;if(typeof o=="number")return o;throw Error("Value passed to 'css' function must be a 'css' function result: "+o+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(s)+n[r+1],n[0]);return new ne(t,n,R)},pe=(n,e)=>{if(D)n.adoptedStyleSheets=e.map(t=>t instanceof CSSStyleSheet?t:t.styleSheet);else for(const t of e){const i=document.createElement("style"),s=M.litNonce;s!==void 0&&i.setAttribute("nonce",s),i.textContent=t.cssText,n.appendChild(i)}},J=D?n=>n:n=>n instanceof CSSStyleSheet?(e=>{let t="";for(const i of e.cssRules)t+=i.cssText;return de(t)})(n):n;const{is:he,defineProperty:ue,getOwnPropertyDescriptor:me,getOwnPropertyNames:ge,getOwnPropertySymbols:fe,getPrototypeOf:ve}=Object,T=globalThis,K=T.trustedTypes,xe=K?K.emptyScript:"",ye=T.reactiveElementPolyfillSupport,A=(n,e)=>n,O={toAttribute(n,e){switch(e){case Boolean:n=n?xe:null;break;case Object:case Array:n=n==null?n:JSON.stringify(n)}return n},fromAttribute(n,e){let t=n;switch(e){case Boolean:t=n!==null;break;case Number:t=n===null?null:Number(n);break;case Object:case Array:try{t=JSON.parse(n)}catch{t=null}}return t}},re=(n,e)=>!he(n,e),X={attribute:!0,type:String,converter:O,reflect:!1,useDefault:!1,hasChanged:re};Symbol.metadata??=Symbol("metadata"),T.litPropertyMetadata??=new WeakMap;let w=class extends HTMLElement{static addInitializer(e){this._$Ei(),(this.l??=[]).push(e)}static get observedAttributes(){return this.finalize(),this._$Eh&&[...this._$Eh.keys()]}static createProperty(e,t=X){if(t.state&&(t.attribute=!1),this._$Ei(),this.prototype.hasOwnProperty(e)&&((t=Object.create(t)).wrapped=!0),this.elementProperties.set(e,t),!t.noAccessor){const i=Symbol(),s=this.getPropertyDescriptor(e,i,t);s!==void 0&&ue(this.prototype,e,s)}}static getPropertyDescriptor(e,t,i){const{get:s,set:r}=me(this.prototype,e)??{get(){return this[t]},set(o){this[t]=o}};return{get:s,set(o){const h=s?.call(this);r?.call(this,o),this.requestUpdate(e,h,i)},configurable:!0,enumerable:!0}}static getPropertyOptions(e){return this.elementProperties.get(e)??X}static _$Ei(){if(this.hasOwnProperty(A("elementProperties")))return;const e=ve(this);e.finalize(),e.l!==void 0&&(this.l=[...e.l]),this.elementProperties=new Map(e.elementProperties)}static finalize(){if(this.hasOwnProperty(A("finalized")))return;if(this.finalized=!0,this._$Ei(),this.hasOwnProperty(A("properties"))){const t=this.properties,i=[...ge(t),...fe(t)];for(const s of i)this.createProperty(s,t[s])}const e=this[Symbol.metadata];if(e!==null){const t=litPropertyMetadata.get(e);if(t!==void 0)for(const[i,s]of t)this.elementProperties.set(i,s)}this._$Eh=new Map;for(const[t,i]of this.elementProperties){const s=this._$Eu(t,i);s!==void 0&&this._$Eh.set(s,t)}this.elementStyles=this.finalizeStyles(this.styles)}static finalizeStyles(e){const t=[];if(Array.isArray(e)){const i=new Set(e.flat(1/0).reverse());for(const s of i)t.unshift(J(s))}else e!==void 0&&t.push(J(e));return t}static _$Eu(e,t){const i=t.attribute;return i===!1?void 0:typeof i=="string"?i:typeof e=="string"?e.toLowerCase():void 0}constructor(){super(),this._$Ep=void 0,this.isUpdatePending=!1,this.hasUpdated=!1,this._$Em=null,this._$Ev()}_$Ev(){this._$ES=new Promise(e=>this.enableUpdating=e),this._$AL=new Map,this._$E_(),this.requestUpdate(),this.constructor.l?.forEach(e=>e(this))}addController(e){(this._$EO??=new Set).add(e),this.renderRoot!==void 0&&this.isConnected&&e.hostConnected?.()}removeController(e){this._$EO?.delete(e)}_$E_(){const e=new Map,t=this.constructor.elementProperties;for(const i of t.keys())this.hasOwnProperty(i)&&(e.set(i,this[i]),delete this[i]);e.size>0&&(this._$Ep=e)}createRenderRoot(){const e=this.shadowRoot??this.attachShadow(this.constructor.shadowRootOptions);return pe(e,this.constructor.elementStyles),e}connectedCallback(){this.renderRoot??=this.createRenderRoot(),this.enableUpdating(!0),this._$EO?.forEach(e=>e.hostConnected?.())}enableUpdating(e){}disconnectedCallback(){this._$EO?.forEach(e=>e.hostDisconnected?.())}attributeChangedCallback(e,t,i){this._$AK(e,i)}_$ET(e,t){const i=this.constructor.elementProperties.get(e),s=this.constructor._$Eu(e,i);if(s!==void 0&&i.reflect===!0){const r=(i.converter?.toAttribute!==void 0?i.converter:O).toAttribute(t,i.type);this._$Em=e,r==null?this.removeAttribute(s):this.setAttribute(s,r),this._$Em=null}}_$AK(e,t){const i=this.constructor,s=i._$Eh.get(e);if(s!==void 0&&this._$Em!==s){const r=i.getPropertyOptions(s),o=typeof r.converter=="function"?{fromAttribute:r.converter}:r.converter?.fromAttribute!==void 0?r.converter:O;this._$Em=s;const h=o.fromAttribute(t,r.type);this[s]=h??this._$Ej?.get(s)??h,this._$Em=null}}requestUpdate(e,t,i,s=!1,r){if(e!==void 0){const o=this.constructor;if(s===!1&&(r=this[e]),i??=o.getPropertyOptions(e),!((i.hasChanged??re)(r,t)||i.useDefault&&i.reflect&&r===this._$Ej?.get(e)&&!this.hasAttribute(o._$Eu(e,i))))return;this.C(e,t,i)}this.isUpdatePending===!1&&(this._$ES=this._$EP())}C(e,t,{useDefault:i,reflect:s,wrapped:r},o){i&&!(this._$Ej??=new Map).has(e)&&(this._$Ej.set(e,o??t??this[e]),r!==!0||o!==void 0)||(this._$AL.has(e)||(this.hasUpdated||i||(t=void 0),this._$AL.set(e,t)),s===!0&&this._$Em!==e&&(this._$Eq??=new Set).add(e))}async _$EP(){this.isUpdatePending=!0;try{await this._$ES}catch(t){Promise.reject(t)}const e=this.scheduleUpdate();return e!=null&&await e,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){if(!this.isUpdatePending)return;if(!this.hasUpdated){if(this.renderRoot??=this.createRenderRoot(),this._$Ep){for(const[s,r]of this._$Ep)this[s]=r;this._$Ep=void 0}const i=this.constructor.elementProperties;if(i.size>0)for(const[s,r]of i){const{wrapped:o}=r,h=this[s];o!==!0||this._$AL.has(s)||h===void 0||this.C(s,void 0,r,h)}}let e=!1;const t=this._$AL;try{e=this.shouldUpdate(t),e?(this.willUpdate(t),this._$EO?.forEach(i=>i.hostUpdate?.()),this.update(t)):this._$EM()}catch(i){throw e=!1,this._$EM(),i}e&&this._$AE(t)}willUpdate(e){}_$AE(e){this._$EO?.forEach(t=>t.hostUpdated?.()),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(e)),this.updated(e)}_$EM(){this._$AL=new Map,this.isUpdatePending=!1}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$ES}shouldUpdate(e){return!0}update(e){this._$Eq&&=this._$Eq.forEach(t=>this._$ET(t,this[t])),this._$EM()}updated(e){}firstUpdated(e){}};w.elementStyles=[],w.shadowRootOptions={mode:"open"},w[A("elementProperties")]=new Map,w[A("finalized")]=new Map,ye?.({ReactiveElement:w}),(T.reactiveElementVersions??=[]).push("2.1.2");const B=globalThis,Y=n=>n,H=B.trustedTypes,Z=H?H.createPolicy("lit-html",{createHTML:n=>n}):void 0,oe="$lit$",x=`lit$${Math.random().toFixed(9).slice(2)}$`,ae="?"+x,be=`<${ae}>`,$=document,E=()=>$.createComment(""),C=n=>n===null||typeof n!="object"&&typeof n!="function",V=Array.isArray,$e=n=>V(n)||typeof n?.[Symbol.iterator]=="function",N=`[ 	
-\f\r]`,S=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,Q=/-->/g,ee=/>/g,y=RegExp(`>|${N}(?:([^\\s"'>=/]+)(${N}*=${N}*(?:[^ 	
-\f\r"'\`<>=]|("|')|))|$)`,"g"),te=/'/g,ie=/"/g,le=/^(?:script|style|textarea|title)$/i,we=n=>(e,...t)=>({_$litType$:n,strings:e,values:t}),a=we(1),k=Symbol.for("lit-noChange"),m=Symbol.for("lit-nothing"),se=new WeakMap,b=$.createTreeWalker($,129);function ce(n,e){if(!V(n)||!n.hasOwnProperty("raw"))throw Error("invalid template strings array");return Z!==void 0?Z.createHTML(e):e}const ke=(n,e)=>{const t=n.length-1,i=[];let s,r=e===2?"<svg>":e===3?"<math>":"",o=S;for(let h=0;h<t;h++){const l=n[h];let u,g,c=-1,f=0;for(;f<l.length&&(o.lastIndex=f,g=o.exec(l),g!==null);)f=o.lastIndex,o===S?g[1]==="!--"?o=Q:g[1]!==void 0?o=ee:g[2]!==void 0?(le.test(g[2])&&(s=RegExp("</"+g[2],"g")),o=y):g[3]!==void 0&&(o=y):o===y?g[0]===">"?(o=s??S,c=-1):g[1]===void 0?c=-2:(c=o.lastIndex-g[2].length,u=g[1],o=g[3]===void 0?y:g[3]==='"'?ie:te):o===ie||o===te?o=y:o===Q||o===ee?o=S:(o=y,s=void 0);const v=o===y&&n[h+1].startsWith("/>")?" ":"";r+=o===S?l+be:c>=0?(i.push(u),l.slice(0,c)+oe+l.slice(c)+x+v):l+x+(c===-2?h:v)}return[ce(n,r+(n[t]||"<?>")+(e===2?"</svg>":e===3?"</math>":"")),i]};class P{constructor({strings:e,_$litType$:t},i){let s;this.parts=[];let r=0,o=0;const h=e.length-1,l=this.parts,[u,g]=ke(e,t);if(this.el=P.createElement(u,i),b.currentNode=this.el.content,t===2||t===3){const c=this.el.content.firstChild;c.replaceWith(...c.childNodes)}for(;(s=b.nextNode())!==null&&l.length<h;){if(s.nodeType===1){if(s.hasAttributes())for(const c of s.getAttributeNames())if(c.endsWith(oe)){const f=g[o++],v=s.getAttribute(c).split(x),L=/([.?@])?(.*)/.exec(f);l.push({type:1,index:r,name:L[2],strings:v,ctor:L[1]==="."?Se:L[1]==="?"?Ae:L[1]==="@"?Ee:U}),s.removeAttribute(c)}else c.startsWith(x)&&(l.push({type:6,index:r}),s.removeAttribute(c));if(le.test(s.tagName)){const c=s.textContent.split(x),f=c.length-1;if(f>0){s.textContent=H?H.emptyScript:"";for(let v=0;v<f;v++)s.append(c[v],E()),b.nextNode(),l.push({type:2,index:++r});s.append(c[f],E())}}}else if(s.nodeType===8)if(s.data===ae)l.push({type:2,index:r});else{let c=-1;for(;(c=s.data.indexOf(x,c+1))!==-1;)l.push({type:7,index:r}),c+=x.length-1}r++}}static createElement(e,t){const i=$.createElement("template");return i.innerHTML=e,i}}function _(n,e,t=n,i){if(e===k)return e;let s=i!==void 0?t._$Co?.[i]:t._$Cl;const r=C(e)?void 0:e._$litDirective$;return s?.constructor!==r&&(s?._$AO?.(!1),r===void 0?s=void 0:(s=new r(n),s._$AT(n,t,i)),i!==void 0?(t._$Co??=[])[i]=s:t._$Cl=s),s!==void 0&&(e=_(n,s._$AS(n,e.values),s,i)),e}class _e{constructor(e,t){this._$AV=[],this._$AN=void 0,this._$AD=e,this._$AM=t}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}u(e){const{el:{content:t},parts:i}=this._$AD,s=(e?.creationScope??$).importNode(t,!0);b.currentNode=s;let r=b.nextNode(),o=0,h=0,l=i[0];for(;l!==void 0;){if(o===l.index){let u;l.type===2?u=new z(r,r.nextSibling,this,e):l.type===1?u=new l.ctor(r,l.name,l.strings,this,e):l.type===6&&(u=new Ce(r,this,e)),this._$AV.push(u),l=i[++h]}o!==l?.index&&(r=b.nextNode(),o++)}return b.currentNode=$,s}p(e){let t=0;for(const i of this._$AV)i!==void 0&&(i.strings!==void 0?(i._$AI(e,i,t),t+=i.strings.length-2):i._$AI(e[t])),t++}}class z{get _$AU(){return this._$AM?._$AU??this._$Cv}constructor(e,t,i,s){this.type=2,this._$AH=m,this._$AN=void 0,this._$AA=e,this._$AB=t,this._$AM=i,this.options=s,this._$Cv=s?.isConnected??!0}get parentNode(){let e=this._$AA.parentNode;const t=this._$AM;return t!==void 0&&e?.nodeType===11&&(e=t.parentNode),e}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(e,t=this){e=_(this,e,t),C(e)?e===m||e==null||e===""?(this._$AH!==m&&this._$AR(),this._$AH=m):e!==this._$AH&&e!==k&&this._(e):e._$litType$!==void 0?this.$(e):e.nodeType!==void 0?this.T(e):$e(e)?this.k(e):this._(e)}O(e){return this._$AA.parentNode.insertBefore(e,this._$AB)}T(e){this._$AH!==e&&(this._$AR(),this._$AH=this.O(e))}_(e){this._$AH!==m&&C(this._$AH)?this._$AA.nextSibling.data=e:this.T($.createTextNode(e)),this._$AH=e}$(e){const{values:t,_$litType$:i}=e,s=typeof i=="number"?this._$AC(e):(i.el===void 0&&(i.el=P.createElement(ce(i.h,i.h[0]),this.options)),i);if(this._$AH?._$AD===s)this._$AH.p(t);else{const r=new _e(s,this),o=r.u(this.options);r.p(t),this.T(o),this._$AH=r}}_$AC(e){let t=se.get(e.strings);return t===void 0&&se.set(e.strings,t=new P(e)),t}k(e){V(this._$AH)||(this._$AH=[],this._$AR());const t=this._$AH;let i,s=0;for(const r of e)s===t.length?t.push(i=new z(this.O(E()),this.O(E()),this,this.options)):i=t[s],i._$AI(r),s++;s<t.length&&(this._$AR(i&&i._$AB.nextSibling,s),t.length=s)}_$AR(e=this._$AA.nextSibling,t){for(this._$AP?.(!1,!0,t);e!==this._$AB;){const i=Y(e).nextSibling;Y(e).remove(),e=i}}setConnected(e){this._$AM===void 0&&(this._$Cv=e,this._$AP?.(e))}}class U{get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}constructor(e,t,i,s,r){this.type=1,this._$AH=m,this._$AN=void 0,this.element=e,this.name=t,this._$AM=s,this.options=r,i.length>2||i[0]!==""||i[1]!==""?(this._$AH=Array(i.length-1).fill(new String),this.strings=i):this._$AH=m}_$AI(e,t=this,i,s){const r=this.strings;let o=!1;if(r===void 0)e=_(this,e,t,0),o=!C(e)||e!==this._$AH&&e!==k,o&&(this._$AH=e);else{const h=e;let l,u;for(e=r[0],l=0;l<r.length-1;l++)u=_(this,h[i+l],t,l),u===k&&(u=this._$AH[l]),o||=!C(u)||u!==this._$AH[l],u===m?e=m:e!==m&&(e+=(u??"")+r[l+1]),this._$AH[l]=u}o&&!s&&this.j(e)}j(e){e===m?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,e??"")}}class Se extends U{constructor(){super(...arguments),this.type=3}j(e){this.element[this.name]=e===m?void 0:e}}class Ae extends U{constructor(){super(...arguments),this.type=4}j(e){this.element.toggleAttribute(this.name,!!e&&e!==m)}}class Ee extends U{constructor(e,t,i,s,r){super(e,t,i,s,r),this.type=5}_$AI(e,t=this){if((e=_(this,e,t,0)??m)===k)return;const i=this._$AH,s=e===m&&i!==m||e.capture!==i.capture||e.once!==i.once||e.passive!==i.passive,r=e!==m&&(i===m||s);s&&this.element.removeEventListener(this.name,this,i),r&&this.element.addEventListener(this.name,this,e),this._$AH=e}handleEvent(e){typeof this._$AH=="function"?this._$AH.call(this.options?.host??this.element,e):this._$AH.handleEvent(e)}}class Ce{constructor(e,t,i){this.element=e,this.type=6,this._$AN=void 0,this._$AM=t,this.options=i}get _$AU(){return this._$AM._$AU}_$AI(e){_(this,e)}}const Pe=B.litHtmlPolyfillSupport;Pe?.(P,z),(B.litHtmlVersions??=[]).push("3.3.2");const ze=(n,e,t)=>{const i=t?.renderBefore??e;let s=i._$litPart$;if(s===void 0){const r=t?.renderBefore??null;i._$litPart$=s=new z(e.insertBefore(E(),r),r,void 0,t??{})}return s._$AI(n),s};const F=globalThis;class d extends w{constructor(){super(...arguments),this.renderOptions={host:this},this._$Do=void 0}createRenderRoot(){const e=super.createRenderRoot();return this.renderOptions.renderBefore??=e.firstChild,e}update(e){const t=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(e),this._$Do=ze(t,this.renderRoot,this.renderOptions)}connectedCallback(){super.connectedCallback(),this._$Do?.setConnected(!0)}disconnectedCallback(){super.disconnectedCallback(),this._$Do?.setConnected(!1)}render(){return k}}d._$litElement$=!0,d.finalized=!0,F.litElementHydrateSupport?.({LitElement:d});const Le=F.litElementPolyfillSupport;Le?.({LitElement:d});(F.litElementVersions??=[]).push("4.2.2");class G extends Event{constructor(e){super(G.eventName,{bubbles:!0,composed:!0,cancelable:!1}),this.routes=e}}G.eventName="lit-routes-connected";const j={github:a`
+    <script type="module" crossorigin>(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))i(n);new MutationObserver(n=>{for(const r of n)if(r.type==="childList")for(const o of r.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&i(o)}).observe(document,{childList:!0,subtree:!0});function t(n){const r={};return n.integrity&&(r.integrity=n.integrity),n.referrerPolicy&&(r.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?r.credentials="include":n.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function i(n){if(n.ep)return;n.ep=!0;const r=t(n);fetch(n.href,r)}})();const M=globalThis,O=M.ShadowRoot&&(M.ShadyCSS===void 0||M.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,B=Symbol(),J=new WeakMap;let ae=class{constructor(e,t,i){if(this._$cssResult$=!0,i!==B)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=e,this.t=t}get styleSheet(){let e=this.o;const t=this.t;if(O&&e===void 0){const i=t!==void 0&&t.length===1;i&&(e=J.get(t)),e===void 0&&((this.o=e=new CSSStyleSheet).replaceSync(this.cssText),i&&J.set(t,e))}return e}toString(){return this.cssText}};const ue=s=>new ae(typeof s=="string"?s:s+"",void 0,B),d=(s,...e)=>{const t=s.length===1?s[0]:e.reduce((i,n,r)=>i+(o=>{if(o._$cssResult$===!0)return o.cssText;if(typeof o=="number")return o;throw Error("Value passed to 'css' function must be a 'css' function result: "+o+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(n)+s[r+1],s[0]);return new ae(t,s,B)},me=(s,e)=>{if(O)s.adoptedStyleSheets=e.map(t=>t instanceof CSSStyleSheet?t:t.styleSheet);else for(const t of e){const i=document.createElement("style"),n=M.litNonce;n!==void 0&&i.setAttribute("nonce",n),i.textContent=t.cssText,s.appendChild(i)}},q=O?s=>s:s=>s instanceof CSSStyleSheet?(e=>{let t="";for(const i of e.cssRules)t+=i.cssText;return ue(t)})(s):s;const{is:ge,defineProperty:fe,getOwnPropertyDescriptor:ve,getOwnPropertyNames:be,getOwnPropertySymbols:ye,getPrototypeOf:xe}=Object,H=globalThis,K=H.trustedTypes,we=K?K.emptyScript:"",ke=H.reactiveElementPolyfillSupport,A=(s,e)=>s,R={toAttribute(s,e){switch(e){case Boolean:s=s?we:null;break;case Object:case Array:s=s==null?s:JSON.stringify(s)}return s},fromAttribute(s,e){let t=s;switch(e){case Boolean:t=s!==null;break;case Number:t=s===null?null:Number(s);break;case Object:case Array:try{t=JSON.parse(s)}catch{t=null}}return t}},le=(s,e)=>!ge(s,e),Y={attribute:!0,type:String,converter:R,reflect:!1,useDefault:!1,hasChanged:le};Symbol.metadata??=Symbol("metadata"),H.litPropertyMetadata??=new WeakMap;let k=class extends HTMLElement{static addInitializer(e){this._$Ei(),(this.l??=[]).push(e)}static get observedAttributes(){return this.finalize(),this._$Eh&&[...this._$Eh.keys()]}static createProperty(e,t=Y){if(t.state&&(t.attribute=!1),this._$Ei(),this.prototype.hasOwnProperty(e)&&((t=Object.create(t)).wrapped=!0),this.elementProperties.set(e,t),!t.noAccessor){const i=Symbol(),n=this.getPropertyDescriptor(e,i,t);n!==void 0&&fe(this.prototype,e,n)}}static getPropertyDescriptor(e,t,i){const{get:n,set:r}=ve(this.prototype,e)??{get(){return this[t]},set(o){this[t]=o}};return{get:n,set(o){const p=n?.call(this);r?.call(this,o),this.requestUpdate(e,p,i)},configurable:!0,enumerable:!0}}static getPropertyOptions(e){return this.elementProperties.get(e)??Y}static _$Ei(){if(this.hasOwnProperty(A("elementProperties")))return;const e=xe(this);e.finalize(),e.l!==void 0&&(this.l=[...e.l]),this.elementProperties=new Map(e.elementProperties)}static finalize(){if(this.hasOwnProperty(A("finalized")))return;if(this.finalized=!0,this._$Ei(),this.hasOwnProperty(A("properties"))){const t=this.properties,i=[...be(t),...ye(t)];for(const n of i)this.createProperty(n,t[n])}const e=this[Symbol.metadata];if(e!==null){const t=litPropertyMetadata.get(e);if(t!==void 0)for(const[i,n]of t)this.elementProperties.set(i,n)}this._$Eh=new Map;for(const[t,i]of this.elementProperties){const n=this._$Eu(t,i);n!==void 0&&this._$Eh.set(n,t)}this.elementStyles=this.finalizeStyles(this.styles)}static finalizeStyles(e){const t=[];if(Array.isArray(e)){const i=new Set(e.flat(1/0).reverse());for(const n of i)t.unshift(q(n))}else e!==void 0&&t.push(q(e));return t}static _$Eu(e,t){const i=t.attribute;return i===!1?void 0:typeof i=="string"?i:typeof e=="string"?e.toLowerCase():void 0}constructor(){super(),this._$Ep=void 0,this.isUpdatePending=!1,this.hasUpdated=!1,this._$Em=null,this._$Ev()}_$Ev(){this._$ES=new Promise(e=>this.enableUpdating=e),this._$AL=new Map,this._$E_(),this.requestUpdate(),this.constructor.l?.forEach(e=>e(this))}addController(e){(this._$EO??=new Set).add(e),this.renderRoot!==void 0&&this.isConnected&&e.hostConnected?.()}removeController(e){this._$EO?.delete(e)}_$E_(){const e=new Map,t=this.constructor.elementProperties;for(const i of t.keys())this.hasOwnProperty(i)&&(e.set(i,this[i]),delete this[i]);e.size>0&&(this._$Ep=e)}createRenderRoot(){const e=this.shadowRoot??this.attachShadow(this.constructor.shadowRootOptions);return me(e,this.constructor.elementStyles),e}connectedCallback(){this.renderRoot??=this.createRenderRoot(),this.enableUpdating(!0),this._$EO?.forEach(e=>e.hostConnected?.())}enableUpdating(e){}disconnectedCallback(){this._$EO?.forEach(e=>e.hostDisconnected?.())}attributeChangedCallback(e,t,i){this._$AK(e,i)}_$ET(e,t){const i=this.constructor.elementProperties.get(e),n=this.constructor._$Eu(e,i);if(n!==void 0&&i.reflect===!0){const r=(i.converter?.toAttribute!==void 0?i.converter:R).toAttribute(t,i.type);this._$Em=e,r==null?this.removeAttribute(n):this.setAttribute(n,r),this._$Em=null}}_$AK(e,t){const i=this.constructor,n=i._$Eh.get(e);if(n!==void 0&&this._$Em!==n){const r=i.getPropertyOptions(n),o=typeof r.converter=="function"?{fromAttribute:r.converter}:r.converter?.fromAttribute!==void 0?r.converter:R;this._$Em=n;const p=o.fromAttribute(t,r.type);this[n]=p??this._$Ej?.get(n)??p,this._$Em=null}}requestUpdate(e,t,i,n=!1,r){if(e!==void 0){const o=this.constructor;if(n===!1&&(r=this[e]),i??=o.getPropertyOptions(e),!((i.hasChanged??le)(r,t)||i.useDefault&&i.reflect&&r===this._$Ej?.get(e)&&!this.hasAttribute(o._$Eu(e,i))))return;this.C(e,t,i)}this.isUpdatePending===!1&&(this._$ES=this._$EP())}C(e,t,{useDefault:i,reflect:n,wrapped:r},o){i&&!(this._$Ej??=new Map).has(e)&&(this._$Ej.set(e,o??t??this[e]),r!==!0||o!==void 0)||(this._$AL.has(e)||(this.hasUpdated||i||(t=void 0),this._$AL.set(e,t)),n===!0&&this._$Em!==e&&(this._$Eq??=new Set).add(e))}async _$EP(){this.isUpdatePending=!0;try{await this._$ES}catch(t){Promise.reject(t)}const e=this.scheduleUpdate();return e!=null&&await e,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){if(!this.isUpdatePending)return;if(!this.hasUpdated){if(this.renderRoot??=this.createRenderRoot(),this._$Ep){for(const[n,r]of this._$Ep)this[n]=r;this._$Ep=void 0}const i=this.constructor.elementProperties;if(i.size>0)for(const[n,r]of i){const{wrapped:o}=r,p=this[n];o!==!0||this._$AL.has(n)||p===void 0||this.C(n,void 0,r,p)}}let e=!1;const t=this._$AL;try{e=this.shouldUpdate(t),e?(this.willUpdate(t),this._$EO?.forEach(i=>i.hostUpdate?.()),this.update(t)):this._$EM()}catch(i){throw e=!1,this._$EM(),i}e&&this._$AE(t)}willUpdate(e){}_$AE(e){this._$EO?.forEach(t=>t.hostUpdated?.()),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(e)),this.updated(e)}_$EM(){this._$AL=new Map,this.isUpdatePending=!1}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$ES}shouldUpdate(e){return!0}update(e){this._$Eq&&=this._$Eq.forEach(t=>this._$ET(t,this[t])),this._$EM()}updated(e){}firstUpdated(e){}};k.elementStyles=[],k.shadowRootOptions={mode:"open"},k[A("elementProperties")]=new Map,k[A("finalized")]=new Map,ke?.({ReactiveElement:k}),(H.reactiveElementVersions??=[]).push("2.1.2");const W=globalThis,X=s=>s,N=W.trustedTypes,Q=N?N.createPolicy("lit-html",{createHTML:s=>s}):void 0,ce="$lit$",b=`lit$${Math.random().toFixed(9).slice(2)}$`,he="?"+b,$e=`<${he}>`,w=document,C=()=>w.createComment(""),E=s=>s===null||typeof s!="object"&&typeof s!="function",V=Array.isArray,Se=s=>V(s)||typeof s?.[Symbol.iterator]=="function",T=`[ 	
+\f\r]`,_=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,Z=/-->/g,ee=/>/g,y=RegExp(`>|${T}(?:([^\\s"'>=/]+)(${T}*=${T}*(?:[^ 	
+\f\r"'\`<>=]|("|')|))|$)`,"g"),te=/'/g,ie=/"/g,de=/^(?:script|style|textarea|title)$/i,_e=s=>(e,...t)=>({_$litType$:s,strings:e,values:t}),a=_e(1),$=Symbol.for("lit-noChange"),m=Symbol.for("lit-nothing"),ne=new WeakMap,x=w.createTreeWalker(w,129);function pe(s,e){if(!V(s)||!s.hasOwnProperty("raw"))throw Error("invalid template strings array");return Q!==void 0?Q.createHTML(e):e}const Ae=(s,e)=>{const t=s.length-1,i=[];let n,r=e===2?"<svg>":e===3?"<math>":"",o=_;for(let p=0;p<t;p++){const l=s[p];let u,g,h=-1,f=0;for(;f<l.length&&(o.lastIndex=f,g=o.exec(l),g!==null);)f=o.lastIndex,o===_?g[1]==="!--"?o=Z:g[1]!==void 0?o=ee:g[2]!==void 0?(de.test(g[2])&&(n=RegExp("</"+g[2],"g")),o=y):g[3]!==void 0&&(o=y):o===y?g[0]===">"?(o=n??_,h=-1):g[1]===void 0?h=-2:(h=o.lastIndex-g[2].length,u=g[1],o=g[3]===void 0?y:g[3]==='"'?ie:te):o===ie||o===te?o=y:o===Z||o===ee?o=_:(o=y,n=void 0);const v=o===y&&s[p+1].startsWith("/>")?" ":"";r+=o===_?l+$e:h>=0?(i.push(u),l.slice(0,h)+ce+l.slice(h)+b+v):l+b+(h===-2?p:v)}return[pe(s,r+(s[t]||"<?>")+(e===2?"</svg>":e===3?"</math>":"")),i]};class P{constructor({strings:e,_$litType$:t},i){let n;this.parts=[];let r=0,o=0;const p=e.length-1,l=this.parts,[u,g]=Ae(e,t);if(this.el=P.createElement(u,i),x.currentNode=this.el.content,t===2||t===3){const h=this.el.content.firstChild;h.replaceWith(...h.childNodes)}for(;(n=x.nextNode())!==null&&l.length<p;){if(n.nodeType===1){if(n.hasAttributes())for(const h of n.getAttributeNames())if(h.endsWith(ce)){const f=g[o++],v=n.getAttribute(h).split(b),z=/([.?@])?(.*)/.exec(f);l.push({type:1,index:r,name:z[2],strings:v,ctor:z[1]==="."?Ee:z[1]==="?"?Pe:z[1]==="@"?Le:I}),n.removeAttribute(h)}else h.startsWith(b)&&(l.push({type:6,index:r}),n.removeAttribute(h));if(de.test(n.tagName)){const h=n.textContent.split(b),f=h.length-1;if(f>0){n.textContent=N?N.emptyScript:"";for(let v=0;v<f;v++)n.append(h[v],C()),x.nextNode(),l.push({type:2,index:++r});n.append(h[f],C())}}}else if(n.nodeType===8)if(n.data===he)l.push({type:2,index:r});else{let h=-1;for(;(h=n.data.indexOf(b,h+1))!==-1;)l.push({type:7,index:r}),h+=b.length-1}r++}}static createElement(e,t){const i=w.createElement("template");return i.innerHTML=e,i}}function S(s,e,t=s,i){if(e===$)return e;let n=i!==void 0?t._$Co?.[i]:t._$Cl;const r=E(e)?void 0:e._$litDirective$;return n?.constructor!==r&&(n?._$AO?.(!1),r===void 0?n=void 0:(n=new r(s),n._$AT(s,t,i)),i!==void 0?(t._$Co??=[])[i]=n:t._$Cl=n),n!==void 0&&(e=S(s,n._$AS(s,e.values),n,i)),e}class Ce{constructor(e,t){this._$AV=[],this._$AN=void 0,this._$AD=e,this._$AM=t}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}u(e){const{el:{content:t},parts:i}=this._$AD,n=(e?.creationScope??w).importNode(t,!0);x.currentNode=n;let r=x.nextNode(),o=0,p=0,l=i[0];for(;l!==void 0;){if(o===l.index){let u;l.type===2?u=new U(r,r.nextSibling,this,e):l.type===1?u=new l.ctor(r,l.name,l.strings,this,e):l.type===6&&(u=new je(r,this,e)),this._$AV.push(u),l=i[++p]}o!==l?.index&&(r=x.nextNode(),o++)}return x.currentNode=w,n}p(e){let t=0;for(const i of this._$AV)i!==void 0&&(i.strings!==void 0?(i._$AI(e,i,t),t+=i.strings.length-2):i._$AI(e[t])),t++}}class U{get _$AU(){return this._$AM?._$AU??this._$Cv}constructor(e,t,i,n){this.type=2,this._$AH=m,this._$AN=void 0,this._$AA=e,this._$AB=t,this._$AM=i,this.options=n,this._$Cv=n?.isConnected??!0}get parentNode(){let e=this._$AA.parentNode;const t=this._$AM;return t!==void 0&&e?.nodeType===11&&(e=t.parentNode),e}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(e,t=this){e=S(this,e,t),E(e)?e===m||e==null||e===""?(this._$AH!==m&&this._$AR(),this._$AH=m):e!==this._$AH&&e!==$&&this._(e):e._$litType$!==void 0?this.$(e):e.nodeType!==void 0?this.T(e):Se(e)?this.k(e):this._(e)}O(e){return this._$AA.parentNode.insertBefore(e,this._$AB)}T(e){this._$AH!==e&&(this._$AR(),this._$AH=this.O(e))}_(e){this._$AH!==m&&E(this._$AH)?this._$AA.nextSibling.data=e:this.T(w.createTextNode(e)),this._$AH=e}$(e){const{values:t,_$litType$:i}=e,n=typeof i=="number"?this._$AC(e):(i.el===void 0&&(i.el=P.createElement(pe(i.h,i.h[0]),this.options)),i);if(this._$AH?._$AD===n)this._$AH.p(t);else{const r=new Ce(n,this),o=r.u(this.options);r.p(t),this.T(o),this._$AH=r}}_$AC(e){let t=ne.get(e.strings);return t===void 0&&ne.set(e.strings,t=new P(e)),t}k(e){V(this._$AH)||(this._$AH=[],this._$AR());const t=this._$AH;let i,n=0;for(const r of e)n===t.length?t.push(i=new U(this.O(C()),this.O(C()),this,this.options)):i=t[n],i._$AI(r),n++;n<t.length&&(this._$AR(i&&i._$AB.nextSibling,n),t.length=n)}_$AR(e=this._$AA.nextSibling,t){for(this._$AP?.(!1,!0,t);e!==this._$AB;){const i=X(e).nextSibling;X(e).remove(),e=i}}setConnected(e){this._$AM===void 0&&(this._$Cv=e,this._$AP?.(e))}}class I{get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}constructor(e,t,i,n,r){this.type=1,this._$AH=m,this._$AN=void 0,this.element=e,this.name=t,this._$AM=n,this.options=r,i.length>2||i[0]!==""||i[1]!==""?(this._$AH=Array(i.length-1).fill(new String),this.strings=i):this._$AH=m}_$AI(e,t=this,i,n){const r=this.strings;let o=!1;if(r===void 0)e=S(this,e,t,0),o=!E(e)||e!==this._$AH&&e!==$,o&&(this._$AH=e);else{const p=e;let l,u;for(e=r[0],l=0;l<r.length-1;l++)u=S(this,p[i+l],t,l),u===$&&(u=this._$AH[l]),o||=!E(u)||u!==this._$AH[l],u===m?e=m:e!==m&&(e+=(u??"")+r[l+1]),this._$AH[l]=u}o&&!n&&this.j(e)}j(e){e===m?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,e??"")}}class Ee extends I{constructor(){super(...arguments),this.type=3}j(e){this.element[this.name]=e===m?void 0:e}}class Pe extends I{constructor(){super(...arguments),this.type=4}j(e){this.element.toggleAttribute(this.name,!!e&&e!==m)}}class Le extends I{constructor(e,t,i,n,r){super(e,t,i,n,r),this.type=5}_$AI(e,t=this){if((e=S(this,e,t,0)??m)===$)return;const i=this._$AH,n=e===m&&i!==m||e.capture!==i.capture||e.once!==i.once||e.passive!==i.passive,r=e!==m&&(i===m||n);n&&this.element.removeEventListener(this.name,this,i),r&&this.element.addEventListener(this.name,this,e),this._$AH=e}handleEvent(e){typeof this._$AH=="function"?this._$AH.call(this.options?.host??this.element,e):this._$AH.handleEvent(e)}}class je{constructor(e,t,i){this.element=e,this.type=6,this._$AN=void 0,this._$AM=t,this.options=i}get _$AU(){return this._$AM._$AU}_$AI(e){S(this,e)}}const Ue=W.litHtmlPolyfillSupport;Ue?.(P,U),(W.litHtmlVersions??=[]).push("3.3.2");const ze=(s,e,t)=>{const i=t?.renderBefore??e;let n=i._$litPart$;if(n===void 0){const r=t?.renderBefore??null;i._$litPart$=n=new U(e.insertBefore(C(),r),r,void 0,t??{})}return n._$AI(s),n};const G=globalThis;let c=class extends k{constructor(){super(...arguments),this.renderOptions={host:this},this._$Do=void 0}createRenderRoot(){const e=super.createRenderRoot();return this.renderOptions.renderBefore??=e.firstChild,e}update(e){const t=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(e),this._$Do=ze(t,this.renderRoot,this.renderOptions)}connectedCallback(){super.connectedCallback(),this._$Do?.setConnected(!0)}disconnectedCallback(){super.disconnectedCallback(),this._$Do?.setConnected(!1)}render(){return $}};c._$litElement$=!0,c.finalized=!0,G.litElementHydrateSupport?.({LitElement:c});const Me=G.litElementPolyfillSupport;Me?.({LitElement:c});(G.litElementVersions??=[]).push("4.2.2");const se=new WeakMap,re=s=>{if((t=>t.pattern!==void 0)(s))return s.pattern;let e=se.get(s);return e===void 0&&se.set(s,e=new URLPattern({pathname:s.path})),e};let Ne=class{constructor(e,t,i){this.routes=[],this.o=[],this.t={},this.i=n=>{if(n.routes===this)return;const r=n.routes;this.o.push(r),r.h=this,n.stopImmediatePropagation(),n.onDisconnect=()=>{this.o?.splice(this.o.indexOf(r)>>>0,1)};const o=oe(this.t);o!==void 0&&r.goto(o)},(this.l=e).addController(this),this.routes=[...t],this.fallback=i?.fallback}link(e){if(e?.startsWith("/"))return e;if(e?.startsWith("."))throw Error("Not implemented");return e??=this.u,(this.h?.link()??"")+e}async goto(e){let t;if(this.routes.length===0&&this.fallback===void 0)t=e,this.u="",this.t={0:t};else{const i=this.p(e);if(i===void 0)throw Error("No route found for "+e);const n=re(i).exec({pathname:e}),r=n?.pathname.groups??{};if(t=oe(r),typeof i.enter=="function"&&await i.enter(r)===!1)return;this.v=i,this.t=r,this.u=t===void 0?e:e.substring(0,e.length-t.length)}if(t!==void 0)for(const i of this.o)i.goto(t);this.l.requestUpdate()}outlet(){return this.v?.render?.(this.t)}get params(){return this.t}p(e){const t=this.routes.find((i=>re(i).test({pathname:e})));return t||this.fallback===void 0?t:this.fallback?{...this.fallback,path:"/*"}:void 0}hostConnected(){this.l.addEventListener(L.eventName,this.i);const e=new L(this);this.l.dispatchEvent(e),this._=e.onDisconnect}hostDisconnected(){this._?.(),this.h=void 0}};const oe=s=>{let e;for(const t of Object.keys(s))/\d+/.test(t)&&(e===void 0||t>e)&&(e=t);return e&&s[e]};class L extends Event{constructor(e){super(L.eventName,{bubbles:!0,composed:!0,cancelable:!1}),this.routes=e}}L.eventName="lit-routes-connected";const He=location.origin||location.protocol+"//"+location.host;class Ie extends Ne{constructor(){super(...arguments),this.m=e=>{const t=e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey;if(e.defaultPrevented||t)return;const i=e.composedPath().find((o=>o.tagName==="A"));if(i===void 0||i.target!==""||i.hasAttribute("download")||i.getAttribute("rel")==="external")return;const n=i.href;if(n===""||n.startsWith("mailto:"))return;const r=window.location;i.origin===He&&(e.preventDefault(),n!==r.href&&(window.history.pushState({},"",n),this.goto(i.pathname)))},this.R=e=>{this.goto(window.location.pathname)}}hostConnected(){super.hostConnected(),window.addEventListener("click",this.m),window.addEventListener("popstate",this.R),this.goto(window.location.pathname)}hostDisconnected(){super.hostDisconnected(),window.removeEventListener("click",this.m),window.removeEventListener("popstate",this.R)}}const j={github:a`
         <svg viewBox="0 0 16 16" fill="currentColor" class="social-icon" aria-hidden="true">
             <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
         </svg>
@@ -33,7 +33,11 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path>
         </svg>
-    `},Me=[{id:"#about",label:"About"},{id:"#experience",label:"Experience"},{id:"#education",label:"Education"},{id:"#projects",label:"Projects"}],He=[{name:"github",label:"GitHub",url:"https://github.com/aladin20c"},{name:"linkedin",label:"LinkedIn",url:"https://www.linkedin.com/in/aladin-cheniour/"},{name:"goodreads",label:"Goodreads",url:"https://www.goodreads.com/user/show/101887216-aladin"}],je=[{date:"2025 — Present",role:"Medical Research Intern",company:"Dassault Systèmes",companyLink:"https://www.3ds.com/science/meditwin",description:"Building high-performance 2D/3D manipulation, annotation and segmentation tools for volumetric medical data. Exploring remote rendering and optimisation techniques for volumetric rendering.",techs:["DICOM","FHIR","VTK","WebGL","Lit"]},{date:"April — Aug 2025",role:"Full-Stack Software Engineer",company:"Ouidou",companyLink:"https://www.ouidou.fr",description:"Collaborated with multi-disciplinary teams to maintain and implement major features. Optimized application performance by resolving bottlenecks in backend queries and frontend rendering.",techs:["Node.js","Angular","Spring Boot","React","PostgreSQL"]},{date:"2024 — 2025",role:"Academic Tutor",company:"Polytech Paris Saclay",companyLink:"https://www.polytech.universite-paris-saclay.fr",description:"Led tutoring sessions at polytech for first and second-year engineering students in Computer Science, Mathematics, and Physics.",techs:["Algorithms","Math","C++","Physics"]},{date:"June — Aug 2024",role:"Software Engineer Intern",company:"SMA BTP",companyLink:"https://www.smabtp.fr",description:"Automated file submission and testing workflows by developing Selenium scripts. Interfaced with developers to ensure coherent UX across internal tools.",techs:["Selenium","Angular","Spring Boot"]},{date:"July — Aug 2022",role:"Data Analyst Intern",company:"SEABEX",companyLink:"https://seabex.com",description:"Developed and maintained Python programs for processing and analyzing satellite-collected agricultural data to provide decision-support solutions for irrigation and optimize water consumption.",techs:["Python","PyTorch","OpenCV"]}],Te=[{period:"July 2026",degree:"Summer School",field:"Automated Machine Learning",institution:"TU Dortmund & Lamaar Institut",institutionLink:"https://www.automlschool.org",grade:"Dortmund, Germany",achievements:["Covering introductory, state-of-the-art, and application lectures for AutoML and Foundation Models.","Core topics such as: Hyperparameter optimization and model selection, Applying and scaling foundation models, Neural architecture search, Bayesian Optimization, ..."]},{period:"2025 — 2026",degree:"Master of Science",field:"Interaction, Computer Graphics & Design",institution:"Institut Polytechnique de Paris",institutionLink:"https://www.ip-paris.fr",grade:"Palaiseau, France",thesis:"Innovative Visualization and Manipulation Tools and 3D rendering techniques for Medical Data",achievements:["Courses: Computer Vision, Deep Learning, Virtual Humans, Computer animation and simulation, data physicalization & visualisation, Quant UX.","Placed 6th out of 87 in a Kaggle challenge to predict twitter users social roles."]},{period:"2023 — 2026",degree:"Engineering Degree",field:"Mathematics & Computer Science",institution:"Polytech Paris Saclay",institutionLink:"https://www.polytech.universite-paris-saclay.fr",grade:"Orsay, France",achievements:["Courses Included : Advanced Database Management, Computer Networks, Machine Learning, Computer Architecture and Web Development","Won the Polytech Rendering Competition Award 2024"]},{period:"July — Aug 2023",degree:"Summer School",field:"Game Design & Development",institution:"Turku University",institutionLink:"https://www.utu.fi/en",grade:"Turku, Finland",achievements:["Intensive program in Game Design principles","Game development using the Unity engine"]},{period:"2020 — 2023",degree:"Bachelor of Science",field:"Mathematics & Computer Science",institution:"University of Paris City",institutionLink:"https://u-paris.fr",grade:"Paris, France",achievements:["Foundational courses in Mathematics and Computational Theory","2020-2022: Major in computer science (L1-L2). Placed 4th out of 107.","2022-2023: Major in Mathematics with a minor in Computer science (L2). Ranked 3rd out of 50."]}],Ue=[{title:"Cursor-Tracking HeatMap",description:"Chrome extension capturing user cursor behavior during live sessions to visualize interactions via heatmaps and detailed user paths for UX optimization.",techs:["JavaScript","Chrome API","Data Visualization"],image:"/img1.png",githubLink:"https://github.com/aladin20c/cursor-tracker-quant-ux"},{title:"Computer Vision Pipeline For Chess",description:"Computer vision system that identifies piece positions on a physical chessboard from a photo to reconstruct the digital game state.",techs:["Python","OpenCV","Computer Vision"],image:"/img2.png",githubLink:"https://github.com/aladin20c/chess_computer_vision"},{title:"Carbon Footprint Calculator",description:"Mobile application for Viveris to calculate environmental impact, featuring a robust backend and cross-platform mobile UI.",techs:["Spring Boot","React","React Native","Java"],image:"/img3.png",githubLink:"https://github.com/aladin20c/eco-boost-campus"}];class Ie extends d{static properties={name:{type:String},url:{type:String}};static styles=p`
+    `,straightArrow:a`
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"></path>
+        </svg>
+    `},De=[{id:"#about",label:"About"},{id:"#experience",label:"Experience"},{id:"#education",label:"Education"},{id:"#projects",label:"Projects"}],Te=[{name:"github",label:"GitHub",url:"https://github.com/aladin20c"},{name:"linkedin",label:"LinkedIn",url:"https://www.linkedin.com/in/aladin-cheniour/"},{name:"goodreads",label:"Goodreads",url:"https://www.goodreads.com/user/show/101887216-aladin"}],Re=[{date:"2025 — Present",role:"Medical Research Intern",company:"Dassault Systèmes",companyLink:"https://www.3ds.com/science/meditwin",description:"Building high-performance 2D/3D manipulation, annotation and segmentation tools for volumetric medical data. Exploring remote rendering and optimisation techniques for volumetric rendering.",techs:["DICOM","FHIR","VTK","WebGL","Lit"]},{date:"April — Aug 2025",role:"Full-Stack Software Engineer",company:"Ouidou",companyLink:"https://www.ouidou.fr",description:"Collaborated with multi-disciplinary teams to maintain and implement major features. Optimized application performance by resolving bottlenecks in backend queries and frontend rendering.",techs:["Node.js","Angular","Spring Boot","React","PostgreSQL"]},{date:"2024 — 2025",role:"Academic Tutor",company:"Polytech Paris Saclay",companyLink:"https://www.polytech.universite-paris-saclay.fr",description:"Led tutoring sessions at polytech for first and second-year engineering students in Computer Science, Mathematics, and Physics.",techs:["Algorithms","Math","C++","Physics"]},{date:"June — Aug 2024",role:"Software Engineer Intern",company:"SMA BTP",companyLink:"https://www.smabtp.fr",description:"Automated file submission and testing workflows by developing Selenium scripts. Interfaced with developers to ensure coherent UX across internal tools.",techs:["Selenium","Angular","Spring Boot"]},{date:"July — Aug 2022",role:"Data Analyst Intern",company:"SEABEX",companyLink:"https://seabex.com",description:"Developed and maintained Python programs for processing and analyzing satellite-collected agricultural data to provide decision-support solutions for irrigation and optimize water consumption.",techs:["Python","PyTorch","OpenCV"]}],Oe=[{period:"July 2026",degree:"Summer School",field:"Automated Machine Learning",institution:"TU Dortmund & Lamaar Institut",institutionLink:"https://www.automlschool.org",grade:"Dortmund, Germany",achievements:["Covering introductory, state-of-the-art, and application lectures for AutoML and Foundation Models.","Core topics such as: Hyperparameter optimization and model selection, Applying and scaling foundation models, Neural architecture search, Bayesian Optimization, ..."]},{period:"2025 — 2026",degree:"Master of Science",field:"Interaction, Computer Graphics & Design",institution:"Institut Polytechnique de Paris",institutionLink:"https://www.ip-paris.fr",grade:"Palaiseau, France",thesis:"Innovative Visualization and Manipulation Tools and 3D rendering techniques for Medical Data",achievements:["Courses: Computer Vision, Deep Learning, Virtual Humans, Computer animation and simulation, data physicalization & visualisation, Quant UX.","Placed 6th out of 87 in a Kaggle challenge to predict twitter users social roles."]},{period:"2023 — 2026",degree:"Engineering Degree",field:"Mathematics & Computer Science",institution:"Polytech Paris Saclay",institutionLink:"https://www.polytech.universite-paris-saclay.fr",grade:"Orsay, France",achievements:["Courses Included : Advanced Database Management, Computer Networks, Machine Learning, Computer Architecture and Web Development","Won the Polytech Rendering Competition Award 2024"]},{period:"July — Aug 2023",degree:"Summer School",field:"Game Design & Development",institution:"Turku University",institutionLink:"https://www.utu.fi/en",grade:"Turku, Finland",achievements:["Intensive program in Game Design principles","Game development using the Unity engine"]},{period:"2020 — 2023",degree:"Bachelor of Science",field:"Mathematics & Computer Science",institution:"University of Paris City",institutionLink:"https://u-paris.fr",grade:"Paris, France",achievements:["Foundational courses in Mathematics and Computational Theory","2020-2022: Major in computer science (L1-L2). Placed 4th out of 107.","2022-2023: Major in Mathematics with a minor in Computer science (L2). Ranked 3rd out of 50."]}],Be=[{title:"Cursor-Tracking HeatMap",description:"Chrome extension capturing user cursor behavior during live sessions to visualize interactions via heatmaps and detailed user paths for UX optimization.",techs:["JavaScript","Chrome API","Data Visualization"],image:"/img1.png",githubLink:"https://github.com/aladin20c/cursor-tracker-quant-ux"},{title:"Computer Vision Pipeline For Chess",description:"Computer vision system that identifies piece positions on a physical chessboard from a photo to reconstruct the digital game state.",techs:["Python","OpenCV","Computer Vision"],image:"/img2.png",githubLink:"https://github.com/aladin20c/chess_computer_vision"},{title:"Carbon Footprint Calculator",description:"Mobile application for Viveris to calculate environmental impact, featuring a robust backend and cross-platform mobile UI.",techs:["Spring Boot","React","React Native","Java"],image:"/img3.png",githubLink:"https://github.com/aladin20c/eco-boost-campus"}],We=[{year:"2026",projectName:"Medical Viewer",projectUrl:"https://github.com/aladin20c/trame-medical-viewer-server-client",description:"A medical 3d viewer for CT scans with different manipulation tools.",builtWith:["Trame","Vtk","Python"],linkUrl:"https://github.com/aladin20c/trame-medical-viewer-server-client",linkLabel:"github",hasSvg:!0,linkIcon:"github"},{year:"2026",projectName:"Neural Radiance Fields",projectUrl:"https://github.com/aladin20c/minimalist-nerf-implementation",description:"A PyTorch implementation of the original Neural Radiance Fields (NeRF) paper.",builtWith:["Python","Pytorch","colmap"],linkUrl:"https://github.com/aladin20c/minimalist-nerf-implementation",linkLabel:"github",hasSvg:!0,linkIcon:"github"},{year:"2026",projectName:"Chrome Cursor Tracker",projectUrl:"https://github.com/aladin20c/cursor-tracker-quant-ux",description:" Chrome Extension that monitors user interactions in the browser and a Python backend that stores the collected data.",builtWith:["Flask","Python","Js"],linkUrl:"https://github.com/aladin20c/cursor-tracker-quant-ux",linkLabel:"github",hasSvg:!0,linkIcon:"github"},{year:"2026",projectName:"BunnyGL",projectUrl:"https://github.com/aladin20c/BunnyGL",description:"A custom Low polygon Rendering Engine.",builtWith:["C++","OpenGl","Glsl"],linkUrl:"https://github.com/aladin20c/BunnyGL",linkLabel:"github",hasSvg:!0,linkIcon:"github"},{year:"2025",projectName:"Connect 4",projectUrl:"https://aladin20c.github.io/connect4-interview/",description:"A simple, one-page Connect 4 game for an internship interview.",builtWith:["Js","Html","Css"],linkUrl:"https://aladin20c.github.io/connect4-interview/",linkLabel:"github.io/connect4-interview",hasSvg:!0,linkIcon:"arrow"},{year:"2025",projectName:"Personal Website",projectUrl:"https://github.com/aladin20c/portfolio",description:"This Portfolio.",builtWith:["Lit","Js","Html","Css"],linkUrl:"https://github.com/aladin20c/portfolio",linkLabel:"aladin20c/portfolio",hasSvg:!0,linkIcon:"arrow"},{year:"2025",projectName:"Chess Board Recognition",projectUrl:"https://github.com/aladin20c/chess_computer_vision",description:"Digitally reconstruct a chess game from a raw image of a physical chessboard.",builtWith:["Python","OpenCv","Pytorch"],linkUrl:"https://github.com/aladin20c/chess_computer_visio",linkLabel:"github",hasSvg:!0,linkIcon:"github"},{year:"2025",projectName:"Mobile App for carbon footprint",projectUrl:"https://github.com/aladin20c/eco-boost-campus",description:"A mobile app that helps users calculate, track, and reduce their carbon footprint through challenges and community engagement.",builtWith:["React Native","Angular","Java","SpringBoot","PostgreSQL","Docker"],linkUrl:"https://github.com/aladin20c/eco-boost-campus",linkLabel:"github",hasSvg:!0,linkIcon:"github"},{year:"2025",projectName:"Snacks Clustering",projectUrl:"https://github.com/aladin20c/SnacksClustering",description:"Unsupervised and self supervised Food Image classification.",builtWith:["Python","Pytorch","StreamLit"],linkUrl:"https://github.com/aladin20c/SnacksClustering",linkLabel:"github",hasSvg:!0,linkIcon:"github"},{year:"2025",projectName:"Self Driving Car",projectUrl:"https://aladin20c.github.io/self-driving-car/",description:"A browser‑based simulation where a virtual car learns to drive using reinforcement learning.",builtWith:["Js","Matter.js","TensorFlow"],linkUrl:"https://aladin20c.github.io/self-driving-car/",linkLabel:"github.io/self-driving-car",hasSvg:!0,linkIcon:"arrow"},{year:"2025",projectName:"Versus",projectUrl:"https://github.com/aladin20c/versus",description:"A comprehensive design system for HBS digital products.",builtWith:["React","SpringBoot","Java","Docker"],linkUrl:"https://github.com/aladin20c/versus",linkLabel:"github",hasSvg:!0,linkIcon:"github"},{year:"2024",projectName:"Dominion",projectUrl:"https://github.com/aladin20c/Dominion",description:"A card game reimplemention with UI, multiplayer, and player agents.",builtWith:["C++","wxWidgets"],linkUrl:"https://github.com/aladin20c/Dominion",linkLabel:"github",hasSvg:!0,linkIcon:"github"},{year:"2024",projectName:"Parametric Raceways",projectUrl:"https://github.com/aladin20c/ParametricRacewaysOpenGL",description:"Interactive 3D driving with mathematically generated race tracks.",builtWith:["OpenGl","Glsl","Python"],linkUrl:"https://github.com/aladin20c/ParametricRacewaysOpenGL",linkLabel:"github",hasSvg:!0,linkIcon:"github"},{year:"2023",projectName:"Gamified Portfolio",projectUrl:"https://aladin20c.github.io/portfolio-playable/",description:"Interactive resume in the form of a 2D game.",builtWith:["Js"],linkUrl:"https://aladin20c.github.io/portfolio-playable/",linkLabel:"github.io/portfolio-playable",hasSvg:!0,linkIcon:"arrow"},{year:"2022",projectName:"Multiplayer Poker Game",projectUrl:"https://github.com/aladin20c/PockerEnReseau",description:"Multiplayer poker game supporting Texas Holdem and Five-Card Draw with client-server architecture.",builtWith:["Java","WebSockets"],linkUrl:"https://github.com/aladin20c/PockerEnReseau",linkLabel:"github",hasSvg:!0,linkIcon:"github"},{year:"2022",projectName:"Arithmetic interpreter in C",projectUrl:"https://github.com/aladin20c/unbounded_int",description:"A lightweight C library implementing arbitrary-precision integer arithmetic using doubly linked lists.",builtWith:["C"],linkUrl:"https://github.com/aladin20c/unbounded_int",linkLabel:"github",hasSvg:!0,linkIcon:"github"},{year:"2021",projectName:"Side Scrolling Plateformer",projectUrl:"https://github.com/aladin20c/plateformer",description:"Side Scrolling plateforming game in java.",builtWith:["Java","Swing"],linkUrl:"https://github.com/aladin20c/plateformer",linkLabel:"github",hasSvg:!0,linkIcon:"github"},{year:"2021",projectName:"Catan Clone",projectUrl:"https://github.com/aladin20c/catan",description:"A clone of the famous board game Settlers of Catan, implemented in Java.",builtWith:["Java","Swing"],linkUrl:"https://github.com/aladin20c/catan",linkLabel:"github",hasSvg:!0,linkIcon:"github"},{year:"2021",projectName:"Visulog",projectUrl:"https://github.com/aladin20c/Visulog",description:"Tool for analysis and visualization of git logs.",builtWith:["Java","Html","Js","Css"],linkUrl:"https://github.com/hbs/design-system",linkLabel:"github",hasSvg:!0,linkIcon:"github"}];class Ve extends c{static properties={name:{type:String},url:{type:String}};static styles=d`
     a {
       color: var(--slate-200);
       cursor: pointer;
@@ -60,7 +64,7 @@
         line-height: 2.25rem;
       }
     }
-  `;constructor(){super(),this.name="Alaeddine Cheniour",this.url="/"}render(){return a`<a href="${this.url}" >${this.name}</a>`}}customElements.define("name-header",Ie);class Ne extends d{static properties={href:{type:String},text:{type:String},active:{type:Boolean,reflect:!0}};static styles=p`
+  `;constructor(){super(),this.name="Alaeddine Cheniour",this.url="/"}render(){return a`<a href="${this.url}" >${this.name}</a>`}}customElements.define("name-header",Ve);class Ge extends c{static properties={href:{type:String},text:{type:String},active:{type:Boolean,reflect:!0}};static styles=d`
     :host { display: block; }
     
     .nav-link {
@@ -102,7 +106,7 @@
         <span class="nav-indicator"></span>
         <span class="nav-text">${this.text}</span>
       </a>
-    `}}customElements.define("nav-item",Ne);class Oe extends d{static properties={activeSection:{type:String}};static styles=p`
+    `}}customElements.define("nav-item",Ge);class Fe extends c{static properties={activeSection:{type:String}};static styles=d`
     nav ul {
       margin: 48px 0 24px 0;
       width: max-content;
@@ -112,7 +116,7 @@
   `;constructor(){super(),this.activeSection=window.location.hash||"#about"}handleNavClick(e,t){e.preventDefault(),this.dispatchEvent(new CustomEvent("nav-link-clicked",{detail:{section:t},bubbles:!0,composed:!0})),this.activeSection=t}render(){return a`
       <nav aria-label="Main navigation">
         <ul>
-          ${Me.map(e=>a`
+          ${De.map(e=>a`
             <li>
               <nav-item 
                 href="${e.id}" 
@@ -124,7 +128,7 @@
           `)}
         </ul>
       </nav>
-    `}}customElements.define("nav-menu",Oe);class De extends d{static properties={href:{type:String},label:{type:String},iconName:{type:String}};static styles=p`
+    `}}customElements.define("nav-menu",Fe);class Je extends c{static properties={href:{type:String},label:{type:String},iconName:{type:String}};static styles=d`
     .social-link {
       margin-top: 30px;
       margin-right: 20px;
@@ -140,7 +144,7 @@
       <a class="social-link" href="${this.href}" aria-label="${this.label}">
         ${j[this.iconName]}
       </a>
-    `}}customElements.define("social-link",De);class Re extends d{static styles=p`
+    `}}customElements.define("social-link",Je);class qe extends c{static styles=d`
     
     ul {
       display: flex;
@@ -155,7 +159,7 @@
     /* We can style the internal icon size from here ::slotted(social-link), social-link {--icon-size: 24px;} */
   `;render(){return a`
       <ul>
-        ${He.map(e=>a`
+        ${Te.map(e=>a`
           <li>
             <social-link 
               .iconName="${e.name}" 
@@ -165,7 +169,7 @@
           </li>
         `)}
       </ul>
-    `}}customElements.define("social-list",Re);class Be extends d{static properties={activeSection:{type:String}};constructor(){super(),this.activeSection=window.location.hash||"#about"}static styles=p`
+    `}}customElements.define("social-list",qe);class Ke extends c{static properties={activeSection:{type:String}};constructor(){super(),this.activeSection=window.location.hash||"#about"}static styles=d`
     :host {
       display: block;
       width: 100%;
@@ -264,7 +268,7 @@
               <social-list></social-list>
             </div>
         </header>
-    `}}customElements.define("header-part",Be);class Ve extends d{static properties={text:{type:String},link:{type:String},svg:{type:Boolean},dashedBorder:{type:Boolean},active:{type:Boolean,reflect:!0}};static styles=p`
+    `}}customElements.define("header-part",Ke);class Ye extends c{static properties={text:{type:String},link:{type:String},svg:{type:Boolean},dashedBorder:{type:Boolean},active:{type:Boolean,reflect:!0},bold:{type:Boolean,reflect:!0},svgName:{type:String},svgEffect:{type:Boolean}};constructor(){super(),this.text="",this.link="/",this.svg=!0,this.dashedBorder=!1,this.active=!1,this.bold=!1,this.svgName="arrow",this.svgEffect=!0}static styles=d`
     :host {
       display: inline-block;
     }
@@ -309,6 +313,9 @@
     span {
       display: inline-block;
     }
+    span.bold {
+      font-weight: 700;
+    }
 
     svg {
       display: inline-block;
@@ -326,17 +333,17 @@
     a.active svg {
       transform: translate(2px, -1px);
     }
-  `;constructor(){super(),this.svg=!1,this.active=!1,this.dashedBorder=!1}render(){return a`
+  `;render(){return a`
       <a 
         href="${this.link}" 
         target="_blank" 
         rel="noopener noreferrer"
         class="${this.active?"active":""} ${this.dashedBorder?"with-border":""}"
       >
-        <span>${this.text}</span>
-        ${this.svg?a`${j.arrow}`:""}
+        <span class="${this.bold?"bold":""}" >${this.text}</span>
+        ${this.svg?a`${j[this.svgName]}`:""}
       </a>
-    `}}customElements.define("link-item",Ve);class Fe extends d{static properties={name:{type:String}};static styles=p`
+    `}}customElements.define("link-item",Ye);class Xe extends c{static properties={name:{type:String}};static styles=d`
     :host {
       display: inline-flex;
       align-items: center;
@@ -350,7 +357,7 @@
       margin-right: 6px;
       margin-top: 8px;
     }
-  `;render(){return a`${this.name}`}}customElements.define("tech-tag",Fe);const q=n=>`./public/${n.startsWith("/")?n.slice(1):n}`,I=p`
+  `;render(){return a`${this.name}`}}customElements.define("tech-tag",Xe);const F=s=>`./public/${s.startsWith("/")?s.slice(1):s}`,D=d`
   .hover-background {
     position: absolute;
     inset: -16px -16px -16px -16px;
@@ -366,7 +373,7 @@
       inset: -24px -24px -24px -24px;
     }
   }
-`;class Ge extends d{static properties={id:{type:String}};static styles=p`
+`;class Qe extends c{static properties={id:{type:String}};static styles=d`
     :host {
       display: block;
       scroll-margin-top: 64px;
@@ -431,7 +438,7 @@
           <slot></slot>
         </div>
       </section>
-    `}}customElements.define("portfolio-section",Ge);class qe extends d{static properties={date:{type:String},role:{type:String},company:{type:String},companyLink:{type:String},description:{type:String},techs:{type:Array},isHovered:{type:Boolean}};static styles=[I,p`
+    `}}customElements.define("portfolio-section",Qe);class Ze extends c{static properties={date:{type:String},role:{type:String},company:{type:String},companyLink:{type:String},description:{type:String},techs:{type:Array},isHovered:{type:Boolean}};static styles=[D,d`
       :host { 
         cursor: pointer;
       }
@@ -537,7 +544,7 @@
         </div>
       </div>
     </div>  
-    `}}customElements.define("experience-card",qe);class We extends d{constructor(){super()}static styles=[I,p`
+    `}}customElements.define("experience-card",Ze);class et extends c{constructor(){super()}static styles=[D,d`
       ul {
         list-style: none;
         padding: 0;
@@ -580,7 +587,7 @@
       }
     `];render(){return a`
       <ul>
-        ${je.map(e=>a`
+        ${Re.map(e=>a`
           <li>
             <div class="hover-background"></div>
             <experience-card 
@@ -594,7 +601,7 @@
           </li>
         `)}
       </ul>
-    `}}customElements.define("experience-list",We);class Je extends d{static properties={period:{type:String},degree:{type:String},field:{type:String},institution:{type:String},institutionLink:{type:String},achievements:{type:Array},thesis:{type:String},grade:{type:String},isHovered:{type:Boolean}};static styles=p`
+    `}}customElements.define("experience-list",et);class tt extends c{static properties={period:{type:String},degree:{type:String},field:{type:String},institution:{type:String},institutionLink:{type:String},achievements:{type:Array},thesis:{type:String},grade:{type:String},isHovered:{type:Boolean}};static styles=d`
     :host {
       cursor: pointer;
     }
@@ -803,7 +810,7 @@
           </div>
         </div>
       </div>
-    `}}customElements.define("education-card",Je);class Ke extends d{constructor(){super()}static styles=[I,p`
+    `}}customElements.define("education-card",tt);class it extends c{constructor(){super()}static styles=[D,d`
       ul {
         list-style: none;
         padding: 0;
@@ -846,7 +853,7 @@
       }
     `];render(){return a`
       <ul>
-        ${Te.map(e=>a`
+        ${Oe.map(e=>a`
           <li>
             <div class="hover-background"></div>
             <education-card
@@ -862,7 +869,7 @@
           </li>
         `)}
       </ul>
-    `}}customElements.define("education-list",Ke);class Xe extends d{static properties={title:{type:String},description:{type:String},techs:{type:Array},image:{type:String},githubLink:{type:String},demoLink:{type:String},isHovered:{type:Boolean}};static styles=p`
+    `}}customElements.define("education-list",it);class nt extends c{static properties={title:{type:String},description:{type:String},techs:{type:Array},image:{type:String},githubLink:{type:String},demoLink:{type:String},isHovered:{type:Boolean}};static styles=d`
     :host {
       cursor: pointer;
       display: block;
@@ -1014,7 +1021,7 @@
         margin-bottom: 8px;
       }
     }
-  `;handleHostClick(e){e.target.closest("a")||(this.githubLink?window.open(this.githubLink,"_blank","noopener,noreferrer"):this.demoLink&&window.open(this.demoLink,"_blank","noopener,noreferrer"))}constructor(){super(),this.isHovered=!1,this.techs=[]}handleMouseEnter(){this.isHovered=!0}handleMouseLeave(){this.isHovered=!1}renderImage(){return this.image?a`<img src="${q(this.image)}" alt="${this.title}">`:a`<div class="image-placeholder">${this.title.charAt(0)}</div>`}render(){return a`
+  `;handleHostClick(e){e.target.closest("a")||(this.githubLink?window.open(this.githubLink,"_blank","noopener,noreferrer"):this.demoLink&&window.open(this.demoLink,"_blank","noopener,noreferrer"))}constructor(){super(),this.isHovered=!1,this.techs=[]}handleMouseEnter(){this.isHovered=!0}handleMouseLeave(){this.isHovered=!1}renderImage(){return this.image?a`<img src="${F(this.image)}" alt="${this.title}">`:a`<div class="image-placeholder">${this.title.charAt(0)}</div>`}render(){return a`
       <div class="project-card"
           @click=${this.handleHostClick}
           @mouseenter=${this.handleMouseEnter}
@@ -1069,7 +1076,7 @@
           </div>
         </div>
       </div>
-    `}}customElements.define("project-card",Xe);class Ye extends d{constructor(){super()}static styles=[I,p`
+    `}}customElements.define("project-card",nt);class st extends c{constructor(){super()}static styles=[D,d`
       ul {
         list-style: none;
         padding: 0;
@@ -1112,7 +1119,7 @@
       }
     `];render(){return a`
       <ul>
-        ${Ue.map(e=>a`
+        ${Be.map(e=>a`
           <li>
             <div class="hover-background"></div>
             <project-card
@@ -1126,7 +1133,7 @@
           </li>
         `)}
       </ul>
-    `}}customElements.define("project-list",Ye);class Ze extends d{constructor(){super()}static styles=p`
+    `}}customElements.define("project-list",st);class rt extends c{constructor(){super()}static styles=d`
       .mb-4 {
         margin-bottom: 16px;
       }
@@ -1166,7 +1173,7 @@
           Inspired by Brittany Chiang's design.
         </p>
       </footer>
-    `}}customElements.define("footer-part",Ze);class Qe extends d{constructor(){super(),this.observer=null}static styles=p`
+    `}}customElements.define("footer-part",rt);class ot extends c{constructor(){super(),this.observer=null}static styles=d`
       :host {
         display: block;
         width: 100%;
@@ -1206,7 +1213,7 @@
         color: var(--slate-200);
         text-decoration: none;
       }
-    `;scrollToSection(e){const t=this.shadowRoot.querySelector(e);t&&t.scrollIntoView({behavior:"smooth"})}firstUpdated(){const e=this.shadowRoot.querySelectorAll("portfolio-section"),t={rootMargin:"-30% 0px -60% 0px",threshold:0};this.observer=new IntersectionObserver(i=>{i.forEach(s=>{s.isIntersecting&&this.dispatchEvent(new CustomEvent("section-changed",{detail:{section:`#${s.target.id}`},bubbles:!0,composed:!0}))})},t),e.forEach(i=>this.observer.observe(i))}disconnectedCallback(){super.disconnectedCallback(),this.observer&&this.observer.disconnect()}render(){return a`
+    `;scrollToSection(e){const t=this.shadowRoot.querySelector(e);t&&t.scrollIntoView({behavior:"smooth"})}firstUpdated(){const e=this.shadowRoot.querySelectorAll("portfolio-section"),t={rootMargin:"-30% 0px -60% 0px",threshold:0};this.observer=new IntersectionObserver(i=>{i.forEach(n=>{n.isIntersecting&&this.dispatchEvent(new CustomEvent("section-changed",{detail:{section:`#${n.target.id}`},bubbles:!0,composed:!0}))})},t),e.forEach(i=>this.observer.observe(i))}disconnectedCallback(){super.disconnectedCallback(),this.observer&&this.observer.disconnect()}render(){return a`
           <main id="main-content">
 
             <portfolio-section id="about">
@@ -1241,7 +1248,7 @@
 
             <portfolio-section id="experience">
               <experience-list></experience-list>
-              <link-item link="${q("resume.pdf")}" text="View Full Résumé" svg="true"></link-item>
+              <link-item link="${F("resume.pdf")}" text="View Full Résumé" svg="true"></link-item>
             </portfolio-section>
 
             <portfolio-section id="education">
@@ -1250,12 +1257,13 @@
 
             <portfolio-section id="projects">
               <project-list></project-list>
+              <link-item link="#/archive" text="View Full Project Archive" svg="true"></link-item>
             </portfolio-section>
 
             <footer-part></footer-part>
 
           </main>
-    `}}customElements.define("main-part",Qe);class et extends d{static styles=p`
+    `}}customElements.define("main-part",ot);class at extends c{static styles=d`
     :host {
       /* Locks the widget to the bottom right of the screen */
       position: absolute
@@ -1297,13 +1305,226 @@
       50% { transform: translateY(-5px); }
       100% { transform: translateY(-15px); }
     }
-  `;static properties={linkUrl:{type:String},gifSrc:{type:String}};constructor(){super(),this.linkUrl="https://aladin20c.github.io/portfolio-playable/",this.gifSrc=q("arcade.gif")}render(){return a`
+  `;static properties={linkUrl:{type:String},gifSrc:{type:String}};constructor(){super(),this.linkUrl="https://aladin20c.github.io/portfolio-playable/",this.gifSrc=F("arcade.gif")}render(){return a`
       \x3C!-- target="_blank" opens the link in a new tab -->
       \x3C!-- rel="noopener noreferrer" is a security best practice for external links -->
       <a href="${this.linkUrl}" target="_blank" rel="noopener noreferrer" class="widget-link">
         <img src="${this.gifSrc}" alt="Arcade Secret" class="widget-gif" />
       </a>
-    `}}customElements.define("arcade-widget",et);class tt extends d{static properties={activeSection:{type:String}};constructor(){super(),this.activeSection=window.location.hash||"#about"}static styles=p`
+    `}}customElements.define("arcade-widget",at);class lt extends c{static styles=d`
+    :host {
+      display: block;
+      min-height: 100vh;
+      color: #94a3b8;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .container { padding: 4rem 3rem; }
+    }
+    @media (min-width: 1024px) {
+      .container { padding-top: 6rem; padding-bottom: 6rem; }
+    }
+  `;render(){return a`
+      <div class="container">
+        <slot></slot>
+      </div>
+    `}}customElements.define("page-shell",lt);class ct extends c{static properties={href:{type:String},label:{type:String}};constructor(){super(),this.href="#/",this.label="Back"}static styles=d`
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 600;
+      color: var(--teal-300, #5eead4);
+      text-decoration: none;
+      margin-bottom: 0rem;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    .back-link svg {
+      width: 1rem;
+      height: 1rem;
+      margin-right: 0.5rem;
+      transform: rotate(180deg);
+      transition: transform 0.2s;
+    }
+    .back-link:hover {
+      color: var(--teal-400, #2dd4bf);
+    }
+    .back-link:hover svg {
+      transform: rotate(180deg) translateX(0.25rem);
+    }
+  `;render(){return a`
+      <a href="${this.href}" class="back-link" aria-label="Back to ${this.label}">
+        ${j.straightArrow}
+        ${this.label}
+      </a>
+    `}}customElements.define("back-link",ct);class ht extends c{static styles=d`
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--slate-200, #e2e8f0);
+      margin-bottom: 2rem;
+      margin-top: 0rem;
+    }
+    @media (min-width: 640px) {
+      h1 { font-size: 3rem; }
+    }
+  `;render(){return a`<h1><slot></slot></h1>`}}customElements.define("section-title",ht);class dt extends c{static properties={projects:{type:Array}};constructor(){super(),this.projects=[]}static styles=d`
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    thead {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+      backdrop-filter: blur(8px);
+    }
+    th {
+      padding: 1rem 0.5rem 1rem 0;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--slate-200, #e2e8f0);
+      text-align: left;
+    }
+
+    /* hide tags first, then description & link */
+    .tags-col,
+    .desc-col,
+    .link-col {
+      display: none;
+    }
+
+    @media (min-width: 640px) {
+      .desc-col,
+      .link-col {
+        display: table-cell;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .tags-col {
+        display: table-cell;
+      }
+    }
+
+    tbody tr {
+      border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    }
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    td {
+      padding: 1rem 0.5rem 1rem 0;
+      vertical-align: top;
+      font-size: 0.875rem;
+    }
+
+    .year-cell {
+      color: var(--slate-400, #94a3b8);
+      white-space: nowrap;
+    }
+
+    .project-cell {
+      font-weight: 600;
+      color: var(--slate-200, #e2e8f0);
+      line-height: 1.375;
+    }
+
+    /* Mobile: project name becomes a LinkItem; desktop: plain name */
+    .mobile-link {
+      display: block;
+    }
+    .desktop-name {
+      display: none;
+    }
+    @media (min-width: 640px) {
+      .mobile-link { display: none; }
+      .desktop-name { display: block; }
+    }
+
+    .desc-cell {
+      color: var(--slate-400, #94a3b8);
+      line-height: 1.5;
+      max-width: 40rem;
+    }
+
+    .built-with-list {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      transform: translateY(-0.125rem);
+    }
+    .built-with-list li {
+      margin: 0;
+    }
+
+    .link-cell {
+      white-space: nowrap;
+    }
+  `;render(){return a`
+      <table id="main-content">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Project</th>
+            <th class="desc-col">Description</th>
+            <th class="tags-col">Built with</th>
+            <th class="link-col">Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${this.projects.map(e=>a`
+            <tr>
+              <td class="year-cell">${e.year}</td>
+              <td class="project-cell">
+                <span class="mobile-link">
+                  ${e.projectUrl?a`<link-item
+                        text=${e.projectName}
+                        link=${e.projectUrl}
+                        bold=${!0}
+                      ></link-item>`:e.projectName}
+                </span>
+                <span class="desktop-name">${e.projectName}</span>
+              </td>
+              <td class="desc-cell desc-col">${e.description}</td>
+              <td class="built-with-cell tags-col">
+                <ul class="built-with-list">
+                  ${e.builtWith.map(t=>a`<li><tech-tag name=${t}></tech-tag></li>`)}
+                </ul>
+              </td>
+              <td class="link-cell link-col">
+                ${e.linkUrl?a`<link-item
+                      text=${e.linkLabel}
+                      link=${e.linkUrl}
+                      svg = ${e.hasSvg}
+                      svgName=${e.linkIcon||"arrow"}
+                      external
+                    ></link-item>`:""}
+              </td>
+            </tr>
+          `)}
+        </tbody>
+      </table>
+    `}}customElements.define("project-table",dt);class pt extends c{constructor(){super(),this.projects=We}static properties={projects:{type:Array}};render(){return a`
+      <page-shell>
+        <back-link href="#/" label="Alaeddine Cheniour"></back-link>
+        <section-title>All Projects</section-title>
+        <project-table .projects=${this.projects}></project-table>
+      </page-shell>
+    `}}customElements.define("archive-page",pt);class ut extends c{static properties={activeSection:{type:String}};constructor(){super(),this.activeSection=window.location.hash||"#about"}static styles=d`
     #main-container {
       width: 100%;
       height: 100%;
@@ -1323,7 +1544,7 @@
           <header-part .activeSection="${this.activeSection}" @nav-link-clicked="${this._handleNavClick}">></header-part>
           <main-part @section-changed="${this._handleSectionChange}"></main-part>
         </div>
-    `}}customElements.define("home-page",tt);class it extends d{render(){return a`<home-page></home-page>`}}customElements.define("my-app",it);</script>
+    `}}customElements.define("home-page",ut);class mt extends c{constructor(){super(),this.router=new Ie(this,[{path:"/",render:()=>a`<home-page></home-page>`},{path:"/archive",render:()=>a`<archive-page></archive-page>`},{path:"(.*)",render:()=>a`<home-page></home-page>`}]),this.router.baseUrl="#"}render(){return this.router.outlet()}}customElements.define("my-app",mt);</script>
     <style rel="stylesheet" crossorigin>:root{--slate-900: #0f172a;--slate-800: #1e293b;--slate-700: #334155;--slate-600: #475569;--slate-500: #64748b;--slate-400: #94a3b8;--slate-300: #cbd5e1;--slate-200: #e2e8f0;--teal-900: #134e4a;--teal-400: #2dd4bf;--teal-300: #5eead4;--blue-500: #3b82f6;--purple-600: #9333ea;--teal-400-tr: #2dd4bf1a}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background-color:var(--slate-900);line-height:1.625;color:var(--slate-400);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;scroll-behavior:smooth;width:100vw;min-height:100vh;overflow-x:hidden;position:relative}@media(max-width:1023px){body:before{content:"";position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:-1;background:radial-gradient(circle 600px at 0% 0%,rgba(29,78,216,.15),transparent 100%)}}@media(min-width:1024px){body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),rgba(29,78,216,.15),transparent 80%)}}</style>
   </head>
 

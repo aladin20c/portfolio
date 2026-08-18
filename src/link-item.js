@@ -11,6 +11,20 @@ export class LinkItem extends LitElement {
     svg: { type: Boolean },
     dashedBorder: {type: Boolean},
     active: { type: Boolean, reflect: true },
+    bold:{ type: Boolean, reflect: true },
+    svgName:{ type: String },
+    svgEffect:{ type: Boolean },    
+  }
+  constructor() {
+    super();
+    this.text = '';
+    this.link = '/';
+    this.svg = true;
+    this.dashedBorder = false;
+    this.active = false;
+    this.bold = false;
+    this.svgName = 'arrow';
+    this.svgEffect = true;
   }
 
   static styles = css`
@@ -58,6 +72,9 @@ export class LinkItem extends LitElement {
     span {
       display: inline-block;
     }
+    span.bold {
+      font-weight: 700;
+    }
 
     svg {
       display: inline-block;
@@ -77,13 +94,6 @@ export class LinkItem extends LitElement {
     }
   `;
 
-  constructor() {
-    super();
-    this.svg = false;
-    this.active = false;
-    this.dashedBorder = false;
-  }
-
   render() {
     return html`
       <a 
@@ -92,8 +102,8 @@ export class LinkItem extends LitElement {
         rel="noopener noreferrer"
         class="${this.active ? 'active' : ''} ${this.dashedBorder ? 'with-border' : ''}"
       >
-        <span>${this.text}</span>
-        ${this.svg ? html`${icons["arrow"]}` : ''}
+        <span class="${this.bold ? 'bold' : ''}" >${this.text}</span>
+        ${this.svg ? html`${icons[this.svgName]}` : ''}
       </a>
     `;
   }
