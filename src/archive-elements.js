@@ -286,7 +286,7 @@ export class ArchivePage extends LitElement {
   render() {
     return html`
       <page-shell>
-        <back-link href="/" label="Alaeddine Cheniour"></back-link>
+        <back-link href="#/" label="Alaeddine Cheniour"></back-link>
         <section-title>All Projects</section-title>
         <project-table .projects=${this.projects}></project-table>
       </page-shell>

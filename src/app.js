@@ -5,6 +5,7 @@ import { HeaderPart } from './header-elements';
 import { MainPart } from './main-element';
 import { ArcadeWidget } from './arcade-widget';
 import { ArchivePage } from './archive-elements';
+import { HashRouter } from './HashRouter.js';
 
 /**
  * Home Page
@@ -64,38 +65,15 @@ customElements.define('home-page', HomePage);
 
 
 
-// export class MyApp extends LitElement {
-
-//   render() {
-//     return html`<archive-page></archive-page>`;
-//   }
-//   // render() {
-//   //   return html`<archive-page></archive-page>`;
-//   // }
-// }
-// customElements.define('my-app', MyApp);
-
-
 export class MyApp extends LitElement {
     constructor() {
         super();
-        this.router = new Router(this, [
-            {
-                path: '/',
-                render: () => html`<home-page></home-page>`
-            },
-            {
-                path: '/archive',
-                render: () => html`<archive-page></archive-page>`
-            },
-            {
-                path: '(.*)',
-                render: () => html`<home-page></home-page>`
-            }
+        this.router = new HashRouter(this, [
+            {path: '/', render: () => html`<home-page></home-page>` },
+            {path: '/archive', render: () => html`<archive-page></archive-page>`},
+            {path: '(.*)', render: () => html`<home-page></home-page>`}
         ]);
-        this.router.baseUrl = '#';
     }
-
     render() {
         return this.router.outlet();
     }

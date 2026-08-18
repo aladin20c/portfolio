@@ -1202,7 +1202,7 @@ export class MainPart extends LitElement {
 
             <portfolio-section id="projects">
               <project-list></project-list>
-              <link-item link="/archive" text="View Full Project Archive" svg="true"></link-item>
+              <link-item link="#/archive" text="View Full Project Archive" svg="true"></link-item>
             </portfolio-section>
 
             <footer-part></footer-part>
