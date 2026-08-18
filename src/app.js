@@ -57,6 +57,7 @@ export class HomePage extends LitElement {
         <div id="main-container">
           <header-part .activeSection="${this.activeSection}" @nav-link-clicked="${this._handleNavClick}">></header-part>
           <main-part @section-changed="${this._handleSectionChange}"></main-part>
+          <arcade-widget></arcade-widget>
         </div>
     `;
   }
